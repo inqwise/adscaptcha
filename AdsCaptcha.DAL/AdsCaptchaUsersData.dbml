@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="AdsCaptchaUsersData_Dev" Class="AdsCaptchaUsersDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1;Initial Catalog=AdsCaptchaUsersData_Dev;Persist Security Info=True;User ID=sa" SettingsObjectName="AdsCaptcha.DAL.Properties.Settings" SettingsPropertyName="AdsCaptchaUsersData_DevConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TU_USER_VISIT" Member="TU_USER_VISITs">
+    <Type Name="TU_USER_VISIT">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Request_Type" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="User_GUID" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

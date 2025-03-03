@@ -1,0 +1,118 @@
+.button-green{
+	padding:1px 6px;
+	display:inline-block;
+	text-decoration:none;
+	font-weight:bold;
+	color:#fff;
+	background-color:#57995B;
+	border:1px solid #457D45;
+	X-webkit-box-shadow:0 0 3px #CCCCCC;
+	X-moz-box-shadow:0 0 3px #CCCCCC;
+	Xbox-shadow:0 0 3px #CCCCCC;
+	X-webkit-border-radius:3px;
+	X-moz-border-radius:3px;
+	Xborder-radius:3px;
+	Xmargin:2px;
+	text-align:center;
+	text-shadow:0 1px 1px #3B6E22;
+	background-image:-moz-linear-gradient(top, #57995B, #518F55);
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#57995B), to(#518F55));
+	background-image:-webkit-linear-gradient(#57995B, #518F55);
+	background-image:     -ms-linear-gradient(#57995B, #518F55); /* IE10 */
+	background-image:-o-linear-gradient(#57995B, #518F55);
+	background-image:linear-gradient(top, #57995B, #518F55);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#57995B', endColorstr='#518F55');
+	cursor:pointer;
+}
+input.button-green { padding: 1px 4px;}
+.button-green:hover{
+	background-color:#559658;
+	background-image:-moz-linear-gradient(top, #559658, #49894d);
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#559658), to(#49894d));
+	background-image:-webkit-linear-gradient(#559658, #49894d);
+	background-image:     -ms-linear-gradient(#559658, #49894d); /* IE10 */
+	background-image:-o-linear-gradient(#559658, #49894d);
+	background-image:linear-gradient(top, #559658, #49894d);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#559658', endColorstr='#49894d');
+	text-decoration:none;
+}
+.button-green span{color:#fff !important;text-decoration:none;padding:1px 0 2px;display:inline-block;margin:0;line-height:13px;}
+.button-green:hover span{color:#fff !important;text-decoration:none;}
+.button-green.ui-button-disabled {
+	filter: none;
+	background: none repeat scroll 0 0 #F2F2F2;
+    border-color: #C8C8C8;
+    box-shadow: none;
+    cursor: default;
+    text-shadow: none;
+}
+.button-green.ui-button-disabled span {
+	color: #B8B8B8 !important;
+}
+.button-green.ui-button-disabled span i {
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+}
+
+.button-white{
+	padding:1px 6px;
+	display:inline-block;
+	text-decoration:none;
+	font-weight:bold;
+	color:#333;
+	text-align:center;
+	text-shadow:0 1px 0 #fff;
+	background-color:#e5e5e5;
+	background-image:-moz-linear-gradient(top, #f9f9f9, #e5e5e5);
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e5e5e5));
+	background-image:-webkit-linear-gradient(#f9f9f9, #e5e5e5);
+	background-image:     -ms-linear-gradient(#f9f9f9, #e5e5e5); /* IE10 */
+	background-image:-o-linear-gradient(#f9f9f9, #e5e5e5);
+	background-image:linear-gradient(top, #f9f9f9, #e5e5e5);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#e5e5e5');
+	cursor:pointer;
+	border-color: #999999 #999999 #888888;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px;
+}
+input.button-white { padding: 1px 4px;}
+.button-white:hover{
+	background-color:#ddd;
+	background-image:-moz-linear-gradient(top, #e5e5e5, #dddddd);
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#e5e5e5), to(#dddddd));
+	background-image:-webkit-linear-gradient(#e5e5e5, #dddddd);
+	background-image:     -ms-linear-gradient(#e5e5e5, #dddddd); /* IE10 */
+	background-image:-o-linear-gradient(#e5e5e5, #dddddd);
+	background-image:linear-gradient(top, #e5e5e5, #dddddd);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e5e5e5', endColorstr='#dddddd');
+	text-decoration:none;
+	border-color:#999;
+}
+.button-white span{color:#333 !important;text-decoration:none;padding:1px 0 2px;display:inline-block;margin:0;line-height:13px;}
+.button-white:hover span{color:#333 !important;text-decoration:none;}
+.button-white.ui-button-disabled {
+	filter: none;
+	background: none repeat scroll 0 0 #F2F2F2;
+    border-color: #C8C8C8;
+    box-shadow: none;
+    cursor: default;
+    text-shadow: none;
+}
+.button-white.ui-button-disabled span {
+	color: #B8B8B8 !important;
+}
+.button-white.ui-button-disabled span i {
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+}
+i.icon-previous {
+	background: url(../images/icons/previous.png) no-repeat scroll 0px 3px;
+	display: inline-block;
+	padding-right: 2px;
+}
+i.icon-next {
+	background: url(../images/icons/next.png) no-repeat scroll 1px 3px;
+	display: inline-block;
+	padding-right: 2px;
+}

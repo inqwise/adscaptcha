@@ -1,0 +1,107 @@
+﻿/*** HEADER ***/
+body {background-image:url(../images/header_bg.jpg);}
+#header #moduleHeader a,
+#header #moduleHeader a:hover {color:#1cbbb4;}
+
+/*** START PAGE ***/
+#flashIntro {background:#c0bcb9 url(../../images/lobby_bg.jpg) repeat-x;height:254px;}
+
+#signupButton {left:28px;bottom:15px;}
+
+#loginBox {background-image:url(../images/login_bg.jpg);}
+#loginBox .loginHeader {color:#534741;}
+#loginBox .forgotPassword a,
+#loginBox .forgotPassword a:hover {color:#1cbbb4;}
+
+a.signinButton {background:transparent url(../images/button_signin_right.png) no-repeat scroll top right;}
+a.signinButton span {background:transparent url(../images/button_signin_left.png) no-repeat;} 
+
+/* tabs */
+ul.tabNavigation li a {padding:0 4px 0 4px;}
+ul.tabNavigation li a:hover {color:#534741;}
+ul.tabNavigation li a.special {background-color:#f26520;color:#fff;}
+ul.tabNavigation li a.special:hover {background-color:#f26520;color:#000;}
+ul.tabNavigation li a.special.selected {background-color:#f26520;color:#000;}
+.tabs {background-image:url(../images/tabs_bg.jpg);}
+.tabContent h3 {color:#1cbbb4}
+.tabContent a {color:#1cbbb4;}
+.tabPreview img {/*border-color:#1cbbb4;*/}
+.signupLink a {background-image:url(../images/sign_up_now_big.png);}
+
+/*** LOGIN ***/
+#loginFrame a.buttonSignIn {background-image:url(../images/sign_in.gif);}
+#loginFrame a.buttonRemindMe {background-image:url(../images/remind_me.png);}
+#loginFrame .frameTitle {color:#1cbbb4;}
+
+/*** FORM ***/
+h1 {background-color:#1cbbb4;}
+h2 {background-color:#1cbbb4;}
+
+.arrowinner {background: url(../images/arrow.jpg) no-repeat; width:100px;height:100px;margin:150px 0 0 30px;}
+
+.Total {color:#1cbbb4;}
+
+/* buttons */
+a.button {background:transparent url(../images/button_right.png) no-repeat scroll top right;}
+a.button span {background:transparent url(../images/button_left.png) no-repeat;}
+
+/* system messages */
+.systemMessages {border-color:#1cbbb4;}
+.close {background-color:#1cbbb4;}
+
+/* color picker */
+.colorwell-selected {border-color:#1cbbb4;}
+
+/* switch */
+.cb-enable, .cb-disable, .cb-enable span, .cb-disable span {background-image:url(../images/switch.gif);}
+
+/* slider */
+.slider .track {background-image:url(../images/slider_bg.jpg);}
+
+/* campaign table */
+h2.campaignTable {margin-bottom:0;}
+.campaignTable p {margin:10px 0 5px;}
+.campaignTable .FieldHeader {width:60px;}
+table.campaignTable {width:100%;}
+table.campaignTable td {padding:0 10px 0 40px;}
+tr.campaignTableR1 {height:60px;font-weight:bold;color:#000;background-color:#ececec;}
+tr.campaignTableR1 td {width:33%;vertical-align:middle;background-position:left;background-repeat:no-repeat;}
+td.campaignTableR1C1 {background-image:url(../images/campaign_budget_arrow1.jpg);}
+td.campaignTableR1C2 {background-image:url(../images/campaign_budget_arrow2.jpg);}
+td.campaignTableR1C3 {background-image:url(../images/campaign_budget_arrow3.jpg);color:#53ccc5;background-color:#e8f8f7;border-left:solid 1px #d3d3d3;font-size:125%;}
+tr.campaignTableR2 {}
+tr.campaignTableR2 td {width:33%;vertical-align:top;}
+tr.campaignTableR2 .fieldName {display:inline-block;width:140px;vertical-align:top;padding-top:5px;}
+tr.campaignTableR2 .fieldNameNarrow {display:inline-block;width:60px;vertical-align:top;padding-top:5px;}
+tr.campaignTableR2 .fieldValue {display:inline-block;}
+tr.campaignTableR2 .fieldValidation {display:block;}
+td.campaignTableR2C3, td.campaignTableR3C3 {border-left:solid 1px #d3d3d3;}
+#MasterPage_MainContent_radioSchedule td {width:0;padding:0;}
+
+/*** NAVIGATION ***/
+#navigation {background-image:url(../images/navigation_bg.png);}
+/*.navigation ul li {background-image:url(../images/navigation_separator.png);}*/
+
+/* sub navigation */
+.subNavigation ul li a {color:#1cbbb4;}
+
+/* bread crambs */
+#breadCrambs a {color:#1cbbb4;}
+
+/*** GRID ***/
+.grid {border-color:#e8f8f7;}
+.headingCell {background-color:#e8f8f7;border-bottom-color:#e8f8f7;}
+.headingCellText {color:#1cbbb4;}
+.dataCell {border-bottom-color:#e8f8f7;}
+.summaryRow td {background:#ebf0e9;}
+a.action {color:#1cbbb4;}
+a:hover.action {color:#1cbbb4;}
+
+/* filters */
+.filter {color:#1cbbb4;}
+
+/* information */
+.gridActions a {color:#1cbbb4;}
+
+/* summary table */
+.summaryTable th {background-color:#1cbbb4;}

@@ -1,0 +1,21 @@
+delimiters "$","$"
+import "../General/GeneralEmailParts.stg"
+
+subject(data)::="Your Inqwise new website"
+
+body(data)::=<<
+$header(data)$
+
+Hello,<br /><br />
+Congratulations on joining Inqwise! You have successfully registered  <i>$data.WebsiteUrl$</i> with us.<br />
+Approval of the above website is on hold, pending evaluation of its content.<br />
+The evaluation period will take up to 72 hours, after which you'll receive notification via email.<br /><br />
+Please note:<br />
+You can already embed the captcha codes into your website. Until the evaluation is complete, the website will display a 'Security Only' captcha (without the ads).<br />
+Also, you may be interested to know that larger and visually-richer Inqwise's captchas are more lucrative to you as a publisher, as they generate more \$\$\$.<br /><br />
+To find out more, please visit our website.<br /><br />
+Have a great day,<br />
+The <b>Inqwise</b> team
+
+$footer(data)$
+>>

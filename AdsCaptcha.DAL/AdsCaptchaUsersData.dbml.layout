@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AdsCaptchaUsersData">
+  <DataContextMoniker Name="/AdsCaptchaUsersDataDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bc3a5bf0-1a9a-4bd1-97fc-381f1495bbb7" absoluteBounds="2.125, 1.625, 2, 1.3862939453125">
+      <DataClassMoniker Name="/AdsCaptchaUsersDataDataContext/TU_USER_VISIT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a31ead9-728c-435e-9912-36d99818a4c7" absoluteBounds="2.14, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

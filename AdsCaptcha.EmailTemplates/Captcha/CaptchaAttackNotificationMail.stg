@@ -1,0 +1,17 @@
+delimiters "$","$"
+import "../General/GeneralEmailParts.stg"
+
+subject(data)::="CAPTCHA Page Traffic"
+
+body(data)::=<<
+$header(data)$
+
+Hello $data.Publisher.FirstName; null=data.Publisher.Email$,<br /><br />
+On $data.AttackDate; format="dd/MM/yyyy H:mm"$ GMT we have detected suspicious traffic on your CAPTCHA page.<br />
+For your site protection we have increased the CAPTCHA security level from $data.PreviousSecurityLevel$ to $data.CurrentSecurityLevel$<br />
+If you wish to decrease the CAPTCHA security level to $data.PreviousSecurityLevel$ please click <a href='$data.SiteUrl$publisher/EditCaptcha.aspx?WebsiteId=$data.WebsiteId$&CaptchaId=$data.CaptchaId$'>here</a>.<br /><br />
+Have a great day,<br />
+The <b>Inqwise</b> team
+
+$footer(data)$
+>>

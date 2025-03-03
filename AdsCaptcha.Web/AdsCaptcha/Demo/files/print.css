@@ -1,0 +1,7 @@
+body { background:white; font-size:12px; }
+
+#header_full, #global_header, #header_main, ul#global_login, ul#global_nav, #global_search, #footer_container, #footer, #copyright_container {display:none;}
+
+#interior_header {height:auto;}
+
+.no_print {display:none;}

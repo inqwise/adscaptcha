@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="../App_code/Handlers/Image.cs" Class="Admin.Handlers.Image"%>

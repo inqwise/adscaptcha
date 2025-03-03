@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdsCaptcha_DevModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AdsCaptcha_DevModelStoreContainer">
+          <EntitySet Name="T_PRESS" EntityType="AdsCaptcha_DevModel.Store.T_PRESS" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_PRESS_INQUIRES" EntityType="AdsCaptcha_DevModel.Store.T_PRESS_INQUIRES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="T_PRESS">
+          <Key>
+            <PropertyRef Name="PressID" />
+          </Key>
+          <Property Name="PressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Summary" Type="nvarchar" Nullable="false" MaxLength="2000" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PressSource" Type="nvarchar" MaxLength="500" />
+          <Property Name="PressSourceUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="AttachmentUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="PDF" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="T_PRESS_INQUIRES">
+          <Key>
+            <PropertyRef Name="InquireID" />
+          </Key>
+          <Property Name="InquireID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="350" />
+          <Property Name="Company" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1500" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdsCaptcha_DevModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdsCaptcha_DevEntities1">
+          <EntitySet Name="T_PRESS" EntityType="AdsCaptcha_DevModel.T_PRESS" />
+          <EntitySet Name="T_PRESS_INQUIRES" EntityType="AdsCaptcha_DevModel.T_PRESS_INQUIRES" />
+        </EntityContainer>
+        <EntityType Name="T_PRESS">
+          <Key>
+            <PropertyRef Name="PressID" />
+          </Key>
+          <Property Name="PressID" Type="Int32" Nullable="false" />
+          <Property Name="Header" Type="String" Nullable="false" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PressSource" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="PressSourceUrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="AttachmentUrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="PDF" Type="Binary" Nullable="true" />
+          <Property Name="Summary" Type="String" Nullable="false" /></EntityType>
+        <EntityType Name="T_PRESS_INQUIRES">
+          <Key>
+            <PropertyRef Name="InquireID" />
+          </Key>
+          <Property Name="InquireID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="350" Unicode="true" FixedLength="false" />
+          <Property Name="Company" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Message" Type="String" MaxLength="1500" Unicode="true" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdsCaptcha_DevModelStoreContainer" CdmEntityContainer="AdsCaptcha_DevEntities1">
+          <EntitySetMapping Name="T_PRESS">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_DevModel.T_PRESS)">
+              <MappingFragment StoreEntitySet="T_PRESS">
+                <ScalarProperty Name="Summary" ColumnName="Summary" />
+                <ScalarProperty Name="PDF" ColumnName="PDF" />
+                <ScalarProperty Name="PressID" ColumnName="PressID" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="PressSource" ColumnName="PressSource" />
+                <ScalarProperty Name="PressSourceUrl" ColumnName="PressSourceUrl" />
+                <ScalarProperty Name="AttachmentUrl" ColumnName="AttachmentUrl" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_PRESS_INQUIRES">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_DevModel.T_PRESS_INQUIRES)">
+              <MappingFragment StoreEntitySet="T_PRESS_INQUIRES">
+                <ScalarProperty Name="InquireID" ColumnName="InquireID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="AdsCaptchaModel" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="AdsCaptcha_DevModel.T_PRESS" Width="1.5" PointX="0.75" PointY="0.75" Height="2.7494921874999996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_DevModel.T_PRESS_INQUIRES" Width="1.5" PointX="2.75" PointY="0.75" Height="2.3648893229166665" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,106 @@
+ 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Test Captcha</title>
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<style type="text/css">
+		body {
+			margin: 10px; 
+			padding: 0;
+			font-family: arial, sans-serif;
+			font-size: 12px;
+		}
+		.desc { color: #999; }
+		</style>
+	</head>
+	<body>
+	
+	
+		<form id="theform">
+			
+			<div>
+				<!-- <script type="text/javascript" src="//192.168.1.72:8880/slider/get.ashx?imageTypeId=5&w=300&h=250"></script> -->
+				<script type="text/javascript" src="//192.168.1.72:8880/slider/get.ashx?captchaId=315&publicKey=d9f2c620583e40b0a1939efb74ded9fc&dummy=4304508469"></script>
+			</div>
+			
+			<div class="params">
+				<div class="param-name">Captcha ID:</div>
+				<div class="param-value">
+					<div><input type="text" autocomplete="off" id="text_captcha_id" name="captcha_id" value="315" /></div>
+					<div class="desc"><em>This id is unique to this specific Captcha.</em></div>
+				</div>
+			</div>
+			<div class="params">
+				<div class="param-name">Public Key:</div>
+				<div class="param-value">
+					<div><input type="text" autocomplete="off" id="text_public_key" name="public_key" value="d9f2c620583e40b0a1939efb74ded9fc" /></div>
+					<div class="desc"><em>Use the public key in the client code to receive any CAPTCHA of this website.</em></div>
+				</div>
+			</div>
+			<div class="params">
+				<div class="param-name">Private Key:</div>
+				<div class="param-value">
+					<div><input type="text" autocomplete="off" id="text_private_key" name="private_key" value="9638418d23124febb1b0499a76c6a48c" /></div>
+					<div class="desc"><em>Use the private key when validating any CAPTCHA of this website.</em></div>
+				</div>
+			</div>
+			
+			<div>
+				<button id="button_reload" type="button">Reload</button>
+				<button id="button_submit" type="button">Submit</button>
+			</div>
+		</form>
+		
+		<script type="text/javascript">
+		var validateCaptcha = function(params) {
+			$.ajax({
+				type: "POST",
+		        url: "http://192.168.1.72:8880/slider/validate.ashx",
+		        data : {
+		        	CaptchaId : $('#text_captcha_id').val(),
+		        	PublicKey : $('#text_public_key').val(),
+		        	PrivateKey : $('#text_private_key').val(),
+		        	ChallengeCode : $("#adscaptcha_challenge_field").val(),
+		        	UserResponse : $("#adscaptcha_response_field").val(),
+		        	RemoteAddress : "127.0.0.1"
+		        },
+		        /*data: $('#theform').serialize(),*/
+		        dataType: "jsonp",
+				jsonp: "callback",
+		        success: function (data, status) {
+					alert(data);
+		        },
+		        error: function (XHR, textStatus, errorThrow) {
+		            // error
+		        }
+		    });
+		};
+		
+		$(function() {
+			
+			$('#button_reload').click(function(e) {
+				
+				alert("RELOAD");
+				
+			});
+			
+			$('#button_submit').click(function(e) {
+				
+				validateCaptcha({
+					success : function() {
+						alert("VALID")
+					},
+					error: function() {
+						alert("NOT VALID")
+					}
+				});
+				
+				e.preventDefault();
+			});
+			
+		});
+		</script>
+	
+	</body>
+</html>

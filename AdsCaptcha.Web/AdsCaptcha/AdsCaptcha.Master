@@ -1,0 +1,238 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdsCaptcha.Master.cs" Inherits="Inqwise.AdsCaptcha.AdsCaptcha" ClientIDMode="Static" %>
+<%@ Register src="UserControls/Menu/MainTop.ascx" tagname="MainTop" tagprefix="uc1" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head id="MasterHead" runat="server">
+	
+    	<meta http-equiv="Content-Language" content="en-us" />
+    	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		
+		<meta name="google-site-verification" content="_qNob5dITpC6JOjp1S8upTvyARl5SF-VTKc4ih03JKs" />
+    	<link rel="shortcut icon" type="image/png" id="favicon" runat="server" href="~/images/favicon.png" />
+		
+		<link href="/css/global.css" type="text/css" rel="stylesheet" />
+        
+		<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+    	<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+		
+		
+		<!-- Latest compiled and minified CSS -->
+		<!--
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		-->
+		<!-- Optional theme -->
+		<!--
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+		-->
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+		<!--
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+		-->
+		
+		
+    	<asp:ContentPlaceHolder ID="HeadContent" runat="server" />	    	
+	</head>
+    	
+	<body <asp:ContentPlaceHolder ID="BodyContent" runat="server" /> >
+	<script type="text/javascript">
+	    var apiUrl = "<%=APIUrl%>";
+    </script>
+    
+ 	<form id="form1" runat="server">  
+    <% 
+        try
+        {
+            string env = System.Configuration.ConfigurationSettings.AppSettings["Environment"];
+            string ver = System.Configuration.ConfigurationSettings.AppSettings["Version"];
+            
+            if (env == "Prod")
+            { 
+            %>
+                <!-- ClickTale Top part -->
+            <script type="text/javascript">
+                var WRInitTime = (new Date()).getTime(); 
+            </script>
+                <!-- ClickTale end of Top part -->             
+            <% 
+            }
+            else
+            {
+                if (env != "LiveDemo")
+                    env += (" " + ver);
+            %>
+                <div class="environmemt" style="display:none;"><%=env%></div>
+            <%
+            }
+        }
+        catch { }
+    %>
+	
+	<asp:ContentPlaceHolder ID="LoginContent" runat="server" />
+	<asp:ContentPlaceHolder ID="LoginScriptContent" runat="server" />    
+    	<div class="wrapper">
+    		<div class="header home-page">
+				<div class="inner-header">
+					<div class="inner-left-side">
+						<div class="logo-container"><a href="<%=BaseUrl%>" title="Inqwise"><img src="/images/logo-2.png" width="326" /></a></div>
+						<div class="slogan-container"><span class="slogan">Let consumers choose how to engage with ads <br/><b>and enjoy them!</b></span></div>
+					</div>
+					<div class="inner-right-side">
+						<div>
+						
+							<!-- <%=BaseUrl%>publisher/login.aspx -->
+							
+							<div class="btn-group">
+								<a href="#" class="button-green-small dropdown-toggle" title="Login" data-toggle="dropdown"><span>Login</span></a>
+								<ul class="dropdown-menu right" role="menu">
+								    <li><a href="<%=BaseUrl%>publisher/login.aspx">Captcha Site Owners</a></li>
+									<li><a href="<%=BaseUrl%>advertiser/login.aspx">Captcha Advertisers</a></li>
+								</ul>
+							</div>
+							
+						</div>
+						<div class="menu-header-container">
+							<ul class="menu-header">
+								<li class="active"><a href="<%=BaseUrl%>" title="Home">Home</a></li><li><a href="<%=BaseUrl%>aboutus.aspx" title="About Us">About Us</a></li><!-- <li><a href="#" title="Pre-Roll">Pre-Roll</a></li><li><a href="#" title="Captcha">Captcha</a></li><li><a href="<%=BaseUrl%>press.aspx" title="Press">Press</a></li> --><li><a href="<%=BaseUrl%>contactus.aspx" title="Contact">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+				<div class="cfo">
+					<div class="inner-footer">
+						<div class="menu-bottom-container">
+							<ul class="menu-bottom">
+				                <li><a href="<%=BaseUrl%>aboutus.aspx" title="About Us">About Us</a></li><li><a href="<%=BaseUrl%>contactus.aspx" title="Contact Us">Contact Us</a></li><li><a href="<%=BaseUrl%>termsofuse.aspx" title="Terms of Service">Terms of Service</a></li><li><a href="<%=BaseUrl%>privacypolicy.aspx" title="Privacy policy">Privacy policy</a></li><li><a href="<%=BaseUrl%>resources.aspx" title="Captcha Resources">Captcha Resources</a></li><li><a href="<%=BaseUrl%>help.aspx" title="FAQ">FAQ</a></li><li><a href="<%=BaseUrl%>press.aspx" title="Press">Press</a></li><li><a href="http://blog.Inqwise.com" title="Blog">Blog</a></li>
+				            </ul>
+						</div>
+						<div>
+							<ul class="menu-plugins">
+								<li><a href="<%=BaseUrl%>resources.aspx#csharp" title="C Sharp" class="sprite-4 c-sharp">C#</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#php" title="PHP" class="sprite-4 php">PHP</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#asp" title="ASP" class="sprite-4 asp">ASP</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#java" title="Java" class="sprite-4 java">Java</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#wordpress" title="Wordpress" class="sprite-4 wordpress">Wordpress</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#drupal" title="Drupal" class="sprite-4 drupal">Drupal</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#joomla" title="Joomla" class="sprite-4 joomla">Joomla</a></li> 
+				                <li><a href="<%=BaseUrl%>resources.aspx#phpbb" title="PhpBB" class="sprite-4 php-bb">PhpBB</a></li>
+				                <li><a href="<%=BaseUrl%>resources.aspx#vBulletin" title="vBulletin" class="sprite-4 vbulletin">vBulletin</a></li>
+				                <li><a href="<%=BaseUrl%>resources.aspx#python" title="Python" class="sprite-4 python">Python</a></li>
+				                <li><a href="<%=BaseUrl%>resources.aspx#perl" title="Perl" class="sprite-4 perl">Perl</a></li>
+				                <li><a href="<%=BaseUrl%>resources.aspx#ruby" title="Ruby" class="sprite-4 ruby">Ruby</a></li>
+							</ul>
+						</div>
+		            </div>
+				</div>
+			</div>
+    	</div>
+		<div class="footer">
+            <div class="copyright">
+            	<div class="inner-copyright">
+					<div class="copyright-left-side">Copyright Inqwise 2014. All Rights Reserved.<br/><a href="<%=BaseUrl%>advertiser/prerollskipad.aspx" title="Pre-Roll Skip ad">Pre-Roll Skip ad</a> & Sliding CAPTCHA are Inqwise's Patent Pending</div>
+					<div class="copyright-right-side">
+						<ul class="links-social">
+		            		<li><a title="Inqwise at Facebook" target="_blank" href="" class="sprite-4 facebook-a">Facebook</a></li>
+		            		<li><a title="Inqwise at Twitter" target="_blank" href="" class="sprite-4 twitter">Twitter</a></li>
+		            		<li><a title="Inqwise at YouTube" target="_blank" href="" class="sprite-4 youtube">Youtube</a></li>
+		            		<li><a title="Inqwise at Google+" target="_blank" href="" class="sprite-4 google">Google Plus</a></li>
+		            	</ul>
+		            </div>
+	            </div>
+            </div>
+		</div>
+    </form>
+	
+	<script type="text/javascript">
+	$(function() {
+	
+		var lastDrop = null;
+		$('.dropdown-toggle').click(function() {
+			var $this = $(this);
+			var $parent = $this.parent();
+			
+			lastDrop = $parent;
+			
+			if(!$parent.hasClass('open')) {
+				$parent
+				.addClass('open');
+			} else {
+				$parent
+				.removeClass('open');
+			}
+		});
+		
+		$('.dropdown-toggle').click(function() { return false; });
+		$(document).click(function(){
+			//console.log(lastDrop);
+			if(lastDrop != null) {
+		    	if(lastDrop.hasClass('open')) {
+		    		lastDrop.removeClass('open');
+		    	}
+			}
+		});
+		
+	});
+	</script>
+	
+    
+    <% 
+        try
+        {
+            string env = System.Configuration.ConfigurationSettings.AppSettings["Environment"];
+            if (env == "Prod") { 
+            	%>
+            	
+                <!-- ClickTale Bottom part -->
+                <div id="ClickTaleDiv" style="display:none;"></div>
+                <!-- ClickTale end of Bottom part -->
+
+
+	            
+	            <script type="text/javascript">
+            	    var _gaq = _gaq || [];
+            	    _gaq.push(['_setAccount', 'UA-36040576-1']);
+            	    _gaq.push(['_setDomainName', 'Inqwise.com']);
+            	    _gaq.push(['_trackPageview']);
+
+            	    (function() {
+            	        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            	        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            	        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            	    })();
+            	</script>
+	            
+
+	            <% 
+            }
+        }
+        catch { }
+    %>
+    
+<!-- Google Code for Remarketing tag -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 994048181;
+var google_conversion_label = "flM8CIuulwQQtfH_2QM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/994048181/?value=0&amp;label=flM8CIuulwQQtfH_2QM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+    
+	</body>
+</html>

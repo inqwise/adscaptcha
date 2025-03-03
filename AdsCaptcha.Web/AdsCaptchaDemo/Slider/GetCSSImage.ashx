@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" Class="Slider.CssImageHandler" CodeBehind="~\App_code\Slider\CssImageHandler.cs" %>

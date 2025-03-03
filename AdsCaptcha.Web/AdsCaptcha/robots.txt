@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: 
+Disallow: /Async/
+Disallow: /Demo/
+Disallow: /Developer/
+Disallow: /Flash/
+Disallow: /Resources/
+Sitemap: http://www.Inqwise.com/SiteMap.xml

@@ -1,0 +1,11 @@
+delimiters "$", "$"
+
+header(data)::=<<
+<div style='display:block;margin-bottom:20px;'>
+<a href='$data.SiteUrl$'><img src='$data.StaticBaseUrl$images/logo_mail.png' width='181' height='43' border='0'></a>
+</div><font style='font-size:14px;'>                          
+>>
+
+footer(data)::=<<
+</font>
+>>

@@ -1,0 +1,18 @@
+delimiters "$","$"
+import "../General/GeneralEmailParts.stg"
+
+subject(data)::="Inqwise | New Campaign (#$data.CampaignId$)"
+
+body(data)::=<<
+$header(data)$
+
+The advertiser <a href='mailto:$data.Advertiser.Email$'>$data.Advertiser.Email$</a> has just added new campaign.<br /><br />
+<table>
+<tr><td><b>Email:</b></td><td><a href='mailto:$data.Advertiser.Email$'>$data.Advertiser.Email$</a></td></tr>
+<tr><td><b>Campaign:</b></td><td>$data.CampaignName$</td></tr>
+</table>
+<br/><br/>
+Click <a href='$data.AdminBaseUrl$EditCampaign.aspx?AdvertiserId=$data.Advertiser.Id$&CampaignId=$data.CampaignId$'>here</a> to view and edit details.
+
+$footer(data)$
+>>

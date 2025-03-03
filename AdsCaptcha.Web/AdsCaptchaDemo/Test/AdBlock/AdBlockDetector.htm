@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>
+    (function ($) {
+        $.fn.detectAdBlock = function (foundAdBlock) {
+            var testURL = window.location + "?advertising=1";
+            $.ajax(testURL, {
+                error: foundAdBlock
+            });
+        };
+    })(jQuery);
+    $(function () {
+        $().detectAdBlock(function () {
+            $("#result").html("Found AdBlock");
+        });
+    });
+</script>
+</head>
+<body>
+<div id="result">
+No AdBlock
+</div>
+</body>
+</html>

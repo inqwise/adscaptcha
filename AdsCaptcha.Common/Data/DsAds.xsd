@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsAds" targetNamespace="http://tempuri.org/DsAds.xsd" xmlns:mstns="http://tempuri.org/DsAds.xsd" xmlns="http://tempuri.org/DsAds.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsAds" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsAds" msprop:Generator_UserDSName="DsAds">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Ads" msprop:Generator_TableClassName="AdsDataTable" msprop:Generator_TableVarName="tableAds" msprop:Generator_RowChangedName="AdsRowChanged" msprop:Generator_TablePropName="Ads" msprop:Generator_RowDeletingName="AdsRowDeleting" msprop:Generator_RowChangingName="AdsRowChanging" msprop:Generator_RowEvHandlerName="AdsRowChangeEventHandler" msprop:Generator_RowDeletedName="AdsRowDeleted" msprop:Generator_RowClassName="AdsRow" msprop:Generator_UserTableName="Ads" msprop:Generator_RowEvArgName="AdsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AdId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAdId" msprop:Generator_ColumnPropNameInRow="AdId" msprop:Generator_ColumnPropNameInTable="AdIdColumn" msprop:Generator_UserColumnName="AdId" type="xs:int" />
+              <xs:element name="ClickUrl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnClickUrl" msprop:Generator_ColumnPropNameInRow="ClickUrl" msprop:Generator_ColumnPropNameInTable="ClickUrlColumn" msprop:Generator_UserColumnName="ClickUrl" type="xs:string" />
+              <xs:element name="LikeUrl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnLikeUrl" msprop:Generator_ColumnPropNameInRow="LikeUrl" msprop:Generator_ColumnPropNameInTable="LikeUrlColumn" msprop:Generator_UserColumnName="LikeUrl" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageTypeId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImageTypeId" msprop:Generator_ColumnPropNameInRow="ImageTypeId" msprop:Generator_ColumnPropNameInTable="ImageTypeIdColumn" msprop:Generator_UserColumnName="ImageTypeId" type="xs:int" />
+              <xs:element name="ImagePath" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImagePath" msprop:Generator_ColumnPropNameInRow="ImagePath" msprop:Generator_ColumnPropNameInTable="ImagePathColumn" msprop:Generator_UserColumnName="ImagePath" type="xs:string" />
+              <xs:element name="Width" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:int" />
+              <xs:element name="Height" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnHeight" msprop:Generator_ColumnPropNameInRow="Height" msprop:Generator_ColumnPropNameInTable="HeightColumn" msprop:Generator_UserColumnName="Height" type="xs:int" />
+              <xs:element name="ImageId" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImageId" msprop:Generator_ColumnPropNameInRow="ImageId" msprop:Generator_ColumnPropNameInTable="ImageIdColumn" msprop:Generator_UserColumnName="ImageId" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Ads" />
+      <xs:field xpath="mstns:AdId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

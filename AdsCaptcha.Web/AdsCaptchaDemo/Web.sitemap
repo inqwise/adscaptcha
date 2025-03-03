@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/Default.apsx" title="Default"  description="Default">
+        <siteMapNode url="~/About.aspx" title="About"  description="About" />
+        <siteMapNode url="~/Login.aspx" title="Login"  description="Login" />
+        <siteMapNode url="~/ChangePassword.aspx" title="ChangePassword"  description="ChangePassword" />
+        <siteMapNode url="~/ChangePasswordSuccess.aspx" title="ChangePasswordSuccess"  description="ChangePasswordSuccess" />
+        <siteMapNode url="~/Register.aspx" title="Register"  description="Register" />
+
+      <siteMapNode url="~/Demos/TestSlider180.aspx" title="TestSlider180"  description="TestSlider180" />
+      <siteMapNode url="~/Demos/TestSlider300.aspx" title="TestSlider300"  description="TestSlider300" />
+    </siteMapNode>
+</siteMap>

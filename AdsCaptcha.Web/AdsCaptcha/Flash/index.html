@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>AdsCaptcha Flash Ad Games</title>
+
+    <!--
+    width:224
+    height:335
+    ratio:1.495
+    
+    gameType: 13003=rotate | 13004=horizontal slider | 13005=vertical slider
+    -->
+    
+    <script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript">
+        function getRandomType() {
+            var max = 13004;
+            var min = 13003;
+
+            var randomNum = Math.random() * (max - min);
+
+            return (Math.round(randomNum) + min);
+        }
+        
+        var flashvars1 = {};
+        var flashvars2 = {};
+        var flashvars3 = {};
+        var params = {};
+        var attributes = {};
+
+        params.allowFullScreen = "false";
+        params.wmode = "transparent";
+
+        flashvars1.captchaId = "30";
+        flashvars1.gameType = getRandomType();
+        swfobject.embedSWF("DynamicCaptcha.swf", "Game1", "224", "335", "10.0.0", false, flashvars1, params, attributes);
+
+        flashvars2.captchaId = "29";
+        flashvars2.gameType = getRandomType();
+        swfobject.embedSWF("DynamicCaptcha.swf", "Game2", "224", "335", "10.0.0", false, flashvars2, params, attributes);
+
+        flashvars3.captchaId = "33";
+        flashvars3.gameType = getRandomType();
+        swfobject.embedSWF("DynamicCaptcha.swf", "Game3", "224", "335", "10.0.0", false, flashvars3, params, attributes);
+    </script>
+
+    <link href="style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <center>
+        <div class="title">Are you a ROBOT?</div>
+        
+        <div id="container">
+            <div id="Game1"></div>
+            <div id="Game2"></div>
+            <div id="Game3"></div>
+        </div>
+        
+        <div class="refresh">click <a href="index.html">here</a> to refresh</div>
+    </center>
+</body>
+
+</html>

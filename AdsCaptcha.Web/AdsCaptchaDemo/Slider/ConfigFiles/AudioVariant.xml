@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<AudioDataSet xmlns="http://tempuri.org/DataSet1.xsd">
+  <Audio >
+    <Type>1</Type>
+    <Name>Move right</Name>
+  </Audio>
+  <Audio >
+    <Type>2</Type>
+    <Name>Move slowly right</Name>
+  </Audio>
+  <Audio >
+    <Type>3</Type>
+    <Name>Correct</Name>
+  </Audio>
+  <Audio >
+    <Type>4</Type>
+    <Name>Move slowly left</Name>
+  </Audio>
+  <Audio>
+    <Type>5</Type>
+    <Name>Move left</Name>
+  </Audio>
+  <Audio>
+    <Type>6</Type>
+    <Name>Instruction</Name>
+  </Audio>
+  <Audio>
+    <Type>7</Type>
+    <Name>Submit</Name>
+  </Audio>
+  <Variant>
+    <ID>1</ID>
+    <Type>1</Type>
+    <File>moveright</File>
+    <Text>Move the Slider to the right or slide it with the right arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>1</Type>
+    <File>moveright2</File>
+    <Text>Move the Slider to the right</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>1</Type>
+    <File>moveright3</File>
+    <Text>Move the Slider to the right or slide it with the right arrow</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>1</Type>
+    <File>moveright4</File>
+    <Text>Move the Slider to the right side</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>1</Type>
+    <File>moveright5</File>
+    <Text>Move the Slider in the right direction</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>1</Type>
+    <File>moveright6</File>
+    <Text>Slide the captcha to the right</Text>
+  </Variant>
+  <Variant>
+    <ID>7</ID>
+    <Type>1</Type>
+    <File>moveright6</File>
+    <Text>Slide the captcha to the right side</Text>
+  </Variant>
+  <Variant>
+    <ID>8</ID>
+    <Type>1</Type>
+    <File>moveright6</File>
+    <Text>Slide the captcha in the right direction</Text>
+  </Variant>
+
+  <Variant>
+    <ID>1</ID>
+    <Type>2</Type>
+    <File>moverightslow</File>
+    <Text>Move the Slider slowely to the right or slide it with the right arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>2</Type>
+    <File>moverightslow2</File>
+    <Text>Move the Slider slowely to the right</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>2</Type>
+    <File>moverightslow3</File>
+    <Text>Move the Slider slowely to the right or slide it with the right arrow</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>2</Type>
+    <File>moverightslow4</File>
+    <Text>Move the Slider slowely to the right side</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>2</Type>
+    <File>moverightslow5</File>
+    <Text>Move the Slider slowely in the right direction</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>2</Type>
+    <File>moverightslow6</File>
+    <Text>Slide the captcha slowely to the right</Text>
+  </Variant>
+  <Variant>
+    <ID>7</ID>
+    <Type>2</Type>
+    <File>moverightslow7</File>
+    <Text>Slide the captcha gradually to the right side</Text>
+  </Variant>
+  <Variant>
+    <ID>8</ID>
+    <Type>2</Type>
+    <File>moverightslow8</File>
+    <Text>Slide the captcha gradually to the right</Text>
+  </Variant>
+  <Variant>
+    <ID>9</ID>
+    <Type>2</Type>
+    <File>moverightslow9</File>
+    <Text>Move the Slider gradually to the right or slide it with the right arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>10</ID>
+    <Type>2</Type>
+    <File>moverightslow10</File>
+    <Text>Move the Slider gradually to the right or slide it with the right arrow</Text>
+  </Variant>
+  <Variant>
+    <ID>11</ID>
+    <Type>2</Type>
+    <File>moverightslow11</File>
+    <Text>Move the Slider gradually to the right side</Text>
+  </Variant>
+  <Variant>
+    <ID>12</ID>
+    <Type>2</Type>
+    <File>moverightslow12</File>
+    <Text>Move the Slider gradually in the right direction</Text>
+  </Variant>
+
+  <Variant>
+    <ID>1</ID>
+    <Type>3</Type>
+    <File>correct</File>
+    <Text>The slider is in the correct position</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>3</Type>
+    <File>correct2</File>
+    <Text>
+      The slider is in the correct spot
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>3</Type>
+    <File>correct4</File>
+    <Text>The slider is in the correct location</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>3</Type>
+    <File>correct5</File>
+    <Text>
+      The slider is in the correct place
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>3</Type>
+    <File>correct3</File>
+    <Text>
+      The slider position is correct
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>3</Type>
+    <File>correct6</File>
+    <Text>The slider is in the accurate position</Text>
+  </Variant>
+  <Variant>
+    <ID>7</ID>
+    <Type>3</Type>
+    <File>correct7</File>
+    <Text>
+      The slider is in the accurate spot
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>8</ID>
+    <Type>3</Type>
+    <File>correct8</File>
+    <Text>The slider is in the accurate location</Text>
+  </Variant>
+  <Variant>
+    <ID>9</ID>
+    <Type>3</Type>
+    <File>correct9</File>
+    <Text>
+      The slider is in the accurate place
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>10</ID>
+    <Type>3</Type>
+    <File>correct10</File>
+    <Text>The slider is in the right position</Text>
+  </Variant>
+  <Variant>
+    <ID>11</ID>
+    <Type>3</Type>
+    <File>correct11</File>
+    <Text>
+      The slider is in the right spot
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>12</ID>
+    <Type>3</Type>
+    <File>correct12</File>
+    <Text>The slider is in the right location</Text>
+  </Variant>
+  <Variant>
+    <ID>13</ID>
+    <Type>3</Type>
+    <File>correct13</File>
+    <Text>
+      The slider is in the right place
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>14</ID>
+    <Type>3</Type>
+    <File>correct14</File>
+    <Text>The slider is in the exact position</Text>
+  </Variant>
+  <Variant>
+    <ID>15</ID>
+    <Type>3</Type>
+    <File>correct15</File>
+    <Text>
+      The slider is in the exact spot
+    </Text>
+  </Variant>
+  <Variant>
+    <ID>16</ID>
+    <Type>3</Type>
+    <File>correct16</File>
+    <Text>The slider is in the exact location</Text>
+  </Variant>
+  <Variant>
+    <ID>17</ID>
+    <Type>3</Type>
+    <File>correct17</File>
+    <Text>
+      The slider is in the exact place
+    </Text>
+  </Variant>
+
+  <Variant>
+    <ID>1</ID>
+    <Type>4</Type>
+    <File>moveleftslow</File>
+    <Text>Move the Slider slowely to the left</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>4</Type>
+    <File>moveleftslow2</File>
+    <Text>Move the Slider slowely to the left or slide it with the left arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>4</Type>
+    <File>moveleftslow3</File>
+    <Text>Move the Slider slowely to the left or slide it with the left arrow</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>4</Type>
+    <File>moveleftslow4</File>
+    <Text>Move the Slider slowely to the left side</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>4</Type>
+    <File>moveleftslow5</File>
+    <Text>Move the Slider slowely in the left direction</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>4</Type>
+    <File>moveleftslow6</File>
+    <Text>Slide the captcha slowely to the left</Text>
+  </Variant>
+  <Variant>
+    <ID>7</ID>
+    <Type>4</Type>
+    <File>moveleftslow7</File>
+    <Text>Slide the captcha slowely to the left side</Text>
+  </Variant>
+  <Variant>
+    <ID>8</ID>
+    <Type>4</Type>
+    <File>moveleftslow8</File>
+    <Text>Move the Slider gradually to the left</Text>
+  </Variant>
+  <Variant>
+    <ID>9</ID>
+    <Type>4</Type>
+    <File>moveleftslow9</File>
+    <Text>Move the Slider gradually to the left or slide it with the left arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>10</ID>
+    <Type>4</Type>
+    <File>moveleftslow10</File>
+    <Text>Move the Slider gradually to the left side</Text>
+  </Variant>
+  <Variant>
+    <ID>11</ID>
+    <Type>4</Type>
+    <File>moveleftslow11</File>
+    <Text>Move the Slider gradually in the left direction</Text>
+  </Variant>
+  <Variant>
+    <ID>12</ID>
+    <Type>4</Type>
+    <File>moveleftslow12</File>
+    <Text>Slide the captcha gradually to the left</Text>
+  </Variant>
+
+  <Variant>
+    <ID>1</ID>
+    <Type>5</Type>
+    <File>moveleft</File>
+    <Text>Move the Slider to the left or slide it with the left arrow button</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>5</Type>
+    <File>moveleft2</File>
+    <Text>Move the Slider to the left</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>5</Type>
+    <File>moveleft3</File>
+    <Text>Move the Slider to the left or slide it with the left arrow</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>5</Type>
+    <File>moveleft4</File>
+    <Text>Move the Slider to the left side</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>5</Type>
+    <File>moveleft5</File>
+    <Text>Move the Slider in the left direction</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>5</Type>
+    <File>moveleft6</File>
+    <Text>Slide the captcha to the left</Text>
+  </Variant>
+
+
+  <Variant>
+    <ID>1</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text>Click on the audio key or ALT-+-X again for more instructions</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text> click on the audio key or ALT-+-X again for additional instructions</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text>Click on the audio key or ALT-+-X again for further instructions</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text>Click on the audio button or ALT-+-X again for more instructions</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text> click on the audio button or ALT-+-X again for additional instructions</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>6</Type>
+    <File></File>
+    <Text>Click on the audio button or ALT-+-X again for further instructions</Text>
+  </Variant>
+
+  <Variant>
+    <ID>1</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>Submit the form</Text>
+  </Variant>
+  <Variant>
+    <ID>2</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>You can submit the form</Text>
+  </Variant>
+  <Variant>
+    <ID>3</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>Submit the form now</Text>
+  </Variant>
+  <Variant>
+    <ID>4</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>You can submit the form now</Text>
+  </Variant>
+  <Variant>
+    <ID>5</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>Submit the form right now</Text>
+  </Variant>
+  <Variant>
+    <ID>6</ID>
+    <Type>7</Type>
+    <File></File>
+    <Text>You can submit the form right now</Text>
+  </Variant>
+ 
+</AudioDataSet>

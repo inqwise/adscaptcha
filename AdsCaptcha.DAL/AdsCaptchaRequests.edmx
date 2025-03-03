@@ -1,0 +1,582 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdsCaptcha_RequestsModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AdsCaptcha_RequestsModelStoreContainer">
+          <EntitySet Name="T_CAMPAIGN_CATEGORY" EntityType="AdsCaptcha_RequestsModel.Store.T_CAMPAIGN_CATEGORY" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_CAPTCHAS_ADS" EntityType="AdsCaptcha_RequestsModel.Store.T_CAPTCHAS_ADS" store:Type="Tables" store:Schema="dbo" store:Name="T_CAPTCHAS_ADS" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [T_CAPTCHAS_ADS].[Captcha_Id] AS [Captcha_Id], 
+      [T_CAPTCHAS_ADS].[Ad_Id] AS [Ad_Id], 
+      [T_CAPTCHAS_ADS].[Country_Id] AS [Country_Id], 
+      [T_CAPTCHAS_ADS].[Priority] AS [Priority]
+      FROM [dbo].[T_CAPTCHAS_ADS] AS [T_CAPTCHAS_ADS]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_REQUESTS" EntityType="AdsCaptcha_RequestsModel.Store.T_REQUESTS" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_REQUESTS_INTEGRATION" EntityType="AdsCaptcha_RequestsModel.Store.T_REQUESTS_INTEGRATION" store:Type="Tables" store:Schema="dbo" store:Name="T_REQUESTS_INTEGRATION" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [T_REQUESTS_INTEGRATION].[Request_Guid] AS [Request_Guid], 
+      [T_REQUESTS_INTEGRATION].[Request_Id] AS [Request_Id], 
+      [T_REQUESTS_INTEGRATION].[Timestamp] AS [Timestamp], 
+      [T_REQUESTS_INTEGRATION].[Session_Id] AS [Session_Id], 
+      [T_REQUESTS_INTEGRATION].[IP_Address] AS [IP_Address], 
+      [T_REQUESTS_INTEGRATION].[Referrer_Url] AS [Referrer_Url], 
+      [T_REQUESTS_INTEGRATION].[Is_Resend] AS [Is_Resend], 
+      [T_REQUESTS_INTEGRATION].[Is_Timed_Out] AS [Is_Timed_Out], 
+      [T_REQUESTS_INTEGRATION].[Is_Checked] AS [Is_Checked], 
+      [T_REQUESTS_INTEGRATION].[Is_Typed] AS [Is_Typed], 
+      [T_REQUESTS_INTEGRATION].[Success_Rate] AS [Success_Rate], 
+      [T_REQUESTS_INTEGRATION].[User_Answer] AS [User_Answer], 
+      [T_REQUESTS_INTEGRATION].[Challenge] AS [Challenge], 
+      [T_REQUESTS_INTEGRATION].[ChallengeParams] AS [ChallengeParams], 
+      [T_REQUESTS_INTEGRATION].[Country_Id] AS [Country_Id], 
+      [T_REQUESTS_INTEGRATION].[Publisher_Id] AS [Publisher_Id], 
+      [T_REQUESTS_INTEGRATION].[Website_Id] AS [Website_Id], 
+      [T_REQUESTS_INTEGRATION].[Captcha_Id] AS [Captcha_Id], 
+      [T_REQUESTS_INTEGRATION].[Type_Id] AS [Type_Id], 
+      [T_REQUESTS_INTEGRATION].[Revenue_Share_Pct] AS [Revenue_Share_Pct], 
+      [T_REQUESTS_INTEGRATION].[Revenue_Share] AS [Revenue_Share], 
+      [T_REQUESTS_INTEGRATION].[Is_Clicked] AS [Is_Clicked], 
+      [T_REQUESTS_INTEGRATION].[Link_Url] AS [Link_Url], 
+      [T_REQUESTS_INTEGRATION].[Advertiser_Id] AS [Advertiser_Id], 
+      [T_REQUESTS_INTEGRATION].[Campaign_Id] AS [Campaign_Id], 
+      [T_REQUESTS_INTEGRATION].[Ad_Id] AS [Ad_Id], 
+      [T_REQUESTS_INTEGRATION].[Ad_Type_Id] AS [Ad_Type_Id], 
+      [T_REQUESTS_INTEGRATION].[Ad_Slogan] AS [Ad_Slogan], 
+      [T_REQUESTS_INTEGRATION].[Ad_Video] AS [Ad_Video], 
+      [T_REQUESTS_INTEGRATION].[Ad_Image] AS [Ad_Image], 
+      [T_REQUESTS_INTEGRATION].[Cpt_Bid] AS [Cpt_Bid], 
+      [T_REQUESTS_INTEGRATION].[Width] AS [Width], 
+      [T_REQUESTS_INTEGRATION].[Height] AS [Height], 
+      [T_REQUESTS_INTEGRATION].[ThemeId] AS [ThemeId], 
+      [T_REQUESTS_INTEGRATION].[IsBanner] AS [IsBanner], 
+      [T_REQUESTS_INTEGRATION].[IsPopup] AS [IsPopup], 
+      [T_REQUESTS_INTEGRATION].[Language] AS [Language], 
+      [T_REQUESTS_INTEGRATION].[FacebookLikeUrl] AS [FacebookLikeUrl], 
+      [T_REQUESTS_INTEGRATION].[Direction] AS [Direction], 
+      [T_REQUESTS_INTEGRATION].[IsPublisherBranded] AS [IsPublisherBranded], 
+      [T_REQUESTS_INTEGRATION].[PublicKey] AS [PublicKey], 
+      [T_REQUESTS_INTEGRATION].[PrivateKey] AS [PrivateKey], 
+      [T_REQUESTS_INTEGRATION].[IsHouseAds] AS [IsHouseAds]
+      FROM [dbo].[T_REQUESTS_INTEGRATION] AS [T_REQUESTS_INTEGRATION]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_WEBSITE_CATEGORY" EntityType="AdsCaptcha_RequestsModel.Store.T_WEBSITE_CATEGORY" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+        </EntityContainer>
+        <EntityType Name="T_CAMPAIGN_CATEGORY">
+          <Key>
+            <PropertyRef Name="Campaign_Id" />
+            <PropertyRef Name="Ad_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Campaign_Id" Type="int" Nullable="false" />
+          <Property Name="Ad_Id" Type="int" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Type_Id" Type="int" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Ad_Url" Type="nvarchar" MaxLength="250" />
+          <Property Name="Max_Cpt" Type="decimal" Precision="11" Scale="4" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdsCaptcha_Requests.dbo.T_CAPTCHAS_ADS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="T_CAPTCHAS_ADS">
+          <Key>
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Ad_Id" />
+            <PropertyRef Name="Priority" />
+          </Key>
+          <Property Name="Captcha_Id" Type="int" Nullable="false" />
+          <Property Name="Ad_Id" Type="int" Nullable="false" />
+          <Property Name="Country_Id" Type="int" />
+          <Property Name="Priority" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS">
+          <Key>
+            <PropertyRef Name="Request_Guid" />
+          </Key>
+          <Property Name="Request_Guid" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Request_Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Timestamp" Type="datetime" Nullable="false" />
+          <Property Name="Session_Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IP_Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Referrer_Url" Type="nvarchar" MaxLength="250" />
+          <Property Name="Is_Resend" Type="int" Nullable="false" />
+          <Property Name="Is_Timed_Out" Type="int" Nullable="false" />
+          <Property Name="Is_Checked" Type="int" Nullable="false" />
+          <Property Name="Is_Typed" Type="int" Nullable="false" />
+          <Property Name="Success_Rate" Type="int" Nullable="false" />
+          <Property Name="User_Answer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Challenge" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ChallengeParams" Type="nvarchar" MaxLength="300" />
+          <Property Name="Country_Id" Type="int" />
+          <Property Name="Publisher_Id" Type="int" Nullable="false" />
+          <Property Name="Website_Id" Type="int" Nullable="false" />
+          <Property Name="Captcha_Id" Type="int" Nullable="false" />
+          <Property Name="Type_Id" Type="int" Nullable="false" />
+          <Property Name="Revenue_Share_Pct" Type="int" Nullable="false" />
+          <Property Name="Revenue_Share" Type="float" />
+          <Property Name="Is_Clicked" Type="int" Nullable="false" />
+          <Property Name="Link_Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+          <Property Name="Ad_Type_Id" Type="int" />
+          <Property Name="Ad_Slogan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Ad_Video" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ad_Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cpt_Bid" Type="decimal" Precision="11" Scale="4" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="ThemeId" Type="int" />
+          <Property Name="IsBanner" Type="bit" />
+          <Property Name="IsPopup" Type="int" />
+          <Property Name="Language" Type="nchar" MaxLength="10" />
+          <Property Name="FacebookLikeUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Direction" Type="int" />
+          <Property Name="IsPublisherBranded" Type="int" />
+          <Property Name="PublicKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrivateKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsHouseAds" Type="bit" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdsCaptcha_Requests.dbo.T_REQUESTS_INTEGRATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="T_REQUESTS_INTEGRATION">
+          <Key>
+            <PropertyRef Name="Request_Guid" />
+            <PropertyRef Name="Request_Id" />
+            <PropertyRef Name="Timestamp" />
+            <PropertyRef Name="Session_Id" />
+            <PropertyRef Name="IP_Address" />
+            <PropertyRef Name="Is_Resend" />
+            <PropertyRef Name="Is_Timed_Out" />
+            <PropertyRef Name="Is_Checked" />
+            <PropertyRef Name="Is_Typed" />
+            <PropertyRef Name="Success_Rate" />
+            <PropertyRef Name="Challenge" />
+            <PropertyRef Name="Publisher_Id" />
+            <PropertyRef Name="Website_Id" />
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Type_Id" />
+            <PropertyRef Name="Revenue_Share_Pct" />
+            <PropertyRef Name="Is_Clicked" />
+          </Key>
+          <Property Name="Request_Guid" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Request_Id" Type="bigint" Nullable="false" />
+          <Property Name="Timestamp" Type="datetime" Nullable="false" />
+          <Property Name="Session_Id" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IP_Address" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Referrer_Url" Type="nvarchar" MaxLength="250" />
+          <Property Name="Is_Resend" Type="int" Nullable="false" />
+          <Property Name="Is_Timed_Out" Type="int" Nullable="false" />
+          <Property Name="Is_Checked" Type="int" Nullable="false" />
+          <Property Name="Is_Typed" Type="int" Nullable="false" />
+          <Property Name="Success_Rate" Type="int" Nullable="false" />
+          <Property Name="User_Answer" Type="nvarchar" MaxLength="50" />
+          <Property Name="Challenge" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ChallengeParams" Type="nvarchar" MaxLength="300" />
+          <Property Name="Country_Id" Type="int" />
+          <Property Name="Publisher_Id" Type="int" Nullable="false" />
+          <Property Name="Website_Id" Type="int" Nullable="false" />
+          <Property Name="Captcha_Id" Type="int" Nullable="false" />
+          <Property Name="Type_Id" Type="int" Nullable="false" />
+          <Property Name="Revenue_Share_Pct" Type="int" Nullable="false" />
+          <Property Name="Revenue_Share" Type="float" />
+          <Property Name="Is_Clicked" Type="int" Nullable="false" />
+          <Property Name="Link_Url" Type="nvarchar" MaxLength="500" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+          <Property Name="Ad_Type_Id" Type="int" />
+          <Property Name="Ad_Slogan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Ad_Video" Type="nvarchar" MaxLength="50" />
+          <Property Name="Ad_Image" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cpt_Bid" Type="decimal" Precision="11" Scale="4" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="ThemeId" Type="int" />
+          <Property Name="IsBanner" Type="bit" />
+          <Property Name="IsPopup" Type="int" />
+          <Property Name="Language" Type="nchar" MaxLength="10" />
+          <Property Name="FacebookLikeUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="Direction" Type="int" />
+          <Property Name="IsPublisherBranded" Type="int" />
+          <Property Name="PublicKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrivateKey" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsHouseAds" Type="bit" />
+        </EntityType>
+        <EntityType Name="T_WEBSITE_CATEGORY">
+          <Key>
+            <PropertyRef Name="Website_Id" />
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Website_Id" Type="int" Nullable="false" />
+          <Property Name="Captcha_Id" Type="int" Nullable="false" />
+          <Property Name="Category_Id" Type="int" Nullable="false" />
+          <Property Name="Type_Id" Type="int" />
+          <Property Name="Allow_Click" Type="int" />
+          <Property Name="Allow_Slogan" Type="int" />
+          <Property Name="Allow_Image" Type="int" />
+          <Property Name="Allow_Video" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="Width" Type="int" />
+        </EntityType>
+        <Function Name="P_Captchas_Ads_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_Request_Integration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_Requests_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Captcha_Id" Type="int" Mode="In" />
+          <Parameter Name="PublicKey" Type="nvarchar" Mode="In" />
+          <Parameter Name="Country_Id" Type="bigint" Mode="In" />
+          <Parameter Name="Session_Id" Type="nvarchar" Mode="In" />
+          <Parameter Name="IP_Address" Type="nvarchar" Mode="In" />
+          <Parameter Name="Referrer_Url" Type="nvarchar" Mode="In" />
+          <Parameter Name="Is_Resend" Type="int" Mode="In" />
+          <Parameter Name="Challenge" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdsCaptcha_RequestsModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdsCaptcha_RequestsEntities">
+          <EntitySet Name="T_CAMPAIGN_CATEGORY" EntityType="AdsCaptcha_RequestsModel.T_CAMPAIGN_CATEGORY" />
+          <EntitySet Name="T_CAPTCHAS_ADS" EntityType="AdsCaptcha_RequestsModel.T_CAPTCHAS_ADS" />
+          <EntitySet Name="T_REQUESTS" EntityType="AdsCaptcha_RequestsModel.T_REQUESTS" />
+          <EntitySet Name="T_REQUESTS_INTEGRATION" EntityType="AdsCaptcha_RequestsModel.T_REQUESTS_INTEGRATION" />
+          <EntitySet Name="T_WEBSITE_CATEGORY" EntityType="AdsCaptcha_RequestsModel.T_WEBSITE_CATEGORY" />
+          <FunctionImport Name="P_Requests_Insert" EntitySet="T_REQUESTS" ReturnType="Collection(AdsCaptcha_RequestsModel.T_REQUESTS)">
+            <Parameter Name="Captcha_Id" Mode="In" Type="Int32" />
+            <Parameter Name="PublicKey" Mode="In" Type="String" />
+            <Parameter Name="Country_Id" Mode="In" Type="Int64" />
+            <Parameter Name="Session_Id" Mode="In" Type="String" />
+            <Parameter Name="IP_Address" Mode="In" Type="String" />
+            <Parameter Name="Referrer_Url" Mode="In" Type="String" />
+            <Parameter Name="Is_Resend" Mode="In" Type="Int32" />
+            <Parameter Name="Challenge" Mode="In" Type="String" /></FunctionImport></EntityContainer>
+        <EntityType Name="T_CAMPAIGN_CATEGORY">
+          <Key>
+            <PropertyRef Name="Campaign_Id" />
+            <PropertyRef Name="Ad_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Campaign_Id" Type="Int32" Nullable="false" />
+          <Property Name="Ad_Id" Type="Int32" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Type_Id" Type="Int32" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Ad_Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Max_Cpt" Type="Decimal" Precision="11" Scale="4" />
+        </EntityType>
+        <EntityType Name="T_CAPTCHAS_ADS">
+          <Key>
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Ad_Id" />
+            <PropertyRef Name="Priority" />
+          </Key>
+          <Property Name="Captcha_Id" Type="Int32" Nullable="false" />
+          <Property Name="Ad_Id" Type="Int32" Nullable="false" />
+          <Property Name="Country_Id" Type="Int32" />
+          <Property Name="Priority" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS">
+          <Key>
+            <PropertyRef Name="Request_Guid" />
+          </Key>
+          <Property Name="Request_Guid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Request_Id" Type="Int64" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Name="Session_Id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IP_Address" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Referrer_Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Resend" Type="Int32" Nullable="false" />
+          <Property Name="Is_Timed_Out" Type="Int32" Nullable="false" />
+          <Property Name="Is_Checked" Type="Int32" Nullable="false" />
+          <Property Name="Is_Typed" Type="Int32" Nullable="false" />
+          <Property Name="Success_Rate" Type="Int32" Nullable="false" />
+          <Property Name="User_Answer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Challenge" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Country_Id" Type="Int32" />
+          <Property Name="Publisher_Id" Type="Int32" Nullable="false" />
+          <Property Name="Website_Id" Type="Int32" Nullable="false" />
+          <Property Name="Captcha_Id" Type="Int32" Nullable="false" />
+          <Property Name="Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Revenue_Share_Pct" Type="Int32" Nullable="false" />
+          <Property Name="Revenue_Share" Type="Double" />
+          <Property Name="Is_Clicked" Type="Int32" Nullable="false" />
+          <Property Name="Link_Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <Property Name="Ad_Type_Id" Type="Int32" />
+          <Property Name="Cpt_Bid" Type="Decimal" Precision="11" Scale="4" />
+          <Property Name="Width" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="ThemeId" Type="Int32" />
+          <Property Name="IsBanner" Type="Boolean" />
+          <Property Name="IsPopup" Type="Int32" />
+          <Property Name="Language" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="FacebookLikeUrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Direction" Type="Int32" />
+          <Property Name="IsPublisherBranded" Type="Int32" />
+          <Property Name="ChallengeParams" Type="String" Nullable="true" />
+          <Property Name="Ad_Slogan" Type="String" Nullable="true" />
+          <Property Name="Ad_Video" Type="String" Nullable="true" />
+          <Property Name="Ad_Image" Type="String" Nullable="true" />
+          <Property Name="PublicKey" Type="String" Nullable="true" />
+          <Property Name="PrivateKey" Type="String" Nullable="true" />
+          <Property Name="IsHouseAds" Type="Boolean" Nullable="true" /></EntityType>
+        <EntityType Name="T_REQUESTS_INTEGRATION">
+          <Key>
+            <PropertyRef Name="Request_Guid" />
+            <PropertyRef Name="Request_Id" />
+            <PropertyRef Name="Timestamp" />
+            <PropertyRef Name="Session_Id" />
+            <PropertyRef Name="IP_Address" />
+            <PropertyRef Name="Is_Resend" />
+            <PropertyRef Name="Is_Timed_Out" />
+            <PropertyRef Name="Is_Checked" />
+            <PropertyRef Name="Is_Typed" />
+            <PropertyRef Name="Success_Rate" />
+            <PropertyRef Name="Challenge" />
+            <PropertyRef Name="Publisher_Id" />
+            <PropertyRef Name="Website_Id" />
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Type_Id" />
+            <PropertyRef Name="Revenue_Share_Pct" />
+            <PropertyRef Name="Is_Clicked" />
+          </Key>
+          <Property Name="Request_Guid" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Request_Id" Type="Int64" Nullable="false" />
+          <Property Name="Timestamp" Type="DateTime" Nullable="false" />
+          <Property Name="Session_Id" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IP_Address" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Referrer_Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Is_Resend" Type="Int32" Nullable="false" />
+          <Property Name="Is_Timed_Out" Type="Int32" Nullable="false" />
+          <Property Name="Is_Checked" Type="Int32" Nullable="false" />
+          <Property Name="Is_Typed" Type="Int32" Nullable="false" />
+          <Property Name="Success_Rate" Type="Int32" Nullable="false" />
+          <Property Name="User_Answer" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Challenge" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Country_Id" Type="Int32" />
+          <Property Name="Publisher_Id" Type="Int32" Nullable="false" />
+          <Property Name="Website_Id" Type="Int32" Nullable="false" />
+          <Property Name="Captcha_Id" Type="Int32" Nullable="false" />
+          <Property Name="Type_Id" Type="Int32" Nullable="false" />
+          <Property Name="Revenue_Share_Pct" Type="Int32" Nullable="false" />
+          <Property Name="Revenue_Share" Type="Double" />
+          <Property Name="Is_Clicked" Type="Int32" Nullable="false" />
+          <Property Name="Link_Url" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <Property Name="Ad_Type_Id" Type="Int32" />
+          <Property Name="Cpt_Bid" Type="Decimal" Precision="11" Scale="4" />
+          <Property Name="ChallengeParams" Type="String" Nullable="true" />
+          <Property Name="Ad_Slogan" Type="String" Nullable="true" />
+          <Property Name="Ad_Video" Type="String" Nullable="true" />
+          <Property Name="Ad_Image" Type="String" Nullable="true" />
+          <Property Name="Width" Type="Int32" Nullable="true" />
+          <Property Name="Height" Type="Int32" Nullable="true" />
+          <Property Name="ThemeId" Type="Int32" Nullable="true" />
+          <Property Name="IsBanner" Type="Boolean" Nullable="true" />
+          <Property Name="IsPopup" Type="Int32" Nullable="true" />
+          <Property Name="Language" Type="String" Nullable="true" />
+          <Property Name="FacebookLikeUrl" Type="String" Nullable="true" />
+          <Property Name="Direction" Type="Int32" Nullable="true" />
+          <Property Name="IsPublisherBranded" Type="Int32" Nullable="true" />
+          <Property Name="PublicKey" Type="String" Nullable="true" />
+          <Property Name="PrivateKey" Type="String" Nullable="true" />
+          <Property Name="IsHouseAds" Type="Boolean" Nullable="true" /></EntityType>
+        <EntityType Name="T_WEBSITE_CATEGORY">
+          <Key>
+            <PropertyRef Name="Website_Id" />
+            <PropertyRef Name="Captcha_Id" />
+            <PropertyRef Name="Category_Id" />
+          </Key>
+          <Property Name="Website_Id" Type="Int32" Nullable="false" />
+          <Property Name="Captcha_Id" Type="Int32" Nullable="false" />
+          <Property Name="Category_Id" Type="Int32" Nullable="false" />
+          <Property Name="Type_Id" Type="Int32" />
+          <Property Name="Allow_Click" Type="Int32" />
+          <Property Name="Allow_Slogan" Type="Int32" />
+          <Property Name="Allow_Image" Type="Int32" />
+          <Property Name="Allow_Video" Type="Int32" />
+          <Property Name="Height" Type="Int32" />
+          <Property Name="Width" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdsCaptcha_RequestsModelStoreContainer" CdmEntityContainer="AdsCaptcha_RequestsEntities">
+          <EntitySetMapping Name="T_CAMPAIGN_CATEGORY">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_RequestsModel.T_CAMPAIGN_CATEGORY)">
+              <MappingFragment StoreEntitySet="T_CAMPAIGN_CATEGORY">
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Ad_Url" ColumnName="Ad_Url" />
+                <ScalarProperty Name="Max_Cpt" ColumnName="Max_Cpt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_CAPTCHAS_ADS">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_RequestsModel.T_CAPTCHAS_ADS)">
+              <MappingFragment StoreEntitySet="T_CAPTCHAS_ADS">
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_RequestsModel.T_REQUESTS)">
+              <MappingFragment StoreEntitySet="T_REQUESTS">
+                <ScalarProperty Name="IsHouseAds" ColumnName="IsHouseAds" />
+                <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="Ad_Image" ColumnName="Ad_Image" />
+                <ScalarProperty Name="Ad_Video" ColumnName="Ad_Video" />
+                <ScalarProperty Name="Ad_Slogan" ColumnName="Ad_Slogan" />
+                <ScalarProperty Name="ChallengeParams" ColumnName="ChallengeParams" />
+                <ScalarProperty Name="Request_Guid" ColumnName="Request_Guid" />
+                <ScalarProperty Name="Request_Id" ColumnName="Request_Id" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Session_Id" ColumnName="Session_Id" />
+                <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
+                <ScalarProperty Name="Referrer_Url" ColumnName="Referrer_Url" />
+                <ScalarProperty Name="Is_Resend" ColumnName="Is_Resend" />
+                <ScalarProperty Name="Is_Timed_Out" ColumnName="Is_Timed_Out" />
+                <ScalarProperty Name="Is_Checked" ColumnName="Is_Checked" />
+                <ScalarProperty Name="Is_Typed" ColumnName="Is_Typed" />
+                <ScalarProperty Name="Success_Rate" ColumnName="Success_Rate" />
+                <ScalarProperty Name="User_Answer" ColumnName="User_Answer" />
+                <ScalarProperty Name="Challenge" ColumnName="Challenge" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="Publisher_Id" ColumnName="Publisher_Id" />
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Revenue_Share_Pct" ColumnName="Revenue_Share_Pct" />
+                <ScalarProperty Name="Revenue_Share" ColumnName="Revenue_Share" />
+                <ScalarProperty Name="Is_Clicked" ColumnName="Is_Clicked" />
+                <ScalarProperty Name="Link_Url" ColumnName="Link_Url" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Ad_Type_Id" ColumnName="Ad_Type_Id" />
+                <ScalarProperty Name="Cpt_Bid" ColumnName="Cpt_Bid" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="IsBanner" ColumnName="IsBanner" />
+                <ScalarProperty Name="IsPopup" ColumnName="IsPopup" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="FacebookLikeUrl" ColumnName="FacebookLikeUrl" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="IsPublisherBranded" ColumnName="IsPublisherBranded" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS_INTEGRATION">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_RequestsModel.T_REQUESTS_INTEGRATION)">
+              <MappingFragment StoreEntitySet="T_REQUESTS_INTEGRATION">
+                <ScalarProperty Name="IsHouseAds" ColumnName="IsHouseAds" />
+                <ScalarProperty Name="PrivateKey" ColumnName="PrivateKey" />
+                <ScalarProperty Name="PublicKey" ColumnName="PublicKey" />
+                <ScalarProperty Name="IsPublisherBranded" ColumnName="IsPublisherBranded" />
+                <ScalarProperty Name="Direction" ColumnName="Direction" />
+                <ScalarProperty Name="FacebookLikeUrl" ColumnName="FacebookLikeUrl" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="IsPopup" ColumnName="IsPopup" />
+                <ScalarProperty Name="IsBanner" ColumnName="IsBanner" />
+                <ScalarProperty Name="ThemeId" ColumnName="ThemeId" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Ad_Image" ColumnName="Ad_Image" />
+                <ScalarProperty Name="Ad_Video" ColumnName="Ad_Video" />
+                <ScalarProperty Name="Ad_Slogan" ColumnName="Ad_Slogan" />
+                <ScalarProperty Name="ChallengeParams" ColumnName="ChallengeParams" />
+                <ScalarProperty Name="Request_Guid" ColumnName="Request_Guid" />
+                <ScalarProperty Name="Request_Id" ColumnName="Request_Id" />
+                <ScalarProperty Name="Timestamp" ColumnName="Timestamp" />
+                <ScalarProperty Name="Session_Id" ColumnName="Session_Id" />
+                <ScalarProperty Name="IP_Address" ColumnName="IP_Address" />
+                <ScalarProperty Name="Referrer_Url" ColumnName="Referrer_Url" />
+                <ScalarProperty Name="Is_Resend" ColumnName="Is_Resend" />
+                <ScalarProperty Name="Is_Timed_Out" ColumnName="Is_Timed_Out" />
+                <ScalarProperty Name="Is_Checked" ColumnName="Is_Checked" />
+                <ScalarProperty Name="Is_Typed" ColumnName="Is_Typed" />
+                <ScalarProperty Name="Success_Rate" ColumnName="Success_Rate" />
+                <ScalarProperty Name="User_Answer" ColumnName="User_Answer" />
+                <ScalarProperty Name="Challenge" ColumnName="Challenge" />
+                <ScalarProperty Name="Country_Id" ColumnName="Country_Id" />
+                <ScalarProperty Name="Publisher_Id" ColumnName="Publisher_Id" />
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Revenue_Share_Pct" ColumnName="Revenue_Share_Pct" />
+                <ScalarProperty Name="Revenue_Share" ColumnName="Revenue_Share" />
+                <ScalarProperty Name="Is_Clicked" ColumnName="Is_Clicked" />
+                <ScalarProperty Name="Link_Url" ColumnName="Link_Url" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Ad_Type_Id" ColumnName="Ad_Type_Id" />
+                <ScalarProperty Name="Cpt_Bid" ColumnName="Cpt_Bid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_WEBSITE_CATEGORY">
+            <EntityTypeMapping TypeName="IsTypeOf(AdsCaptcha_RequestsModel.T_WEBSITE_CATEGORY)">
+              <MappingFragment StoreEntitySet="T_WEBSITE_CATEGORY">
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="Category_Id" ColumnName="Category_Id" />
+                <ScalarProperty Name="Type_Id" ColumnName="Type_Id" />
+                <ScalarProperty Name="Allow_Click" ColumnName="Allow_Click" />
+                <ScalarProperty Name="Allow_Slogan" ColumnName="Allow_Slogan" />
+                <ScalarProperty Name="Allow_Image" ColumnName="Allow_Image" />
+                <ScalarProperty Name="Allow_Video" ColumnName="Allow_Video" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_Requests_Insert" FunctionName="AdsCaptcha_RequestsModel.Store.P_Requests_Insert" /></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="AdsCaptchaRequests" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+        <EntityTypeShape EntityType="AdsCaptcha_RequestsModel.T_CAMPAIGN_CATEGORY" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_RequestsModel.T_CAPTCHAS_ADS" Width="1.5" PointX="2.75" PointY="0.75" Height="1.787985026041667" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_RequestsModel.T_REQUESTS" Width="1.5" PointX="2.75" PointY="3.75" Height="7.941630859375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_RequestsModel.T_REQUESTS_INTEGRATION" Width="1.5" PointX="4.75" PointY="0.75" Height="6.21091796875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_RequestsModel.T_WEBSITE_CATEGORY" Width="1.5" PointX="6.75" PointY="0.75" Height="2.9417936197916665" IsExpanded="true" /></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

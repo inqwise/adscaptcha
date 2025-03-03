@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UploadImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="advertiserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="campaignId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="stream" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UploadImageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="advertiserId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="campaignId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="adId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="previousAdId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateAdResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadImageSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadImage" />
+  </wsdl:message>
+  <wsdl:message name="UploadImageSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAd" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UploaderSoap">
+    <wsdl:operation name="UploadImage">
+      <wsdl:input message="tns:UploadImageSoapIn" />
+      <wsdl:output message="tns:UploadImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAd">
+      <wsdl:input message="tns:UpdateAdSoapIn" />
+      <wsdl:output message="tns:UpdateAdSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UploaderSoap" type="tns:UploaderSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadImage">
+      <soap:operation soapAction="http://tempuri.org/UploadImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAd">
+      <soap:operation soapAction="http://tempuri.org/UpdateAd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UploaderSoap12" type="tns:UploaderSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadImage">
+      <soap12:operation soapAction="http://tempuri.org/UploadImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAd">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Uploader">
+    <wsdl:port name="UploaderSoap" binding="tns:UploaderSoap">
+      <soap:address location="http://demo.Inqwise.com/slider/uploader.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UploaderSoap12" binding="tns:UploaderSoap12">
+      <soap12:address location="http://demo.Inqwise.com/slider/uploader.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

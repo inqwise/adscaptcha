@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="../App_code/Handlers/ImportHandler.cs" Class="Admin.Handlers.ImportHandler"%>

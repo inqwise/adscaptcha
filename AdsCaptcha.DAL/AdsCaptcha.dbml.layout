@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 25.25, 71" name="AdsCaptcha">
+  <DataContextMoniker Name="/AdsCaptchaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8e492251-2874-407f-98a6-79e27d74e40e" absoluteBounds="0.75, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_AD_DIMENSION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dfc3149b-6fef-4ff1-a298-2a1e7e0882c4" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa21945c-69df-4d3c-bed0-387613caa037" absoluteBounds="6.25, 60, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE_TARGETING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b1126c3-da41-41cc-a417-42f7613bcec2" absoluteBounds="6.2650000000000006, 60.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b9583108-f57e-49c6-aedf-927e21abfe96" absoluteBounds="3.5, 61.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_CATEGORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="79d35c4d-2e34-4778-9f41-3cd4e70774b0" absoluteBounds="3.5150000000000006, 61.710000000000008, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d61ccd5f-2d2f-4a76-bbf1-c1adfcd0d8be" absoluteBounds="3.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_DATE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3993d3d8-5130-415a-a232-72587988a1a1" absoluteBounds="3.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="973252b4-3402-4844-a217-72a2f1bd247e" absoluteBounds="0.75, 3.75, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_ERROR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aedaea4f-6ed1-4a43-a672-0d5bbaf9ce80" absoluteBounds="0.76500000000000012, 4.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1e5b57f-6624-4fd4-aa8c-88ed09d34056" isExpanded="false" absoluteBounds="3.75, 2.75, 2, 0.44999999999999929">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_IP_COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="af3764ef-4e1f-4bea-9b50-ffba7f04deff" absoluteBounds="3.765, 3.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f1a85bc3-f181-467d-8b77-8d819e16eb41" absoluteBounds="6.5, 69.125, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_LANGUAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5160f1c9-ee4b-4820-a62f-44b4005754f1" absoluteBounds="6.515, 69.585000000000008, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="13e4b047-649b-45ff-93cd-dab85bed9789" absoluteBounds="3.75, 4.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_THEME" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a06f951-4dfb-4d69-8064-f7bcbb948edd" absoluteBounds="3.7649999999999997, 5.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" absoluteBounds="14.75, 18.25, 2, 2.9247054029256105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="017128eb-8ec5-4414-814c-58f2b31b3d8f" absoluteBounds="14.765000000596046, 18.71000000089407, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed7059f9-f9d0-4cd1-bdba-881ed3b61e3a" absoluteBounds="17.5, 16.375, 2, 3.3093082681298256">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER_BILLING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="15cc274a-e390-4fae-9126-e700f3fa620e" absoluteBounds="17.515000000596046, 16.83500000089407, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca629e50-78c7-4dfa-b047-b7ec0adb3e4f" absoluteBounds="17.5, 10, 2, 2.3478011060506105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_BILLING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="43dd634e-2f69-49f4-bb73-9c0bb7a8425f" absoluteBounds="17.515000000596046, 10.46000000089407, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1b41b273-e46c-45b6-994b-98659da8b30e" absoluteBounds="20.25, 41.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN_CATEGORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aad510c7-53db-4400-8578-0c48ed8b57a6" absoluteBounds="20.265, 41.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="24ff3808-9906-417c-8193-0832e0ca861a" absoluteBounds="20.25, 44.5, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN_COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d4183151-6867-4aa9-9f6f-ee689925f447" absoluteBounds="20.265, 44.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="296b3107-0b80-4539-a110-da67da0ecb7c" absoluteBounds="20.25, 26.875, 2, 1.3862939458340406">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN_KEYWORD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1a3c130-3122-4c23-b714-1887a615a743" absoluteBounds="20.265000000596046, 27.33500000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3130c57d-68c2-4088-8f31-bf7348e92263" absoluteBounds="20.25, 47.375, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN_LANGUAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57489fb7-3412-45fd-ad66-f9abb1c611b8" absoluteBounds="20.265, 47.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e98955f5-293a-45d4-b60b-648a6b2ed9e4" absoluteBounds="20.25, 50.25, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN_TARGETING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2eeebd23-b3f3-47bc-8329-22e46c99b9b6" absoluteBounds="20.265, 50.71, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="393e4921-344c-43f8-ab67-cd75f93d0d96" absoluteBounds="23, 22.75, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CHARGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6b7a8fef-9e7a-4e97-81dd-52f7de712017" absoluteBounds="23.015, 23.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="440bfd5b-bff9-48ed-9e76-ab8885b88026" absoluteBounds="23, 19.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CHARGE_AGG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a79eb8d-b393-4306-ac55-758c945fa403" absoluteBounds="23.015, 20.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0e05da9a-d7a8-4c80-8a96-d206317d6ee5" absoluteBounds="17.5, 30.375, 2, 3.8862125650048256">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_PAYMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="130713ba-8f9f-4707-b282-b8f1c222603c" absoluteBounds="17.515000000596046, 30.83500000089407, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3b543a7a-b38a-42a0-a18c-f3ebefaec330" absoluteBounds="20.25, 32.625, 2, 1.7708968091756105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_PAYMENT_CREDIT_CARD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c7555721-bce7-4b25-8c10-8e951e59210e" absoluteBounds="20.265000000596046, 33.08500000089407, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1f1b7cb1-5e62-487c-ae89-1e3558a6a553" absoluteBounds="20.25, 30.375, 2, 1.5785953775048256">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_PAYMENT_PAYPAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8947d93e-8d5a-4790-9f6d-e6195b45e641" absoluteBounds="20.265000000596046, 30.83500000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a317061-e203-43ea-ba9b-29055907c975" absoluteBounds="17.5, 13.125, 2, 2.5401025395840406">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_TRANSACTION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71956b0c-3214-47f6-b181-33ad22df591c" absoluteBounds="17.515000000596046, 13.58500000089407, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d22f066a-4542-4900-b73e-06ed6be844f6" absoluteBounds="6.75, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TC_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="20329264-32db-4c49-9a63-6b10ae9b70af" absoluteBounds="6.765, 1.2100000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7f4e499f-751e-4d48-9569-51d3926e056f" absoluteBounds="6.75, 4.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_ERROR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c3af43c-8433-4412-bdbf-1e524aa91a5e" absoluteBounds="6.7650000000000006, 5.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="71d75ab8-70f7-4cfa-bc8c-f0bc474e12f3" absoluteBounds="6.25, 29.75, 2, 3.8862125651041595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30c8e964-8373-49ea-b246-d57a5151358b" absoluteBounds="6.2650000000000006, 30.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e641ec29-0b3f-45ee-8556-c73e85d86427" absoluteBounds="23, 26, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_ADVERTISER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a3271e8d-cdc7-4521-a5f9-40ffe3e0a118" absoluteBounds="23.015, 26.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41deac7a-d9c7-42f1-9f5a-3f07b3b53f9f" absoluteBounds="6.75, 8.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_AGG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f0f17c06-656a-417e-a016-a8a1cef225a4" absoluteBounds="6.7650000000000006, 9.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9833c144-8e81-40a0-8350-26d8231e60d9" absoluteBounds="9, 29.875, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_CHALLENGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8cf8d36-7ded-4bf3-8975-02dafe84b70e" absoluteBounds="9.015, 30.334999999999994, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="992360e1-a0c6-4f93-8bc2-6fea9084be19" absoluteBounds="9.75, 0.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_CLICK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="778d4307-67a8-4c7d-b66f-37c5c74a3d49" absoluteBounds="9.765, 1.2100000000000009, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f64f8665-59d1-45bb-a8e3-dff380233480" absoluteBounds="9, 44.625, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_DEVELOPER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ff6983aa-7541-4036-a305-f0a402854099" absoluteBounds="9.015, 45.085, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2c20f9ef-54b7-4f0d-bd32-3acaeef22903" absoluteBounds="9, 38.75, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST_PUBLISHER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a4f7cc6b-4e4f-4b53-a5a0-109886a5c71a" absoluteBounds="9.015, 39.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" absoluteBounds="9.25, 32.375, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6254fb4c-fa10-4ed1-a59a-6eda2a9fa8f2" absoluteBounds="9.265, 32.835, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2be35f0a-9d08-4c66-b629-03a92561f4fe" absoluteBounds="9.75, 4.75, 2, 7.5399397786458309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER_ACTIVATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63feaf98-d4e7-48c0-9681-a28f7ef74c81" absoluteBounds="9.765, 5.21, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b61a7ef8-4e1d-4d9e-8083-0315c6884ef5" absoluteBounds="12, 25.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER_BANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4a86eef4-cb16-4e59-a587-f2a66fc6a419" absoluteBounds="12.015, 26.335000000000008, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="504a51a4-2afd-46d2-8872-253079ca8f3c" absoluteBounds="12, 30.125, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER_CHECK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ae991900-c271-4456-9729-5fd17c775f0f" absoluteBounds="12.015, 30.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1960f021-a0d1-4690-a939-e804bfff7eab" absoluteBounds="12, 34.25, 2, 1.1939925130208309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER_PAYPAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2903fcd-282a-44a2-bb93-8cd3fd1dbd19" absoluteBounds="12.015, 34.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5a0a475-70ba-4549-a73e-2e3703bba437" absoluteBounds="12, 40.375, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_EARNING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="803bbc8a-1dd2-4fca-800c-8e0e7b523144" absoluteBounds="12.015, 40.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d90eae96-5723-474a-bb27-ee3146c9acbf" absoluteBounds="6.25, 41.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_EARNING_AGG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dd0e15a6-ae21-4612-95dc-a6dc3c5d4a80" absoluteBounds="6.2650000000000006, 41.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1944a8b-40cc-4bc1-af98-9f19735c7199" absoluteBounds="12, 51.125, 2, 3.5016097005208309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f16c322e-119a-4f1f-a120-4877ee278c67" absoluteBounds="12.015, 51.585, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0cb1ca65-cbbe-4c3b-9d59-496ca65dd1ce" absoluteBounds="14.75, 54.375, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT_BANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a32b0c9e-f0db-46c6-9d8c-5bfb1d49ee8c" absoluteBounds="14.765, 54.835, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="25126b45-7145-4343-8efd-b70af67266a8" absoluteBounds="14.75, 50.625, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT_CHECK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d57bfac-7b21-4db5-8ac0-72f48171f8e7" absoluteBounds="14.765, 51.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e5091303-de53-40e0-aba4-5bca7112a84e" absoluteBounds="14.75, 48.375, 2, 1.5785953776041595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT_PAYPAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="31fdbaef-b3a8-4558-b421-99fbdc70c6f8" absoluteBounds="14.765, 48.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7fb0a300-174d-4368-a626-569be34e3faa" absoluteBounds="0.75, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TM_ADMIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5bb6a34e-ba55-47d3-97c0-0500232a01e9" absoluteBounds="0.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb754d1f-c868-40d1-9d68-dada95afc13c" absoluteBounds="3.75, 11.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TM_PROFIT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="906d568a-1542-4dac-80c2-e157be1a8fe6" absoluteBounds="3.7650000000000006, 12.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0b2b33f-8b97-4ec6-a1cb-8b413cc48852" absoluteBounds="9.25, 41.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TM_PROFIT_AGG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9336a937-27f2-4b45-9812-405159c15981" absoluteBounds="9.265, 41.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77f45369-843e-4e3c-ac40-c64af7d583cf" absoluteBounds="12, 36.5, 2, 2.3478011067708309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_EARNING" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf6d14d4-1464-41ed-8598-249f5ea2c9fd" absoluteBounds="12.015, 36.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5451d55a-928f-4336-9dc8-404e0b1e53aa" absoluteBounds="12, 44.625, 2, 2.1554996743798256">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_EARNING_AGG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7454f410-0a11-446f-8f43-207dbefc7fc8" absoluteBounds="12.015000000596046, 45.08500000089407, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eaaa9645-33f6-4d7b-bcb1-26a253737692" absoluteBounds="3.5, 49, 2, 3.5016096998006105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59b6413a-6154-4232-a2a4-043203ce4e03" absoluteBounds="3.5150000005960464, 49.46000000089407, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41cfb52c-c7a1-4e0c-b56c-6db6e6929bb3" absoluteBounds="6.25, 52.25, 2, 3.1170068364590406">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT_BANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7e7aae76-599c-42ac-ac5b-d4f67966a06d" absoluteBounds="6.2650000005960464, 52.71000000089407, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ef5ef2fa-dc7e-4f21-92cd-ea9cdba9039f" absoluteBounds="6.25, 48.5, 2, 2.9247054029256105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT_CHECK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0aa66ed7-6717-4eec-ac95-182d7a2775c4" absoluteBounds="6.2650000005960464, 48.96000000089407, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bb2e64fb-2c99-4074-8014-34714b0ef228" absoluteBounds="6.25, 46.25, 2, 1.5785953775048256">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT_PAYPAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c302024c-28ec-4bea-875e-52c360293e33" absoluteBounds="6.2650000005960464, 46.71000000089407, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9633a555-c56a-49e2-8dd7-999275d2487f" absoluteBounds="0.75, 25.625, 2, 5.2323225904256105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="810deca2-c870-472c-83f2-ffe78784d8d0" absoluteBounds="0.76500000059604645, 26.08500000089407, 1.9700000000000002, 4.672322591145833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a9a5761a-b26d-4019-b411-3b2013fde57f" absoluteBounds="12.75, 0.75, 2, 7.5399397786458309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER_ACTIVATION" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1415322e-bff9-4614-90e0-e3ae754d4f39" absoluteBounds="12.765, 1.21, 1.9700000000000002, 6.979939778645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9a75efb-cc94-4736-8517-e3ceeb415a4e" absoluteBounds="3.5, 22.25, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER_BANK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13196806-4055-407d-9665-e21ca44a1750" absoluteBounds="3.5150000005960464, 22.71000000089407, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dc7ca39d-15b7-48bb-b44b-d4accf82751f" absoluteBounds="3.5, 19.125, 2, 2.3478011060506105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER_CHECK" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b33318f5-86ea-4504-ae16-4fdb7ebae554" absoluteBounds="3.5150000005960464, 19.58500000089407, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36cc1279-5ff0-4bdb-ad16-c46a269423ad" absoluteBounds="3.5, 17.125, 2, 1.1939925123006105">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER_PAYPAL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9684de9-fc24-481c-8406-86a40cceccb1" absoluteBounds="3.5150000005960464, 17.58500000089407, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7db713c8-a7f5-48be-a696-81f18306479f" absoluteBounds="12.75, 9.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_RANDOM_IMAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd17951b-80bd-4740-983e-25a4b38199b1" absoluteBounds="12.765, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" absoluteBounds="3.5, 56.125, 2, 3.6939111333340406">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="02e62201-ae1e-46fa-a82b-279df2b1c90f" absoluteBounds="3.5150000005960464, 56.58500000089407, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="891c964c-c7dc-48d0-bddd-b291a68964d3" absoluteBounds="6.25, 57.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE_CATEGORY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="57ebc75d-94e6-4af1-b339-9a5b0d38e208" absoluteBounds="6.2650000000000006, 57.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c9198db5-eec1-461a-b98f-9eab6f057a37" absoluteBounds="9.25, 54.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE_COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54b945c3-5196-46e3-9248-9aedc3434145" absoluteBounds="9.265, 54.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="698f3ffa-9c23-4bba-b79e-e6f99bb66889" absoluteBounds="6.25, 66.125, 2, 1.3862939458340406">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE_KEYWORD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="30119c13-e8ac-4fd1-a350-156f3f1359aa" absoluteBounds="6.2650000005960464, 66.58500000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="41b91e74-d640-4c15-9eb9-34eaf747d3b6" absoluteBounds="9.25, 57.25, 2, 1.3862939453125023">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE_LANGUAGE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7186688f-f2a8-48b0-b2fd-e435416496b0" absoluteBounds="9.2650000005960464, 57.71000000089407, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 61.5104484049479); (6.25 : 61.5104484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_CATEGORY/T_CATEGORY_TP_WEBSITE_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="b9583108-f57e-49c6-aedf-927e21abfe96" />
+        <classShapeMoniker Id="aa21945c-69df-4d3c-bed0-387613caa037" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 69.125); (6.125 : 68.75); (5.875 : 68.75); (5.875 : 62.1472580382111); (5.97232443490112 : 62.04993360331 : JumpStart); (6.09017556509888 : 61.9320824731122 : JumpEnd); (6.2513612283153 : 61.7708968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_LANGUAGE/T_LANGUAGE_TP_WEBSITE_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="f1a85bc3-f181-467d-8b77-8d819e16eb41" />
+        <classShapeMoniker Id="aa21945c-69df-4d3c-bed0-387613caa037" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 18.9671541340649); (17.5 : 18.9671541340649)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_ADVERTISER_BILLING" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="ed7059f9-f9d0-4cd1-bdba-881ed3b61e3a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.78125 : 18.25); (15.78125 : 11.1739005530253); (17.5 : 11.1739005530253)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_BILLING" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="ca629e50-78c7-4dfa-b047-b7ec0adb3e4f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 62.2348448776042); (5.79166666666667 : 62.2348448776042 : JumpStart); (6.11458333333333 : 62.2348448776042 : JumpEnd); (7.60416666666667 : 62.2348448776042 : JumpStart); (7.77083333333333 : 62.2348448776042 : JumpEnd); (8.44791666666667 : 62.2348448776042 : JumpStart); (8.61458333333333 : 62.2348448776042 : JumpEnd); (8.77604166666667 : 62.2348448776042 : JumpStart); (8.94270833333333 : 62.2348448776042 : JumpEnd); (10.1666666666667 : 62.2348448776042 : JumpStart); (10.3333333333333 : 62.2348448776042 : JumpEnd); (20 : 62.2348448776042); (20 : 43.1362939453125); (21.25 : 43.1362939453125); (21.25 : 42.7612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_CATEGORY/T_CATEGORY_TA_CAMPAIGN_CATEGORY" />
+      <nodes>
+        <classShapeMoniker Id="b9583108-f57e-49c6-aedf-927e21abfe96" />
+        <classShapeMoniker Id="1b41b273-e46c-45b6-994b-98659da8b30e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 69.125); (8.875 : 68.75); (20.125 : 68.75); (20.125 : 48.8862939453125); (20.25 : 48.7612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_LANGUAGE/T_LANGUAGE_TA_CAMPAIGN_LANGUAGE" />
+      <nodes>
+        <classShapeMoniker Id="f1a85bc3-f181-467d-8b77-8d819e16eb41" />
+        <classShapeMoniker Id="3130c57d-68c2-4088-8f31-bf7348e92263" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 62.00286834375); (5.93605636112777 : 62.00286834375 : JumpStart); (6.11458333333333 : 62.00286834375 : JumpEnd); (7.60416666666667 : 62.00286834375 : JumpStart); (7.77083333333333 : 62.00286834375 : JumpEnd); (8.44791666666667 : 62.00286834375 : JumpStart); (8.61458333333333 : 62.00286834375 : JumpEnd); (8.77604166666667 : 62.00286834375 : JumpStart); (8.94270833333333 : 62.00286834375 : JumpEnd); (10.1666666666667 : 62.00286834375 : JumpStart); (10.3333333333333 : 62.00286834375 : JumpEnd); (19.9166666666667 : 62.00286834375 : JumpStart); (20.2083333333333 : 62.00286834375 : JumpEnd); (20.6354141666667 : 62.00286834375 : JumpStart); (20.8020808333333 : 62.00286834375 : JumpEnd); (21.25 : 62.00286834375); (21.25 : 52.0208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_CATEGORY/T_CATEGORY_TA_CAMPAIGN_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="b9583108-f57e-49c6-aedf-927e21abfe96" />
+        <classShapeMoniker Id="e98955f5-293a-45d4-b60b-648a6b2ed9e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 69.9455501888021); (21.7812525 : 69.9455501888021); (21.7812525 : 52.0208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_LANGUAGE/T_LANGUAGE_TA_CAMPAIGN_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="f1a85bc3-f181-467d-8b77-8d819e16eb41" />
+        <classShapeMoniker Id="e98955f5-293a-45d4-b60b-648a6b2ed9e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.218748 : 21.1747054029256); (15.218748 : 22.375); (16.1979191666667 : 22.375 : JumpStart); (16.3645858333333 : 22.375 : JumpEnd); (16.4635454166667 : 22.375 : JumpStart); (16.6302120833333 : 22.375 : JumpEnd); (22.625 : 22.375); (22.625 : 23.9239005533854); (22.6666666666667 : 23.9239005533854 : JumpStart); (22.9583333333333 : 23.9239005533854 : JumpEnd); (23 : 23.9239005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_CHARGE" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="393e4921-344c-43f8-ab67-cd75f93d0d96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 20.7674413766458); (17.1666666666667 : 20.7674413766458 : JumpStart); (17.3333333333333 : 20.7674413766458 : JumpEnd); (23 : 20.7674413766458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_CHARGE_AGG" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="440bfd5b-bff9-48ed-9e76-ab8885b88026" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.2812525 : 21.1747054029256); (16.2812525 : 32.3181062825024); (17.5 : 32.3181062825024)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_PAYMENT" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="0e05da9a-d7a8-4c80-8a96-d206317d6ee5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 33.4431062825024); (20.25 : 33.4431062825024)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_PAYMENT/TA_PAYMENT_TA_PAYMENT_CREDIT_CARD" />
+      <nodes>
+        <classShapeMoniker Id="0e05da9a-d7a8-4c80-8a96-d206317d6ee5" />
+        <classShapeMoniker Id="3b543a7a-b38a-42a0-a18c-f3ebefaec330" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.5 : 31.1642976887524); (19.8541691666667 : 31.1642976887524 : JumpStart); (20.0208358333333 : 31.1642976887524 : JumpEnd); (20.25 : 31.1642976887524)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_PAYMENT/TA_PAYMENT_TA_PAYMENT_PAYPAL" />
+      <nodes>
+        <classShapeMoniker Id="0e05da9a-d7a8-4c80-8a96-d206317d6ee5" />
+        <classShapeMoniker Id="1f1b7cb1-5e62-487c-ae89-1e3558a6a553" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.2968775 : 18.25); (16.2968775 : 14.395051269792); (17.5 : 14.395051269792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_TRANSACTION" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="9a317061-e203-43ea-ba9b-29055907c975" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.75 : 19.8672977553554); (17.25 : 19.8672977553554); (17.25 : 21.9054996744792); (22.875 : 21.9054996744792); (22.875 : 25.625); (24 : 25.625); (24 : 26)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TCS_REQUEST_ADVERTISER" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="e641ec29-0b3f-45ee-8556-c73e85d86427" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 29.7812505); (8.41666666666667 : 29.7812505 : JumpStart); (8.58333333333333 : 29.7812505 : JumpEnd); (11.0729166666667 : 29.7812505 : JumpStart); (11.2395833333333 : 29.7812505 : JumpEnd); (11.2916666666667 : 29.7812505 : JumpStart); (11.5833333333333 : 29.7812505 : JumpEnd); (11.6666666666667 : 29.7812505 : JumpStart); (11.8333333333333 : 29.7812505 : JumpEnd); (16.1979191666667 : 29.7812505 : JumpStart); (16.3645858333333 : 29.7812505 : JumpEnd); (19.6041629166667 : 29.7812505 : JumpStart); (19.7708295833333 : 29.7812505 : JumpEnd); (19.7916641666667 : 29.7812505 : JumpStart); (20.0208358333333 : 29.7812505 : JumpEnd); (24 : 29.7812505); (24 : 27.9631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST/TCS_REQUEST_TCS_REQUEST_ADVERTISER" />
+      <nodes>
+        <classShapeMoniker Id="71d75ab8-70f7-4cfa-bc8c-f0bc474e12f3" />
+        <classShapeMoniker Id="e641ec29-0b3f-45ee-8556-c73e85d86427" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 30.6642976888021); (8.41666666666667 : 30.6642976888021 : JumpStart); (8.58333333333333 : 30.6642976888021 : JumpEnd); (9 : 30.6642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST/TCS_REQUEST_TCS_REQUEST_CHALLENGE" />
+      <nodes>
+        <classShapeMoniker Id="71d75ab8-70f7-4cfa-bc8c-f0bc474e12f3" />
+        <classShapeMoniker Id="9833c144-8e81-40a0-8350-26d8231e60d9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 31.7399835325521); (8.41666666666667 : 31.7399835325521 : JumpStart); (8.58333333333333 : 31.7399835325521 : JumpEnd); (8.75 : 31.7399835325521); (8.75 : 39.25); (8.875 : 39.25); (8.875 : 44.25); (10 : 44.25); (10 : 44.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST/TCS_REQUEST_TCS_REQUEST_DEVELOPER" />
+      <nodes>
+        <classShapeMoniker Id="71d75ab8-70f7-4cfa-bc8c-f0bc474e12f3" />
+        <classShapeMoniker Id="f64f8665-59d1-45bb-a8e3-dff380233480" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.40625 : 33.6362125651042); (6.40625 : 39); (7.47916666666667 : 39 : JumpStart); (7.64583333333333 : 39 : JumpEnd); (8.66666666666667 : 39 : JumpStart); (8.91208333333333 : 39 : JumpEnd); (9 : 39)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TCS_REQUEST/TCS_REQUEST_TCS_REQUEST_PUBLISHER" />
+      <nodes>
+        <classShapeMoniker Id="71d75ab8-70f7-4cfa-bc8c-f0bc474e12f3" />
+        <classShapeMoniker Id="2c20f9ef-54b7-4f0d-bd32-3acaeef22903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.95923076923077 : 37.0304182942708); (10.5451728878343 : 37.2059939956617 : JumpStart); (10.7048261121657 : 37.2538335790459 : JumpEnd); (11.375 : 37.4546490635016); (11.375 : 44.25); (11.2062987019468 : 44.2879782418845 : JumpStart); (11.0437012980532 : 44.3245823676745 : JumpEnd); (9.70923076923077 : 44.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TCS_REQUEST_DEVELOPER" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="f64f8665-59d1-45bb-a8e3-dff380233480" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.15625 : 32.375); (11.15625 : 27.2412019856771); (11.2916666666667 : 27.2412019856771 : JumpStart); (11.4583333333333 : 27.2412019856771 : JumpEnd); (12 : 27.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_DEVELOPER_BANK" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="b61a7ef8-4e1d-4d9e-8083-0315c6884ef5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.1875025 : 32.375); (11.1875025 : 31.9142951888021); (12 : 31.9142951888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_DEVELOPER_CHECK" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="504a51a4-2afd-46d2-8872-253079ca8f3c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 34.8469962565104); (12 : 34.8469962565104)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_DEVELOPER_PAYPAL" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="1960f021-a0d1-4690-a939-e804bfff7eab" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 36.9796480635016); (11.4410744349011 : 37.1707224984027 : JumpStart); (11.5589255650989 : 37.2885736286005 : JumpEnd); (11.875 : 37.6046480635016); (11.875 : 41.6450512695313); (12 : 41.6450512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="e5a0a475-70ba-4549-a73e-2e3703bba437" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10.6249995 : 37.0304182942708); (10.6249995 : 38.625); (10.0833333333333 : 38.625 : JumpStart); (9.91666666666667 : 38.625 : JumpEnd); (8.82875 : 38.625); (8.82875 : 42.6739005533854); (8.25 : 42.6739005533854)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="d90eae96-5723-474a-bb27-ee3146c9acbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 36.9981096019631); (11.4410744349011 : 37.1891840368642 : JumpStart); (11.5589255650989 : 37.307035167062 : JumpEnd); (11.78125 : 37.5293596019631); (11.78125 : 52.8758048502604); (12 : 52.8758048502604)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_DEVELOPER/TD_DEVELOPER_TD_PAYMENT" />
+      <nodes>
+        <classShapeMoniker Id="57e80604-b618-44e9-ab84-c63de6dbd2c8" />
+        <classShapeMoniker Id="d1944a8b-40cc-4bc1-af98-9f19735c7199" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13 : 54.6266097005208); (13 : 56.0593087682292); (14.75 : 56.0593087682292)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT/TD_PAYMENT_TD_PAYMENT_BANK" />
+      <nodes>
+        <classShapeMoniker Id="d1944a8b-40cc-4bc1-af98-9f19735c7199" />
+        <classShapeMoniker Id="0cb1ca65-cbbe-4c3b-9d59-496ca65dd1ce" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14 : 52.3373527018229); (14.75 : 52.3373527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT/TD_PAYMENT_TD_PAYMENT_CHECK" />
+      <nodes>
+        <classShapeMoniker Id="d1944a8b-40cc-4bc1-af98-9f19735c7199" />
+        <classShapeMoniker Id="25126b45-7145-4343-8efd-b70af67266a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(13 : 51.125); (13 : 49.1642976888021); (14.75 : 49.1642976888021)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TD_PAYMENT/TD_PAYMENT_TD_PAYMENT_PAYPAL" />
+      <nodes>
+        <classShapeMoniker Id="d1944a8b-40cc-4bc1-af98-9f19735c7199" />
+        <classShapeMoniker Id="e5091303-de53-40e0-aba4-5bca7112a84e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 52.5016096998006); (4.5 : 53.9343087681298); (5.54166666666667 : 53.9343087681298 : JumpStart); (5.70833333333333 : 53.9343087681298 : JumpEnd); (5.79166666666667 : 53.9343087681298 : JumpStart); (5.95833333333333 : 53.9343087681298 : JumpEnd); (6.25 : 53.9343087681298)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT/TP_PAYMENT_TP_PAYMENT_BANK" />
+      <nodes>
+        <classShapeMoniker Id="eaaa9645-33f6-4d7b-bcb1-26a253737692" />
+        <classShapeMoniker Id="41cfb52c-c7a1-4e0c-b56c-6db6e6929bb3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 50.2123527014628); (5.54166666666667 : 50.2123527014628 : JumpStart); (5.70833333333333 : 50.2123527014628 : JumpEnd); (5.79166666666667 : 50.2123527014628 : JumpStart); (5.95833333333333 : 50.2123527014628 : JumpEnd); (6.25 : 50.2123527014628)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT/TP_PAYMENT_TP_PAYMENT_CHECK" />
+      <nodes>
+        <classShapeMoniker Id="eaaa9645-33f6-4d7b-bcb1-26a253737692" />
+        <classShapeMoniker Id="ef5ef2fa-dc7e-4f21-92cd-ea9cdba9039f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 49); (4.5 : 47.0392976887524); (5.54166666666667 : 47.0392976887524 : JumpStart); (5.70833333333333 : 47.0392976887524 : JumpEnd); (5.79166666666667 : 47.0392976887524 : JumpStart); (5.95833333333333 : 47.0392976887524 : JumpEnd); (6.25 : 47.0392976887524)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PAYMENT/TP_PAYMENT_TP_PAYMENT_PAYPAL" />
+      <nodes>
+        <classShapeMoniker Id="eaaa9645-33f6-4d7b-bcb1-26a253737692" />
+        <classShapeMoniker Id="bb2e64fb-2c99-4074-8014-34714b0ef228" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.085935125 : 30.8573225904256); (1.085935125 : 45.4062505); (1.40104091666667 : 45.4062505 : JumpStart); (1.56770758333333 : 45.4062505 : JumpEnd); (1.79948004166667 : 45.4062505 : JumpStart); (1.96614670833333 : 45.4062505 : JumpEnd); (5.54166666666667 : 45.4062505 : JumpStart); (5.70833333333333 : 45.4062505 : JumpEnd); (5.79166666666667 : 45.4062505 : JumpStart); (5.95833333333333 : 45.4062505 : JumpEnd); (8.33854166666667 : 45.4062505 : JumpStart); (8.61458333333333 : 45.4062505 : JumpEnd); (9 : 45.4062505)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TCS_REQUEST_DEVELOPER" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="f64f8665-59d1-45bb-a8e3-dff380233480" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 27.0134234964193); (8.5 : 27.0134234964193); (8.5 : 38.375); (8.66666666666667 : 38.375 : JumpStart); (8.83333333333333 : 38.375 : JumpEnd); (8.91666666666667 : 38.375 : JumpStart); (9.08333333333333 : 38.375 : JumpEnd); (10 : 38.375); (10 : 38.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TCS_REQUEST_PUBLISHER" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="2c20f9ef-54b7-4f0d-bd32-3acaeef22903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 28.4643509928386); (8.41666666666667 : 28.4643509928386 : JumpStart); (8.58333333333333 : 28.4643509928386 : JumpEnd); (11.0729166666667 : 28.4643509928386 : JumpStart); (11.2395833333333 : 28.4643509928386 : JumpEnd); (11.2916666666667 : 28.4643509928386 : JumpStart); (11.4583333333333 : 28.4643509928386 : JumpEnd); (11.5 : 28.4643509928386); (11.5 : 40); (11.6041666666667 : 40 : JumpStart); (11.9583333333333 : 40 : JumpEnd); (13 : 40); (13 : 40.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TD_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="e5a0a475-70ba-4549-a73e-2e3703bba437" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 30.8573225904256); (2.2812525 : 42.6739005533854); (2.46354491666667 : 42.6739005533854 : JumpStart); (2.63021158333333 : 42.6739005533854 : JumpEnd); (5.91666666666667 : 42.6739005533854 : JumpStart); (6.08333333333333 : 42.6739005533854 : JumpEnd); (6.25 : 42.6739005533854)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TD_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="d90eae96-5723-474a-bb27-ee3146c9acbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 26.2879597482096); (11.375 : 26.2879597482096); (11.375 : 32.125); (11.2708358333333 : 32.125 : JumpStart); (11.0729166666667 : 32.125 : JumpEnd); (9 : 32.125); (9 : 38.5); (9.91666666666667 : 38.5 : JumpStart); (10.0833333333333 : 38.5 : JumpEnd); (10.5416661666667 : 38.5 : JumpStart); (10.7083328333333 : 38.5 : JumpEnd); (11.25 : 38.5); (11.25 : 41.125); (10.25 : 41.125); (10.25 : 41.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TM_PROFIT_AGG" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="d0b2b33f-8b97-4ec6-a1cb-8b413cc48852" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 28.4643509928386); (8.41666666666667 : 28.4643509928386 : JumpStart); (8.58333333333333 : 28.4643509928386 : JumpEnd); (11.0729166666667 : 28.4643509928386 : JumpStart); (11.2395833333333 : 28.4643509928386 : JumpEnd); (11.2916666666667 : 28.4643509928386 : JumpStart); (11.4583333333333 : 28.4643509928386 : JumpEnd); (11.75 : 28.4643509928386); (11.75 : 36.125); (13 : 36.125); (13 : 36.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="77f45369-843e-4e3c-ac40-c64af7d583cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.54687825 : 30.8573225904256); (2.54687825 : 44.5977197265625); (5.79166666666667 : 44.5977197265625 : JumpStart); (5.95833333333333 : 44.5977197265625 : JumpEnd); (8.33854166666667 : 44.5977197265625 : JumpStart); (8.50520833333333 : 44.5977197265625 : JumpEnd); (8.75 : 44.5977197265625); (8.75 : 44.375); (8.85416666666667 : 44.375 : JumpStart); (9.02083333333333 : 44.375 : JumpEnd); (9.91666666666667 : 44.375 : JumpStart); (10.0833333333333 : 44.375 : JumpEnd); (10.7364102564103 : 44.375 : JumpStart); (10.9030769230769 : 44.375 : JumpEnd); (11.0416666666667 : 44.375 : JumpStart); (11.2083333333333 : 44.375 : JumpEnd); (11.25 : 44.375); (11.25 : 45.7027498371899); (11.4166666666667 : 45.7027498371899 : JumpStart); (11.5833333333333 : 45.7027498371899 : JumpEnd); (11.6041666666667 : 45.7027498371899 : JumpStart); (11.8645833333333 : 45.7027498371899 : JumpEnd); (12 : 45.7027498371899)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="5451d55a-928f-4336-9dc8-404e0b1e53aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.882813375 : 30.8573225904256); (1.882813375 : 50.7508048499003); (3.5 : 50.7508048499003)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_PAYMENT" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="eaaa9645-33f6-4d7b-bcb1-26a253737692" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 25.625); (1.75 : 23.6162019856771); (3.5 : 23.6162019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_PUBLISHER_BANK" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="c9a75efb-cc94-4736-8517-e3ceeb415a4e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 25.625); (2.2812525 : 20.2989005530253); (3.5 : 20.2989005530253)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_PUBLISHER_CHECK" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="dc7ca39d-15b7-48bb-b44b-d4accf82751f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 25.625); (1.2187475 : 17.7219962561503); (3.5 : 17.7219962561503)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_PUBLISHER_PAYPAL" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="36cc1279-5ff0-4bdb-ad16-c46a269423ad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 59.2620150620519); (5.75 : 60.0335255179494); (5.75 : 59.4986387716847); (5.87857443490112 : 59.6272132065858 : JumpStart); (5.99642556509888 : 59.7450643367836 : JumpEnd); (6.2513612283153 : 60)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_WEBSITE_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="aa21945c-69df-4d3c-bed0-387613caa037" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 59.2588520393233); (5.85416666666667 : 59.2588520393233 : JumpStart); (6.02083333333333 : 59.2588520393233 : JumpEnd); (8.33854166666667 : 59.2588520393233 : JumpStart); (8.61458333333333 : 59.2588520393233 : JumpEnd); (8.77604166666667 : 59.2588520393233 : JumpStart); (8.94270833333333 : 59.2588520393233 : JumpEnd); (9.09375 : 59.2588520393233); (9.09375 : 46.7804996744792)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TCS_REQUEST_DEVELOPER" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="f64f8665-59d1-45bb-a8e3-dff380233480" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 58.3808989409405); (5.625 : 58.3808989409405); (5.625 : 44.5820947265625); (5.79166666666667 : 44.5820947265625 : JumpStart); (5.95833333333333 : 44.5820947265625 : JumpEnd); (8.33854166666667 : 44.5820947265625 : JumpStart); (8.50520833333333 : 44.5820947265625 : JumpEnd); (8.9375 : 44.5820947265625); (8.9375 : 41.0881982421875); (10 : 41.0881982421875); (10 : 40.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TCS_REQUEST_PUBLISHER" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="2c20f9ef-54b7-4f0d-bd32-3acaeef22903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 57.3622441884047); (5.54166666666667 : 57.3622441884047 : JumpStart); (5.89583333333333 : 57.3622441884047 : JumpEnd); (6.125 : 57.3622441884047); (6.125 : 56.9999999997392); (8.33854166666667 : 56.9999999997392 : JumpStart); (8.61458333333333 : 56.9999999997392 : JumpEnd); (8.77604166666667 : 56.9999999997392 : JumpStart); (8.94270833333333 : 56.9999999997392 : JumpEnd); (9.01041666666667 : 56.9999999997392 : JumpStart); (9.17708333333333 : 56.9999999997392 : JumpEnd); (9.63541416666667 : 56.9999999997392 : JumpStart); (9.80208083333333 : 56.9999999997392 : JumpEnd); (11.5 : 56.9999999997392); (11.5 : 43.2901025390625); (11.6041666666667 : 43.2901025390625 : JumpStart); (11.8645833333333 : 43.2901025390625 : JumpEnd); (13 : 43.2901025390625); (13 : 42.9151025390625)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TD_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="e5a0a475-70ba-4549-a73e-2e3703bba437" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 56.125); (5.56607443490112 : 56.0589255650989 : JumpStart); (5.68392556509888 : 55.9410744349011 : JumpEnd); (5.875 : 55.75); (5.875 : 43.2921028300781); (6.25 : 43.2921028300781)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TD_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="d90eae96-5723-474a-bb27-ee3146c9acbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 57.3622441884047); (5.54166666666667 : 57.3622441884047 : JumpStart); (5.89583333333333 : 57.3622441884047 : JumpEnd); (6 : 57.3622441884047); (6 : 55.8862939453125); (8.33854166666667 : 55.8862939453125 : JumpStart); (8.61458333333333 : 55.8862939453125 : JumpEnd); (8.77604166666667 : 55.8862939453125 : JumpStart); (8.94270833333333 : 55.8862939453125 : JumpEnd); (9 : 55.8862939453125); (9 : 47.0304996744792); (9.01041666666667 : 47.0304996744792 : JumpStart); (9.17708333333333 : 47.0304996744792 : JumpEnd); (11.125 : 47.0304996744792); (11.125 : 44.2228011067708); (10.25 : 44.2228011067708); (10.25 : 43.8478011067708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TM_PROFIT_AGG" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="d0b2b33f-8b97-4ec6-a1cb-8b413cc48852" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 57.8715715646726); (5.54166666666667 : 57.8715715646726 : JumpStart); (5.70833333333333 : 57.8715715646726 : JumpEnd); (5.8125 : 57.8715715646726); (5.8125 : 57.1249999997392); (5.91666666666667 : 57.1249999997392 : JumpStart); (6.20833333333333 : 57.1249999997392 : JumpEnd); (8.33854166666667 : 57.1249999997392 : JumpStart); (8.61458333333333 : 57.1249999997392 : JumpEnd); (8.77604166666667 : 57.1249999997392 : JumpStart); (8.94270833333333 : 57.1249999997392 : JumpEnd); (9.01041666666667 : 57.1249999997392 : JumpStart); (9.17708333333333 : 57.1249999997392 : JumpEnd); (9.63541416666667 : 57.1249999997392 : JumpStart); (9.80208083333333 : 57.1249999997392 : JumpEnd); (11.6875 : 57.1249999997392); (11.6875 : 39.2228011067708); (11.6979166666667 : 39.2228011067708 : JumpStart); (11.9583333333333 : 39.2228011067708 : JumpEnd); (13 : 39.2228011067708); (13 : 38.8478011067708)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="77f45369-843e-4e3c-ac40-c64af7d583cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 58.8198754901319); (5.75 : 58.8198754901319); (5.75 : 56.6249999997392); (5.91666666666667 : 56.6249999997392 : JumpStart); (6.08333333333333 : 56.6249999997392 : JumpEnd); (8.33854166666667 : 56.6249999997392 : JumpStart); (8.61458333333333 : 56.6249999997392 : JumpEnd); (8.77604166666667 : 56.6249999997392 : JumpStart); (8.94270833333333 : 56.6249999997392 : JumpEnd); (9.01041666666667 : 56.6249999997392 : JumpStart); (9.17708333333333 : 56.6249999997392 : JumpEnd); (11.375 : 56.6249999997392); (11.375 : 47.1554996743798); (11.4166666666667 : 47.1554996743798 : JumpStart); (11.5833333333333 : 47.1554996743798 : JumpEnd); (11.6041666666667 : 47.1554996743798 : JumpStart); (11.8645833333333 : 47.1554996743798 : JumpEnd); (13 : 47.1554996743798); (13 : 46.7804996743798)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="5451d55a-928f-4336-9dc8-404e0b1e53aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.48437425 : 30.8573225904256); (1.48437425 : 57.971955566667); (3.5 : 57.971955566667)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_WEBSITE" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 61.3118490375601); (5.9375 : 60.8743490375601); (5.9375 : 57.9432318768093); (6.25 : 57.9432318768093)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_CATEGORY/T_CATEGORY_TP_WEBSITE_CATEGORY" />
+      <nodes>
+        <classShapeMoniker Id="b9583108-f57e-49c6-aedf-927e21abfe96" />
+        <classShapeMoniker Id="891c964c-c7dc-48d0-bddd-b291a68964d3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 57.387326458893); (5.54166666666667 : 57.387326458893 : JumpStart); (5.89583333333333 : 57.387326458893 : JumpEnd); (6.25 : 57.387326458893)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_WEBSITE_CATEGORY" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="891c964c-c7dc-48d0-bddd-b291a68964d3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.4387475 : 56.125); (4.4387475 : 55.5641528908858); (5.54166666666667 : 55.5641528908858 : JumpStart); (5.70833333333333 : 55.5641528908858 : JumpEnd); (5.79166666666667 : 55.5641528908858 : JumpStart); (5.95833333333333 : 55.5641528908858 : JumpEnd); (8.33854166666667 : 55.5641528908858 : JumpStart); (8.61458333333333 : 55.5641528908858 : JumpEnd); (8.77604166666667 : 55.5641528908858 : JumpStart); (9.17708333333333 : 55.5641528908858 : JumpEnd); (9.25 : 55.5641528908858)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_WEBSITE_COUNTRY" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="c9198db5-eec1-461a-b98f-9eab6f057a37" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.49846153846154 : 59.818911133334); (5.87857443490112 : 60.1990240297736 : JumpStart); (5.99642556509888 : 60.3168751599714 : JumpEnd); (6.03125 : 60.3516995948725); (6.03125 : 66.818146972917); (6.25 : 66.818146972917)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_WEBSITE_KEYWORD" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="698f3ffa-9c23-4bba-b79e-e6f99bb66889" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 69.535275094401); (10.25 : 69.535275094401); (10.25 : 58.6362939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_LANGUAGE/T_LANGUAGE_TP_WEBSITE_LANGUAGE" />
+      <nodes>
+        <classShapeMoniker Id="f1a85bc3-f181-467d-8b77-8d819e16eb41" />
+        <classShapeMoniker Id="41b91e74-d640-4c15-9eb9-34eaf747d3b6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 56.7187515); (5.54166666666667 : 56.7187515 : JumpStart); (5.83333333333333 : 56.7187515 : JumpEnd); (5.91666666666667 : 56.7187515 : JumpStart); (6.08333333333333 : 56.7187515 : JumpEnd); (8.33854166666667 : 56.7187515 : JumpStart); (8.61458333333333 : 56.7187515 : JumpEnd); (8.77604166666667 : 56.7187515 : JumpStart); (8.94270833333333 : 56.7187515 : JumpEnd); (9.01041666666667 : 56.7187515 : JumpStart); (9.17708333333333 : 56.7187515 : JumpEnd); (9.7187475 : 56.7187515); (9.7187475 : 57.25)]" fixedFrom="Algorithm" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_WEBSITE_LANGUAGE" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="41b91e74-d640-4c15-9eb9-34eaf747d3b6" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="52107dcb-0d25-4991-999d-d7405ae293c1" absoluteBounds="12.75, 12.75, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_DECODE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c011162-9ba1-4871-8a71-400ccc263f17" absoluteBounds="12.765, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c469137d-4c9b-4e1c-be66-b9817395a8ef" absoluteBounds="6.75, 13.75, 2, 5.0400211588541666">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TCS_STAT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="998de7fb-d7d5-4826-aceb-de92ddfe0011" absoluteBounds="6.7650000000000006, 14.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c411e941-acc6-49f2-84e7-58a70e7dee17" absoluteBounds="15.75, 0.75, 2.25, 2.7324039713541595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_REPORTS_PUBLISHER_REPORTMAIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="60c3debf-2a41-40a2-a660-2f0c51f43ddb" absoluteBounds="15.765, 1.2099999999999938, 2.2199999999999998, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c02b3bd6-da98-4eda-8881-d7865059c43b" absoluteBounds="0.75, 14.75, 2.375, 0.8093896484375005">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_REPORTS_ADVERTISER_REPORTMAIN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f65acc5c-a311-405d-ba59-db1ffdd6cb12" absoluteBounds="0.75, 14.75, 0.125, 0.2493896484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3c71d02f-3e36-4498-a7ea-f36e2993fbb8" absoluteBounds="15.75, 4.75, 2, 2.1554996744791595">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA_HOUSEAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0a4b2e86-7ba5-4953-8e33-59aa1cb99bf5" absoluteBounds="15.765, 5.2100000000000009, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" absoluteBounds="20.5, 22.625, 2, 4.2708154296875">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_AD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13c899ec-fa7d-4112-9cb7-5579f4630b59" absoluteBounds="20.515, 23.085, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(22.5 : 23.2744502766927); (23 : 23.2744502766927)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_AD/TA_AD_TA_CHARGE" />
+      <nodes>
+        <classShapeMoniker Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" />
+        <classShapeMoniker Id="393e4921-344c-43f8-ab67-cd75f93d0d96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5 : 22.625); (23 : 22.0304996744792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_AD/TA_AD_TA_CHARGE_AGG" />
+      <nodes>
+        <classShapeMoniker Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" />
+        <classShapeMoniker Id="440bfd5b-bff9-48ed-9e76-ab8885b88026" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(22.5 : 26.4479077148438); (23 : 26.4479077148438)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_AD/TA_AD_TCS_REQUEST_ADVERTISER" />
+      <nodes>
+        <classShapeMoniker Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" />
+        <classShapeMoniker Id="e641ec29-0b3f-45ee-8556-c73e85d86427" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(16.54687875 : 21.1747054029256); (16.54687875 : 24.03125); (20.5 : 24.03125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_AD" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" absoluteBounds="18.375, 25.375, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="773bb1ee-f839-4f9a-ba7b-61569f3971ed" absoluteBounds="18.39, 25.835, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(19.8749975 : 29.4535139973958); (19.8749975 : 42.0681469726563); (20.25 : 42.0681469726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CAMPAIGN_CATEGORY" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="1b41b273-e46c-45b6-994b-98659da8b30e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.68749625 : 29.4535139973958); (19.68749625 : 45.2400244726563); (19.8229166666667 : 45.2400244726563 : JumpStart); (20.0833333333333 : 45.2400244726563 : JumpEnd); (20.25 : 45.2400244726563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CAMPAIGN_COUNTRY" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="24ff3808-9906-417c-8193-0832e0ca861a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.375 : 28.8574044716149); (21.3125005 : 28.8574044716149); (21.3125005 : 28.261293945834)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CAMPAIGN_KEYWORD" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="296b3107-0b80-4539-a110-da67da0ecb7c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.90625 : 29.4535139973958); (19.90625 : 48.3337747226563); (19.9166666666667 : 48.3337747226563 : JumpStart); (20.0833333333333 : 48.3337747226563 : JumpEnd); (20.25 : 48.3337747226563)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CAMPAIGN_LANGUAGE" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="3130c57d-68c2-4088-8f31-bf7348e92263" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.9375025 : 29.4535139973958); (19.9375025 : 51.1354484049479); (20.0416666666667 : 51.1354484049479 : JumpStart); (20.2083333333333 : 51.1354484049479 : JumpEnd); (20.25 : 51.1354484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CAMPAIGN_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="e98955f5-293a-45d4-b60b-648a6b2ed9e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.375 : 25.375); (19.375 : 22.5); (22.5217969707506 : 22.5 : JumpStart); (22.6884636374173 : 22.5 : JumpEnd); (22.75 : 22.5); (22.75 : 24.5421028300781); (22.7916666666667 : 24.5421028300781 : JumpStart); (22.9583333333333 : 24.5421028300781 : JumpEnd); (23 : 24.5421028300781)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CHARGE" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="393e4921-344c-43f8-ab67-cd75f93d0d96" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(19.9062525 : 25.375); (19.9062525 : 21.3677230255625); (23 : 21.3677230255625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_CHARGE_AGG" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="440bfd5b-bff9-48ed-9e76-ab8885b88026" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.375 : 29.1867117345054); (23.4687475 : 29.1867117345054); (23.4687475 : 27.9631982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TCS_REQUEST_ADVERTISER" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="e641ec29-0b3f-45ee-8556-c73e85d86427" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(20.375 : 26.09375); (20.5 : 26.09375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_CAMPAIGN/TA_CAMPAIGN_TA_AD" />
+      <nodes>
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+        <classShapeMoniker Id="4015ca16-a6fc-42b3-a33d-16b7c42df299" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(15.75000025 : 21.1747054029256); (15.75000025 : 27.4142569986979); (16.1979191666667 : 27.4142569986979 : JumpStart); (16.3645858333333 : 27.4142569986979 : JumpEnd); (18.375 : 27.4142569986979)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TA_ADVERTISER/TA_ADVERTISER_TA_CAMPAIGN" />
+      <nodes>
+        <classShapeMoniker Id="82995f59-3e1b-4e66-81ae-4ebaa16f0f0e" />
+        <classShapeMoniker Id="08db15e2-fd2d-4c30-93ff-a1f9e3f16416" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="b53a5e7a-b9f3-4b7c-a217-b50576c1b903" absoluteBounds="7.125, 64.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/T_COUNTRY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="50e6873b-0da7-447a-8ddb-e37344e61d69" absoluteBounds="7.14, 64.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.6875 : 64.125); (7.6875 : 61.7708968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_COUNTRY/T_COUNTRY_TP_WEBSITE_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="b53a5e7a-b9f3-4b7c-a217-b50576c1b903" />
+        <classShapeMoniker Id="aa21945c-69df-4d3c-bed0-387613caa037" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.53125 : 64.125); (8.53125 : 44.53125); (8.78987708454399 : 44.53125 : JumpStart); (8.95654375121066 : 44.53125 : JumpEnd); (9.91666666666667 : 44.53125 : JumpStart); (10.2090064102564 : 44.53125 : JumpEnd); (11.0416666666667 : 44.53125 : JumpStart); (11.3333333333333 : 44.53125 : JumpEnd); (11.4166666666667 : 44.53125 : JumpStart); (11.8645833333333 : 44.53125 : JumpEnd); (19.6041629166667 : 44.53125 : JumpStart); (19.7708295833333 : 44.53125 : JumpEnd); (19.8229166666667 : 44.53125 : JumpStart); (20.0833333333333 : 44.53125 : JumpEnd); (20.25 : 44.53125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_COUNTRY/T_COUNTRY_TA_CAMPAIGN_COUNTRY" />
+      <nodes>
+        <classShapeMoniker Id="b53a5e7a-b9f3-4b7c-a217-b50576c1b903" />
+        <classShapeMoniker Id="24ff3808-9906-417c-8193-0832e0ca861a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(9.125 : 65.0104484049479); (20.0416666666667 : 65.0104484049479 : JumpStart); (20.2083333333333 : 65.0104484049479 : JumpEnd); (20.7187475 : 65.0104484049479); (20.7187475 : 52.0208968098958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_COUNTRY/T_COUNTRY_TA_CAMPAIGN_TARGETING" />
+      <nodes>
+        <classShapeMoniker Id="b53a5e7a-b9f3-4b7c-a217-b50576c1b903" />
+        <classShapeMoniker Id="e98955f5-293a-45d4-b60b-648a6b2ed9e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.859375 : 64.125); (8.859375 : 55.4655773636724); (8.91666666666667 : 55.4655773636724 : JumpStart); (9.17708333333333 : 55.4655773636724 : JumpEnd); (9.25 : 55.4655773636724)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/T_COUNTRY/T_COUNTRY_TP_WEBSITE_COUNTRY" />
+      <nodes>
+        <classShapeMoniker Id="b53a5e7a-b9f3-4b7c-a217-b50576c1b903" />
+        <classShapeMoniker Id="c9198db5-eec1-461a-b98f-9eab6f057a37" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" absoluteBounds="6.625, 39.5, 2, 4.8477197265625">
+      <DataClassMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d9a0625f-94df-49dc-b6ca-2919dad6bd25" absoluteBounds="6.64, 39.96, 1.9700000000000002, 4.2877197265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 44.3477197265625); (9 : 44.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TCS_REQUEST_DEVELOPER" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="f64f8665-59d1-45bb-a8e3-dff380233480" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 40.1065991210938); (8.74541666666667 : 40.1065991210938 : JumpStart); (8.95833333333333 : 40.1065991210938 : JumpEnd); (9 : 40.1065991210938)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TCS_REQUEST_PUBLISHER" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="2c20f9ef-54b7-4f0d-bd32-3acaeef22903" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 41.34375); (8.74541666666667 : 41.34375 : JumpStart); (9.02083333333333 : 41.34375 : JumpEnd); (10.1666666666667 : 41.34375 : JumpStart); (10.3333333333333 : 41.34375 : JumpEnd); (11.2916666666667 : 41.34375 : JumpStart); (11.4583333333333 : 41.34375 : JumpEnd); (11.6041666666667 : 41.34375 : JumpStart); (11.9583333333333 : 41.34375 : JumpEnd); (12 : 41.34375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TD_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="e5a0a475-70ba-4549-a73e-2e3703bba437" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.625 : 41.9238598632813); (6 : 41.9238598632813); (6 : 42.9217237580128); (6.25 : 42.9217237580128)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TD_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="d90eae96-5723-474a-bb27-ee3146c9acbf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.625 : 42.0244502766927); (8.74541666666667 : 42.0244502766927 : JumpStart); (9.02083333333333 : 42.0244502766927 : JumpEnd); (9.25 : 42.0244502766927)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TM_PROFIT_AGG" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="d0b2b33f-8b97-4ec6-a1cb-8b413cc48852" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5625 : 39.5); (7.5625 : 37.7339591471354); (8.41666666666667 : 37.7339591471354 : JumpStart); (8.58333333333333 : 37.7339591471354 : JumpEnd); (8.66666666666667 : 37.7339591471354 : JumpStart); (8.83333333333333 : 37.7339591471354 : JumpEnd); (8.91666666666667 : 37.7339591471354 : JumpStart); (9.08333333333333 : 37.7339591471354 : JumpEnd); (10.5416661666667 : 37.7339591471354 : JumpStart); (10.7083328333333 : 37.7339591471354 : JumpEnd); (11.2916666666667 : 37.7339591471354 : JumpStart); (11.5833333333333 : 37.7339591471354 : JumpEnd); (11.6979166666667 : 37.7339591471354 : JumpStart); (11.9583333333333 : 37.7339591471354 : JumpEnd); (12 : 37.7339591471354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TP_EARNING" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="77f45369-843e-4e3c-ac40-c64af7d583cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5781255 : 44.3477197265625); (7.5781255 : 44.5664697265625); (8.33854166666667 : 44.5664697265625 : JumpStart); (8.50520833333333 : 44.5664697265625 : JumpEnd); (8.8125 : 44.5664697265625); (8.8125 : 44.390625); (8.85416666666667 : 44.390625 : JumpStart); (9.02083333333333 : 44.390625 : JumpEnd); (9.91666666666667 : 44.390625 : JumpStart); (10.0833333333333 : 44.390625 : JumpEnd); (10.6670032051282 : 44.390625 : JumpStart); (10.8336698717949 : 44.390625 : JumpEnd); (11.0416666666667 : 44.390625 : JumpStart); (11.2083333333333 : 44.390625 : JumpEnd); (11.4166666666667 : 44.390625 : JumpStart); (11.5833333333333 : 44.390625 : JumpEnd); (11.625 : 44.390625); (11.625 : 45.132622918595); (11.6979166666667 : 45.132622918595 : JumpStart); (11.8645833333333 : 45.132622918595 : JumpEnd); (12 : 45.132622918595)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_CAPTCHA/TP_CAPTCHA_TP_EARNING_AGG" />
+      <nodes>
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+        <classShapeMoniker Id="5451d55a-928f-4336-9dc8-404e0b1e53aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.0820329375 : 30.8573225904256); (2.0820329375 : 40.46875); (2.19791916666667 : 40.46875 : JumpStart); (2.36458583333333 : 40.46875 : JumpEnd); (2.46354491666667 : 40.46875 : JumpStart); (2.63021158333333 : 40.46875 : JumpEnd); (6.625 : 40.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_PUBLISHER/TP_PUBLISHER_TP_CAPTCHA" />
+      <nodes>
+        <classShapeMoniker Id="9633a555-c56a-49e2-8dd7-999275d2487f" />
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 59.571715597693); (5.51702192863159 : 59.571715597693 : JumpStart); (5.68368859529825 : 59.571715597693 : JumpEnd); (5.73974349267493 : 59.571715597693 : JumpStart); (6.02083333333333 : 59.571715597693 : JumpEnd); (8.421875 : 59.571715597693); (8.421875 : 44.3477197265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AdsCaptchaDataContext/TP_WEBSITE/TP_WEBSITE_TP_CAPTCHA" />
+      <nodes>
+        <classShapeMoniker Id="1157aa6e-534f-45f8-9a40-b1f2e02ef5cb" />
+        <classShapeMoniker Id="176aecd8-41ed-42ea-aa0a-f7b6603b151a" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

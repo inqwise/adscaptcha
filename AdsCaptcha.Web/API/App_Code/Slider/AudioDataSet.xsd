@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="AudioDataSet" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="AudioDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="AudioDataSet" msprop:Generator_DataSetName="AudioDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Audio" msprop:Generator_UserTableName="Audio" msprop:Generator_RowDeletedName="AudioRowDeleted" msprop:Generator_TableClassName="AudioDataTable" msprop:Generator_RowChangedName="AudioRowChanged" msprop:Generator_RowClassName="AudioRow" msprop:Generator_RowChangingName="AudioRowChanging" msprop:Generator_RowEvArgName="AudioRowChangeEvent" msprop:Generator_RowEvHandlerName="AudioRowChangeEventHandler" msprop:Generator_TablePropName="Audio" msprop:Generator_TableVarName="tableAudio" msprop:Generator_RowDeletingName="AudioRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_UserColumnName="Name" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInTable="NameColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Variant" msprop:Generator_UserTableName="Variant" msprop:Generator_RowDeletedName="VariantRowDeleted" msprop:Generator_TableClassName="VariantDataTable" msprop:Generator_RowChangedName="VariantRowChanged" msprop:Generator_RowClassName="VariantRow" msprop:Generator_RowChangingName="VariantRowChanging" msprop:Generator_RowEvArgName="VariantRowChangeEvent" msprop:Generator_RowEvHandlerName="VariantRowChangeEventHandler" msprop:Generator_TablePropName="Variant" msprop:Generator_TableVarName="tableVariant" msprop:Generator_RowDeletingName="VariantRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInTable="TypeColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="File" msprop:Generator_UserColumnName="File" msprop:Generator_ColumnPropNameInRow="File" msprop:Generator_ColumnVarNameInTable="columnFile" msprop:Generator_ColumnPropNameInTable="FileColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Text" msprop:Generator_UserColumnName="Text" msprop:Generator_ColumnPropNameInRow="Text" msprop:Generator_ColumnVarNameInTable="columnText" msprop:Generator_ColumnPropNameInTable="TextColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInTable="IDColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Audio" />
+      <xs:field xpath="mstns:Type" />
+    </xs:unique>
+    <xs:keyref name="FK_Audio_Variant" refer="Constraint1" msdata:ConstraintOnly="true">
+      <xs:selector xpath=".//mstns:Variant" />
+      <xs:field xpath="mstns:Type" />
+    </xs:keyref>
+  </xs:element>
+</xs:schema>

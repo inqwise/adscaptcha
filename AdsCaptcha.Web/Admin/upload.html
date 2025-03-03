@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style type="text/css">
+		html, body {
+			font-family: arial;
+			font-size: 12px;
+		}
+		body {
+			margin: 0; padding: 0;
+		}
+		.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; Xborder-radius: 3px; }
+		.bar { background-color: #57a610; width:0%; height:16px; Xborder-radius: 3px; }
+		.percent { position:absolute; display:inline-block; top:3px; left:48%; }
+		</style>
+	
+	</head>
+    <body>
+		
+		<form action="handlers/import.ashx" method="post" enctype="multipart/form-data">
+       		<input type="file" name="myfile" id="myfile"><br/>
+       		<select id="imageTypeId" name="imageTypeId">
+       			<option value="1">Random</option>
+       			<option value="5">Demo</option>
+       		</select><br/>
+       		<input type="submit" value="Upload File to Server">
+   		</form>
+   
+   		<div class="progress">
+       		<div class="bar"></div >
+       		<div class="percent">0%</div>
+   		</div>
+   
+   		<div id="status"></div>
+   		
+   		
+   		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">window.jQuery || document.write("<script type=\"text/javascript\" src=\"scripts/jquery/1.8.2/jquery.min.js\"><\/script>")</script>
+		<script type="text/javascript" src="scripts/utils/utils.js"></script>
+		<!--[if lt IE 8]>
+		<script type="text/javascript" src="scripts/utils/json2.js"></script>
+		<![endif]-->
+   		<script type="text/javascript" src="scripts/form/jquery.form.js"></script>
+		<script type="text/javascript">
+		(function() {
+		    
+			var bar = $('.bar');
+			var percent = $('.percent');
+			var status = $('#status');
+			   
+			 // #form_upload
+			$('form').ajaxForm({
+			    beforeSend: function() {
+			        //status.empty(); //->> <br>uploaded: CV-english.pdf (224388 bytes)
+			        var percentVal = '0%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			    },
+			    uploadProgress: function(event, position, total, percentComplete) {
+			        var percentVal = percentComplete + '%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			    },
+			    success: function() {
+			        var percentVal = '100%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			    },
+				complete: function(xhr) {
+				
+					//alert("COMPLETE" + xhr.responseText);
+					var data = JSON.parse(xhr.responseText);
+					if(data.error != undefined) {
+						// error
+					} else {
+						if(data.imageId != undefined) {
+							
+							/*
+							$('#myfile').val("");
+							bar.width(0);
+							percent.text('0%');
+							*/
+							
+							window.top.setImage(data);
+						}
+					}
+					
+				}
+			}); 
+		
+		})();       
+		</script>
+		
+	</body>
+</html>

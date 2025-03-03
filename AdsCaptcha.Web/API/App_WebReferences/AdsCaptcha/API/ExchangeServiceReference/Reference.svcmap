@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="48cbc69f-bf2f-4b9b-a74b-c1fd7acd755c" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://adexc.Inqwise.com/ExchangeService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ExchangeService.xsd" MetadataType="Schema" ID="b86877ee-9a3f-4da6-bdf6-d24c053ba433" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ExchangeService1.xsd" MetadataType="Schema" ID="f84e44ba-ec8b-4907-afcb-0a629ad8ad66" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ExchangeService2.xsd" MetadataType="Schema" ID="a525ae2b-6915-4e26-92da-a20b3000726c" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ExchangeService3.xsd" MetadataType="Schema" ID="bbcce299-a808-4df0-bde8-0954f42660f5" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ExchangeService.disco" MetadataType="Disco" ID="9e3856e1-08f5-4317-8728-07aa7cf691eb" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?disco" />
+    <MetadataFile FileName="ExchangeService.wsdl" MetadataType="Wsdl" ID="4717f642-b165-4923-8641-fb7244d26224" SourceId="1" SourceUrl="http://adexc.Inqwise.com/ExchangeService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

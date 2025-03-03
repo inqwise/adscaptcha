@@ -1,0 +1,1 @@
+﻿<%@ Application CodeBehind="App_Code/Global.asax.cs" Inherits="Inqwise.AdsCaptcha.API.Global" Language="C#" %>

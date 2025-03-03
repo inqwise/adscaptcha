@@ -1,0 +1,11 @@
+﻿<params>
+	<get_ad_url>http://api.dev.com/FlashService.asmx/GetAd</get_ad_url>
+	<validate_ad_url>http://api.dev.com/FlashService.asmx/ValidateAd</validate_ad_url>
+	<js_callback_function>adscaptchaCallback</js_callback_function>
+	<default_pic>fox.jpg</default_pic>
+	<threshold_slide>10</threshold_slide> <!-- 1=pixel -->
+	<threshold_rotate>4</threshold_rotate> <!-- 1=2.5 degrees -->
+	<num_of_attempts>3</num_of_attempts>
+	<play_time>0</play_time>
+	<logo_link_url>http://dev.com</logo_link_url>
+</params>

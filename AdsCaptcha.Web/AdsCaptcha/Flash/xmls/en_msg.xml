@@ -1,0 +1,9 @@
+<dictionary>
+	<start_msg>Slide to fit!</start_msg>
+	<win_msg>Great, you did it.</win_msg>
+	<lose_msg>At least you tried.</lose_msg>
+	<try_msg1>Try again,</try_msg1>
+	<try_msg2>attempts to go.</try_msg2>
+	<time_out_msg>gamed timed out.</time_out_msg>
+	<button_txt>Check</button_txt>	
+</dictionary>	 

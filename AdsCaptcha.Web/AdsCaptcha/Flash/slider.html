@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>AdsCaptcha Flash Ad Games</title>
+
+    <script type="text/javascript">
+        function adscaptchaCallback(valid) {
+            alert('valid = ' + valid);
+        }
+    </script>
+
+	<script type="text/javascript" src="swfobject.js"></script>
+    <script type="text/javascript">
+    {
+        var flashvars = {};
+        var params = {};
+        var attributes = {};
+
+        params.allowFullScreen = "false";
+
+        flashvars.captchaId = "29";
+        flashvars.gameType = "13004";
+
+        swfobject.embedSWF("AdGame.swf", "AdsCaptchaAdGame", "600", "400", "10.0.0", false, flashvars, params, attributes);
+    }
+    </script>
+</head>
+
+<body>
+    <div id="AdsCaptchaAdGame"></div>
+</body>
+
+</html>

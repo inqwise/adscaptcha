@@ -1,0 +1,40 @@
+﻿* {
+    padding:0;
+    margin:0;
+}
+body {
+    background-color:#efefef;
+    padding:30px;
+    font-family:Arial,Verdana;
+    color:#534741;
+}
+.title {
+    font-size:26px;
+    font-weight:bold;
+}
+.refresh {
+    font-size:10px;
+    font-weight:bold;
+}
+.refresh a {
+    text-decoration:underline;
+    color:#1cbbb4;
+}
+.refresh a:hover {
+    text-decoration:underline;
+    color:#1cbbb4;
+}
+#container {
+    position:relative;
+    width:800px;
+    height:380px;
+    margin:10px 0 10px 0;
+    margin-left:auto;
+    margin-right:auto;
+}
+#Game1, #Game2, #Game3 {
+    position:relative;
+    display:block;
+    float:left;
+    margin:20px;
+}

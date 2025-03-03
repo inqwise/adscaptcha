@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="\App_Code\Slider\ExchangeHandler.cs" Class="Inqwise.AdsCaptcha.API.Slider.ExchangeHandler" %>

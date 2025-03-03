@@ -1,0 +1,1 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Ad.aspx.cs" Inherits="Inqwise.AdsCaptcha.API.Ad" ValidateRequest="false" %>

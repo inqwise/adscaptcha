@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style type="text/css">
+		@import "/fonts/stylesheet.css";
+		html, body {
+			font-family: arial;
+			font-size: 12px;
+		}
+		body {
+			margin: 0; padding: 0;
+		}
+		.progress { position:relative; width:100px; border: 1px solid #ddd; padding: 1px; Xborder-radius: 3px; }
+		.bar { background-color: #57a610; width:0%; height:16px; Xborder-radius: 3px; }
+		.percent { 
+			position: absolute;
+		    text-align: center;
+		    top: 3px;
+		    width: 100%;
+		}
+		.file-wrapper {
+	    	cursor: pointer;
+	    	display: inline-block;
+	    	overflow: hidden;
+	    	position: relative;
+	    }
+	    .file-wrapper .button {
+		    cursor: pointer;
+		    display: inline-block;
+			border: 1px solid #61AE28;
+		    background-color: #9AE461;
+			background-image:-moz-linear-gradient(top, #9AE461, #65C900);
+			background-image:-webkit-gradient(linear, left top, left bottom, from(#9AE461), to(#65C900));
+			background-image:-webkit-linear-gradient(#9AE461, #65C900);
+			background-image:-o-linear-gradient(#9AE461, #65C900);
+			background-image:linear-gradient(top, #9AE461, #65C900);
+			_filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9AE461', endColorstr='#65C900');
+			border: 1px solid #61AE28;
+			-webkit-border-radius:5px;
+			-moz-border-radius:5px;
+			border-radius:5px;
+		    color: #FFFFFF;
+		    Xdisplay: block;
+		    float: left;
+		    font-family: 'oswaldregular';
+		    height: 22px;
+		    line-height: 22px;
+		    overflow: hidden;
+		    text-align: center;
+		    width: 100px;
+		    font-size:14px;
+		    text-shadow: 0 1px 0 #61AE28;
+	    }
+	    .file-wrapper input {
+		    cursor: pointer;
+		    height: 100%;
+		    position: absolute;
+		    right: 0;
+		    top: 0;
+		     filter: alpha(opacity=1);
+			-moz-opacity: 0.01;
+			opacity: 0.01;
+	    }
+		</style>
+	
+	</head>
+    <body>
+		
+		<form id="form" name="form" action="/handlers/import.ashx" method="post" enctype="multipart/form-data">
+			<input type="hidden" name="imageId" id="imageId">
+			<span class="file-wrapper">
+       			<input type="file" name="myfile" id="myfile" autocomplete="off">
+       			<span class="button">Upload Image</span>
+       		</span>
+       		<!-- <input type="submit" value="Upload File to Server"> -->
+   		</form>
+   
+   		<div class="progress">
+       		<div class="bar"></div >
+       		<div class="percent">0%</div>
+   		</div>
+   
+   		<div id="status"></div>
+   		
+   		
+   		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript">window.jQuery || document.write("<script type=\"text/javascript\" src=\"/scripts/jquery/1.8.2/jquery.min.js\"><\/script>")</script>
+		<script type="text/javascript" src="/scripts/utils/utils.js"></script>
+		<!--[if lt IE 8]>
+		<script type="text/javascript" src="/scripts/utils/json2.js"></script>
+		<![endif]-->
+   		<script type="text/javascript" src="/scripts/form/jquery.form.js"></script>
+		<script type="text/javascript">
+		(function() {
+			
+		    
+			var bar = $('.bar');
+			var percent = $('.percent');
+			var status = $('#status');
+			
+			
+			var options = {
+				beforeSend: function() {
+			        var percentVal = '0%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			    },
+			    uploadProgress: function(event, position, total, percentComplete) {
+			        var percentVal = percentComplete + '%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			    },
+			    success: function() {
+			        var percentVal = '100%';
+			        bar.width(percentVal)
+			        percent.html(percentVal);
+			        
+			        $('#myfile').val("");
+			    },
+			    error: function() {
+			    	$('#myfile').val("");
+			    },
+				complete: function(xhr) {
+					
+					var data = JSON.parse(xhr.responseText);
+					if(data.error != undefined) {
+						window.top.setImageError(data);
+					} else {
+						if(data.imageId != undefined) {
+							$('#imageId').val(data.imageId);
+							window.top.setImage(data);
+						}
+					}
+					
+				}
+			};
+			
+			$('.file-wrapper input[type=file]').bind('change focus click', function() {
+				var $this = $(this),
+				$val = $this.val(),
+				valArray = $val.split('\\'),
+				newVal = valArray[valArray.length-1];
+				//$button = $this.siblings('.button'),
+				//$fakeFile = $this.siblings('.file-holder');
+				if(newVal !== '') {
+					$('form').ajaxSubmit(options);
+				}
+			});
+			
+		
+		})();       
+		</script>
+		
+	</body>
+</html>

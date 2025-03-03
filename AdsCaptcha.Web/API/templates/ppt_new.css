@@ -1,0 +1,80 @@
+﻿#adscaptcha_widget{
+    position:relative;
+    direction:P_DIRECTION;
+    background-color:P_WIDGET_BACKGROUND_COLOR!important;
+    border:solid P_WIDGET_BORDER_WIDTHpx P_WIDGET_BORDER_COLOR!important;
+    padding:5px!important;
+}
+#adscaptcha_table{
+    width:100%!important;
+    border-collapse:separate!important;
+    border-spacing:0!important;
+}
+#adscaptcha_widget #adscaptcha_r1{
+    margin:5px 0 0 0!important;
+}
+#adscaptcha_widget #adscaptcha_r1 td{
+    padding-bottom:3px!important;
+}
+#adscaptcha_widget #adscaptcha_ad_holder{
+    border:P_AD_BORDER_WIDTHpx solid P_AD_BORDER_COLOR!important;
+    padding:0!important;
+    margin:0 0 5px 0!important;
+}
+#adscaptcha_widget #adscaptcha_ad_image{
+    padding:0!important;
+}
+#adscaptcha_widget #adscaptcha_challenge_holder{
+    width:100%!important;
+    height:45px!important;
+    vertical-align:middle!important;
+    margin:5px 0 5px 0!important;
+}
+#adscaptcha_widget #adscaptcha_instructions_holder,
+#adscaptcha_widget #adscaptcha_input_holder{
+    width:100%!important;
+    vertical-align:bottom!important;
+    text-align:center!important;
+}
+#adscaptcha_widget #adscaptcha_instructions{
+    width:100%!important;
+    font-family:Arial!important;
+    font-size:12px!important;
+    font-weight:normal!important;
+    height:16px!important;
+    line-height:16px!important;
+    color:P_WIDGET_TEXT_COLOR!important;
+    direction:P_DIRECTION;
+    text-align:P_ALIGN;
+}
+#adscaptcha_widget #adscaptcha_response_field{
+    direction:P_DIRECTION;
+    text-align:P_ALIGN;
+    border:solid P_RESPONSE_BORDER_WIDTHpx P_RESPONSE_BORDER_COLOR!important;
+    background-color:P_RESPONSE_BACKGROUND_COLOR!important;
+    background-image:none!important;
+    height:22px!important;
+    line-height:22px!important;
+    vertical-align:middle;
+    padding:0 3px 0 3px!important;
+    font-family:Arial;
+    font-size:12px;
+    color:P_RESPONSE_TEXT_COLOR!important;
+    letter-spacing:0.5px;
+    -moz-border-radius:0!important;
+    -webkit-border-radius:0!important;
+}
+#adscaptcha_widget #adscaptcha_buttons_holder{
+    width:50%!important;
+    vertical-align:bottom!important;
+    text-align:P_IALIGN!important;
+}
+#adscaptcha_widget #adscaptcha_about_holder{
+    width:50%!important;
+    height:9px!important;
+    vertical-align:bottom!important;
+    text-align:P_ALIGN!important;
+}
+#adscaptcha_widget #adscaptcha_about_image{
+    height:5px;
+}

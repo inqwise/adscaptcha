@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" CodeBehind="../App_code/Handlers/WebsitesHandler.cs" Class="Inqwise.AdsCaptcha.Handlers.WebsitesHandler"%>

@@ -1,0 +1,50 @@
+﻿#adscaptcha_widget div,
+#adscaptcha_widget input,
+#adscaptcha_widget span,
+#adscaptcha_widget object,
+#adscaptcha_widget iframe,
+#adscaptcha_widget p,
+#adscaptcha_widget a,
+#adscaptcha_widget a:hover,
+#adscaptcha_widget font,
+#adscaptcha_widget img,
+#adscaptcha_widget form,
+#adscaptcha_widget label,
+#adscaptcha_widget table,
+#adscaptcha_widget tbody,
+#adscaptcha_widget tfoot,
+#adscaptcha_widget thead,
+#adscaptcha_widget tr,
+#adscaptcha_widget th,
+#adscaptcha_widget td{
+    margin:0;
+    padding:0;
+    outline:0;
+    border:0 none!important;
+    font-weight:inherit;
+    font-style:inherit;
+    font-size:100%;
+    font-family:inherit;
+    line-height:1px;
+    vertical-align:baseline;
+}
+#adscaptcha_widget:focus {outline:0;}
+
+#adscaptcha_widget #adscaptcha_challenge_table tr,
+#adscaptcha_widget #adscaptcha_challenge_table td,
+#adscaptcha_widget #adscaptcha_r1 tr,
+#adscaptcha_widget #adscaptcha_r1 td,
+#adscaptcha_widget #adscaptcha_r2 tr,
+#adscaptcha_widget #adscaptcha_r2 td,
+#adscaptcha_widget #adscaptcha_r3 tr,
+#adscaptcha_widget #adscaptcha_r3 td,
+#adscaptcha_widget #adscaptcha_r4 tr,
+#adscaptcha_widget #adscaptcha_r5 tr,
+#adscaptcha_widget #adscaptcha_r4 td,
+#adscaptcha_widget #adscaptcha_r5 td{
+    padding:0px;
+    margin:0px;
+    border-collapse:separate;
+    border:0 none;
+    background-color:Transparent!important;
+}

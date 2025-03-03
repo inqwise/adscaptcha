@@ -1,0 +1,1695 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AdsCaptcha" Class="AdsCaptchaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=127.0.0.1\sql;Initial Catalog=AdsCaptcha;Persist Security Info=True;User ID=sa" SettingsObjectName="AdsCaptcha.DAL.Properties.Settings" SettingsPropertyName="AdsCaptchaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.T_AD_DIMENSIONS" Member="T_AD_DIMENSIONs">
+    <Type Name="T_AD_DIMENSION">
+      <Column Name="Dimension_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Image" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Video" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Slider" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE_TARGETING" Member="TP_WEBSITE_TARGETINGs">
+    <Type Name="TP_WEBSITE_TARGETING">
+      <Column Name="[Key]" Member="Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_CATEGORY_TP_WEBSITE_TARGETING" Member="T_CATEGORY" ThisKey="Category_Id" OtherKey="Category_Id" Type="T_CATEGORY" IsForeignKey="true" />
+      <Association Name="T_LANGUAGE_TP_WEBSITE_TARGETING" Member="T_LANGUAGE" ThisKey="Language_Id" OtherKey="Language_Id" Type="T_LANGUAGE" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_TARGETING" Member="TP_WEBSITE" ThisKey="Website_Id" OtherKey="Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="T_COUNTRY_TP_WEBSITE_TARGETING" Member="T_COUNTRY" ThisKey="Country_Id" OtherKey="Country_Id" Type="T_COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_CATEGORY" Member="T_CATEGORies">
+    <Type Name="T_CATEGORY">
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Category_Desc" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_CATEGORY_TP_WEBSITE_TARGETING" Member="TP_WEBSITE_TARGETINGs" ThisKey="Category_Id" OtherKey="Category_Id" Type="TP_WEBSITE_TARGETING" />
+      <Association Name="T_CATEGORY_TA_CAMPAIGN_CATEGORY" Member="TA_CAMPAIGN_CATEGORies" ThisKey="Category_Id" OtherKey="Category_Id" Type="TA_CAMPAIGN_CATEGORY" />
+      <Association Name="T_CATEGORY_TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN_TARGETINGs" ThisKey="Category_Id" OtherKey="Category_Id" Type="TA_CAMPAIGN_TARGETING" />
+      <Association Name="T_CATEGORY_TP_WEBSITE_CATEGORY" Member="TP_WEBSITE_CATEGORies" ThisKey="Category_Id" OtherKey="Category_Id" Type="TP_WEBSITE_CATEGORY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_DATE" Member="T_DATEs">
+    <Type Name="T_DATE">
+      <Column Name="Date_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_ERRORS" Member="T_ERRORs">
+    <Type Name="T_ERROR">
+      <Column Name="Error_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Error_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IP_Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Module" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_IP_COUNTRY" Member="T_IP_COUNTRies">
+    <Type Name="T_IP_COUNTRY">
+      <Column Name="ip_start" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ip_cidr" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="country_code" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="country_name" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_LANGUAGE" Member="T_LANGUAGEs">
+    <Type Name="T_LANGUAGE">
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Language_Name" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Language_Prefix" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_LANGUAGE_TP_WEBSITE_TARGETING" Member="TP_WEBSITE_TARGETINGs" ThisKey="Language_Id" OtherKey="Language_Id" Type="TP_WEBSITE_TARGETING" />
+      <Association Name="T_LANGUAGE_TA_CAMPAIGN_LANGUAGE" Member="TA_CAMPAIGN_LANGUAGEs" ThisKey="Language_Id" OtherKey="Language_Id" Type="TA_CAMPAIGN_LANGUAGE" />
+      <Association Name="T_LANGUAGE_TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN_TARGETINGs" ThisKey="Language_Id" OtherKey="Language_Id" Type="TA_CAMPAIGN_TARGETING" />
+      <Association Name="T_LANGUAGE_TP_WEBSITE_LANGUAGE" Member="TP_WEBSITE_LANGUAGEs" ThisKey="Language_Id" OtherKey="Language_Id" Type="TP_WEBSITE_LANGUAGE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_THEME" Member="T_THEMEs">
+    <Type Name="T_THEME">
+      <Column Name="Theme_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Theme_Name" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Folder" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Widget_Background_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Widget_Border_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Widget_Border_Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Widget_Text_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Border_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Border_Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Response_Background_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Response_Border_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Response_Border_Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Response_Text_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Background_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Text_Color" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_ADVERTISER" Member="TA_ADVERTISERs">
+    <Type Name="TA_ADVERTISER">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Min_Billing_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Announcements" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Newsletters" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Billing_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Curr_Balance" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TA_ADVERTISER_BILLING" Member="TA_ADVERTISER_BILLING" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER_BILLING" Cardinality="One" />
+      <Association Name="TA_ADVERTISER_TA_BILLING" Member="TA_BILLINGs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_BILLING" />
+      <Association Name="TA_ADVERTISER_TA_CHARGE" Member="TA_CHARGEs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_CHARGE" />
+      <Association Name="TA_ADVERTISER_TA_CHARGE_AGG" Member="TA_CHARGE_AGGs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_CHARGE_AGG" />
+      <Association Name="TA_ADVERTISER_TA_PAYMENT" Member="TA_PAYMENTs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_PAYMENT" />
+      <Association Name="TA_ADVERTISER_TA_TRANSACTION" Member="TA_TRANSACTIONs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_TRANSACTION" />
+      <Association Name="TA_ADVERTISER_TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST_ADVERTISERs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TCS_REQUEST_ADVERTISER" />
+      <Association Name="TA_ADVERTISER_TA_AD" Member="TA_ADs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_AD" />
+      <Association Name="TA_ADVERTISER_TA_CAMPAIGN" Member="TA_CAMPAIGNs" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_CAMPAIGN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_ADVERTISER_BILLING" Member="TA_ADVERTISER_BILLINGs">
+    <Type Name="TA_ADVERTISER_BILLING">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Card_Verify" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Card_Id" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TA_ADVERTISER_BILLING" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_BILLING" Member="TA_BILLINGs">
+    <Type Name="TA_BILLING">
+      <Column Name="Transaction_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Billing_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Association Name="TA_ADVERTISER_TA_BILLING" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN_CATEGORY" Member="TA_CAMPAIGN_CATEGORies">
+    <Type Name="TA_CAMPAIGN_CATEGORY">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="T_CATEGORY_TA_CAMPAIGN_CATEGORY" Member="T_CATEGORY" ThisKey="Category_Id" OtherKey="Category_Id" Type="T_CATEGORY" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_CATEGORY" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN_COUNTRY" Member="TA_CAMPAIGN_COUNTRies">
+    <Type Name="TA_CAMPAIGN_COUNTRY">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_COUNTRY" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+      <Association Name="T_COUNTRY_TA_CAMPAIGN_COUNTRY" Member="T_COUNTRY" ThisKey="Country_Id" OtherKey="Country_Id" Type="T_COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN_KEYWORD" Member="TA_CAMPAIGN_KEYWORDs">
+    <Type Name="TA_CAMPAIGN_KEYWORD">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Keyword" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_KEYWORD" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN_LANGUAGE" Member="TA_CAMPAIGN_LANGUAGEs">
+    <Type Name="TA_CAMPAIGN_LANGUAGE">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="T_LANGUAGE_TA_CAMPAIGN_LANGUAGE" Member="T_LANGUAGE" ThisKey="Language_Id" OtherKey="Language_Id" Type="T_LANGUAGE" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_LANGUAGE" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN_TARGETINGs">
+    <Type Name="TA_CAMPAIGN_TARGETING">
+      <Column Name="[Key]" Member="Key" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="T_CATEGORY_TA_CAMPAIGN_TARGETING" Member="T_CATEGORY" ThisKey="Category_Id" OtherKey="Category_Id" Type="T_CATEGORY" IsForeignKey="true" />
+      <Association Name="T_LANGUAGE_TA_CAMPAIGN_TARGETING" Member="T_LANGUAGE" ThisKey="Language_Id" OtherKey="Language_Id" Type="T_LANGUAGE" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN" ThisKey="Campaign_Id" OtherKey="Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+      <Association Name="T_COUNTRY_TA_CAMPAIGN_TARGETING" Member="T_COUNTRY" ThisKey="Country_Id" OtherKey="Country_Id" Type="T_COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CHARGE" Member="TA_CHARGEs">
+    <Type Name="TA_CHARGE">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TA_CHARGE" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+      <Association Name="TA_AD_TA_CHARGE" Member="TA_AD" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TA_AD" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_CHARGE" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CHARGE_AGG" Member="TA_CHARGE_AGGs">
+    <Type Name="TA_CHARGE_AGG">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ad_Type" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TA_CHARGE_AGG" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+      <Association Name="TA_AD_TA_CHARGE_AGG" Member="TA_AD" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TA_AD" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_CHARGE_AGG" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_PAYMENT" Member="TA_PAYMENTs">
+    <Type Name="TA_PAYMENT">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Payment_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TA_PAYMENT_TA_PAYMENT_CREDIT_CARD" Member="TA_PAYMENT_CREDIT_CARD" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TA_PAYMENT_CREDIT_CARD" Cardinality="One" />
+      <Association Name="TA_PAYMENT_TA_PAYMENT_PAYPAL" Member="TA_PAYMENT_PAYPAL" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TA_PAYMENT_PAYPAL" Cardinality="One" />
+      <Association Name="TA_ADVERTISER_TA_PAYMENT" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_PAYMENT_CREDIT_CARD" Member="TA_PAYMENT_CREDIT_CARDs">
+    <Type Name="TA_PAYMENT_CREDIT_CARD">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transaction_Code" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Auth_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Card_Digits" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TA_PAYMENT_TA_PAYMENT_CREDIT_CARD" Member="TA_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TA_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_PAYMENT_PAYPAL" Member="TA_PAYMENT_PAYPALs">
+    <Type Name="TA_PAYMENT_PAYPAL">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transaction_Id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TA_PAYMENT_TA_PAYMENT_PAYPAL" Member="TA_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TA_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_TRANSACTION" Member="TA_TRANSACTIONs">
+    <Type Name="TA_TRANSACTION">
+      <Column Name="Transaction_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(11,4)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TA_TRANSACTION" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TC_REQUEST" Member="TC_REQUESTs">
+    <Type Name="TC_REQUEST">
+      <Column Name="Message_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Subject_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sent_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_ERRORS" Member="TCS_ERRORs">
+    <Type Name="TCS_ERROR">
+      <Column Name="Error_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Request_Guid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Function]" Member="Function" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Stack_Trace" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Source" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Error_Type" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST" Member="TCS_REQUESTs">
+    <Type Name="TCS_REQUEST">
+      <Column Name="Request_Guid" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Session_Id" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IP_Address" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Referrer_Url" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Is_Flagged" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Resend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Timed_Out" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Checked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Typed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Success_Rate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Archived" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="User_Answer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Viewed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST_ADVERTISER" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST_ADVERTISER" Cardinality="One" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_CHALLENGE" Member="TCS_REQUEST_CHALLENGE" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST_CHALLENGE" Cardinality="One" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPER" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST_DEVELOPER" Cardinality="One" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST_PUBLISHER" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST_PUBLISHER" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST_ADVERTISERs">
+    <Type Name="TCS_REQUEST_ADVERTISER">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cpt_Bid" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ADVERTISER_TCS_REQUEST_ADVERTISER" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST" IsForeignKey="true" />
+      <Association Name="TA_AD_TCS_REQUEST_ADVERTISER" Member="TA_AD" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TA_AD" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TCS_REQUEST_ADVERTISER" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_AGG" Member="TCS_REQUEST_AGGs">
+    <Type Name="TCS_REQUEST_AGG">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Typed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Correct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Resend" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_CHALLENGE" Member="TCS_REQUEST_CHALLENGEs">
+    <Type Name="TCS_REQUEST_CHALLENGE">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Challenge_Code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Params" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_CHALLENGE" Member="TCS_REQUEST" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_CLICK" Member="TCS_REQUEST_CLICKs">
+    <Type Name="TCS_REQUEST_CLICK">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Link_Url" Type="System.String" DbType="VarChar(512) NOT NULL" CanBeNull="false" />
+      <Column Name="Timestamp" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Session_Id" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Referrer_Url" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="IP_Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Clicked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPERs">
+    <Type Name="TCS_REQUEST_DEVELOPER">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Revenue_Share_Pct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST" IsForeignKey="true" />
+      <Association Name="TD_DEVELOPER_TCS_REQUEST_DEVELOPER" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+      <Association Name="TP_PUBLISHER_TCS_REQUEST_DEVELOPER" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TCS_REQUEST_DEVELOPER" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TCS_REQUEST_DEVELOPER" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST_PUBLISHERs">
+    <Type Name="TCS_REQUEST_PUBLISHER">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Revenue_Share_Pct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TCS_REQUEST_TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST" ThisKey="Request_Id" OtherKey="Request_Id" Type="TCS_REQUEST" IsForeignKey="true" />
+      <Association Name="TP_PUBLISHER_TCS_REQUEST_PUBLISHER" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TCS_REQUEST_PUBLISHER" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TCS_REQUEST_PUBLISHER" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_DEVELOPER" Member="TD_DEVELOPERs">
+    <Type Name="TD_DEVELOPER">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone_2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Revenue_Share_Pct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Announcements" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Get_Email_Newsletters" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TD_DEVELOPER_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPERs" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TCS_REQUEST_DEVELOPER" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_BANK" Member="TD_DEVELOPER_BANK" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER_BANK" Cardinality="One" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_CHECK" Member="TD_DEVELOPER_CHECK" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER_CHECK" Cardinality="One" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_PAYPAL" Member="TD_DEVELOPER_PAYPAL" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER_PAYPAL" Cardinality="One" />
+      <Association Name="TD_DEVELOPER_TD_EARNING" Member="TD_EARNINGs" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_EARNING" />
+      <Association Name="TD_DEVELOPER_TD_EARNING_AGG" Member="TD_EARNING_AGGs" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_EARNING_AGG" />
+      <Association Name="TD_DEVELOPER_TD_PAYMENT" Member="TD_PAYMENTs" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_PAYMENT" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_DEVELOPER_ACTIVATION" Member="TD_DEVELOPER_ACTIVATIONs">
+    <Type Name="TD_DEVELOPER_ACTIVATION">
+      <Column Name="ActivationCode" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone_2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sign_Up_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Announcements" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Get_Email_Newsletters" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Account_Numer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Check_Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PayPal_Payee_Account" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_DEVELOPER_BANK" Member="TD_DEVELOPER_BANKs">
+    <Type Name="TD_DEVELOPER_BANK">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Account_Numer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_BANK" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_DEVELOPER_CHECK" Member="TD_DEVELOPER_CHECKs">
+    <Type Name="TD_DEVELOPER_CHECK">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_CHECK" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_DEVELOPER_PAYPAL" Member="TD_DEVELOPER_PAYPALs">
+    <Type Name="TD_DEVELOPER_PAYPAL">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Account" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TD_DEVELOPER_TD_DEVELOPER_PAYPAL" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_EARNING" Member="TD_EARNINGs">
+    <Type Name="TD_EARNING">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TD_DEVELOPER_TD_EARNING" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+      <Association Name="TP_PUBLISHER_TD_EARNING" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TD_EARNING" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TD_EARNING" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_EARNING_AGG" Member="TD_EARNING_AGGs">
+    <Type Name="TD_EARNING_AGG">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TD_DEVELOPER_TD_EARNING_AGG" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+      <Association Name="TP_PUBLISHER_TD_EARNING_AGG" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TD_EARNING_AGG" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TD_EARNING_AGG" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_PAYMENT" Member="TD_PAYMENTs">
+    <Type Name="TD_PAYMENT">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_BANK" Member="TD_PAYMENT_BANK" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT_BANK" Cardinality="One" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_CHECK" Member="TD_PAYMENT_CHECK" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT_CHECK" Cardinality="One" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_PAYPAL" Member="TD_PAYMENT_PAYPAL" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT_PAYPAL" Cardinality="One" />
+      <Association Name="TD_DEVELOPER_TD_PAYMENT" Member="TD_DEVELOPER" ThisKey="Developer_Id" OtherKey="Developer_Id" Type="TD_DEVELOPER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_PAYMENT_BANK" Member="TD_PAYMENT_BANKs">
+    <Type Name="TD_PAYMENT_BANK">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Auth_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Account_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_BANK" Member="TD_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_PAYMENT_CHECK" Member="TD_PAYMENT_CHECKs">
+    <Type Name="TD_PAYMENT_CHECK">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Auth_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_CHECK" Member="TD_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_PAYMENT_PAYPAL" Member="TD_PAYMENT_PAYPALs">
+    <Type Name="TD_PAYMENT_PAYPAL">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transaction_Id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TD_PAYMENT_TD_PAYMENT_PAYPAL" Member="TD_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TD_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_ADMIN" Member="TM_ADMINs">
+    <Type Name="TM_ADMIN">
+      <Column Name="Admin_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_PROFIT" Member="TM_PROFITs">
+    <Type Name="TM_PROFIT">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Profits" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_PROFIT_AGG" Member="TM_PROFIT_AGGs">
+    <Type Name="TM_PROFIT_AGG">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Profits" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TP_PUBLISHER_TM_PROFIT_AGG" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TM_PROFIT_AGG" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TM_PROFIT_AGG" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_EARNING" Member="TP_EARNINGs">
+    <Type Name="TP_EARNING">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TP_PUBLISHER_TP_EARNING" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_EARNING" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TP_EARNING" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_EARNING_AGG" Member="TP_EARNING_AGGs">
+    <Type Name="TP_EARNING_AGG">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TP_PUBLISHER_TP_EARNING_AGG" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_EARNING_AGG" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="TP_CAPTCHA_TP_EARNING_AGG" Member="TP_CAPTCHA" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_CAPTCHA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PAYMENT" Member="TP_PAYMENTs">
+    <Type Name="TP_PAYMENT">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_BANK" Member="TP_PAYMENT_BANK" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT_BANK" Cardinality="One" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_CHECK" Member="TP_PAYMENT_CHECK" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT_CHECK" Cardinality="One" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_PAYPAL" Member="TP_PAYMENT_PAYPAL" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT_PAYPAL" Cardinality="One" />
+      <Association Name="TP_PUBLISHER_TP_PAYMENT" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PAYMENT_BANK" Member="TP_PAYMENT_BANKs">
+    <Type Name="TP_PAYMENT_BANK">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Auth_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Account_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_BANK" Member="TP_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PAYMENT_CHECK" Member="TP_PAYMENT_CHECKs">
+    <Type Name="TP_PAYMENT_CHECK">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Number" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Auth_Number" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_CHECK" Member="TP_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PAYMENT_PAYPAL" Member="TP_PAYMENT_PAYPALs">
+    <Type Name="TP_PAYMENT_PAYPAL">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Transaction_Id" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Account" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Additional_Data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Association Name="TP_PAYMENT_TP_PAYMENT_PAYPAL" Member="TP_PAYMENT" ThisKey="Payment_Id" OtherKey="Payment_Id" Type="TP_PAYMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PUBLISHER" Member="TP_PUBLISHERs">
+    <Type Name="TP_PUBLISHER">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Revenue_Share_Pct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Announcements" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Get_Email_Newsletters" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone_2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Is_Signed_Up" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Branded" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TP_PUBLISHER_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPERs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TCS_REQUEST_DEVELOPER" />
+      <Association Name="TP_PUBLISHER_TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST_PUBLISHERs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TCS_REQUEST_PUBLISHER" />
+      <Association Name="TP_PUBLISHER_TD_EARNING" Member="TD_EARNINGs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TD_EARNING" />
+      <Association Name="TP_PUBLISHER_TD_EARNING_AGG" Member="TD_EARNING_AGGs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TD_EARNING_AGG" />
+      <Association Name="TP_PUBLISHER_TM_PROFIT_AGG" Member="TM_PROFIT_AGGs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TM_PROFIT_AGG" />
+      <Association Name="TP_PUBLISHER_TP_EARNING" Member="TP_EARNINGs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_EARNING" />
+      <Association Name="TP_PUBLISHER_TP_EARNING_AGG" Member="TP_EARNING_AGGs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_EARNING_AGG" />
+      <Association Name="TP_PUBLISHER_TP_PAYMENT" Member="TP_PAYMENTs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PAYMENT" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_BANK" Member="TP_PUBLISHER_BANK" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER_BANK" Cardinality="One" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_CHECK" Member="TP_PUBLISHER_CHECK" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER_CHECK" Cardinality="One" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_PAYPAL" Member="TP_PUBLISHER_PAYPAL" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER_PAYPAL" Cardinality="One" />
+      <Association Name="TP_PUBLISHER_TP_WEBSITE" Member="TP_WEBSITEs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_WEBSITE" />
+      <Association Name="TP_PUBLISHER_TP_CAPTCHA" Member="TP_CAPTCHAs" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_CAPTCHA" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PUBLISHER_ACTIVATION" Member="TP_PUBLISHER_ACTIVATIONs">
+    <Type Name="TP_PUBLISHER_ACTIVATION">
+      <Column Name="ActivationCode" Type="System.String" DbType="VarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="true" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sign_Up_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Get_Email_Announcements" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Get_Email_Newsletters" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="true" />
+      <Column Name="Company_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone_2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Account_Numer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bank_Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Check_Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Check_Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="PayPal_Payee_Account" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PUBLISHER_BANK" Member="TP_PUBLISHER_BANKs">
+    <Type Name="TP_PUBLISHER_BANK">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Bank_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Holder_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Account_Numer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_BANK" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PUBLISHER_CHECK" Member="TP_PUBLISHER_CHECKs">
+    <Type Name="TP_PUBLISHER_CHECK">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Recipient_Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Zip_Code" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_CHECK" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_PUBLISHER_PAYPAL" Member="TP_PUBLISHER_PAYPALs">
+    <Type Name="TP_PUBLISHER_PAYPAL">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Payee_Account" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="TP_PUBLISHER_TP_PUBLISHER_PAYPAL" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_RANDOM_IMAGE" Member="TP_RANDOM_IMAGEs">
+    <Type Name="TP_RANDOM_IMAGE">
+      <Column Name="Image_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE" Member="TP_WEBSITEs">
+    <Type Name="TP_WEBSITE">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Language" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Keyword" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Public_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Private_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Bonus_Limit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Bonus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Total_Revenue" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_TARGETING" Member="TP_WEBSITE_TARGETINGs" ThisKey="Website_Id" OtherKey="Website_Id" Type="TP_WEBSITE_TARGETING" />
+      <Association Name="TP_WEBSITE_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPERs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TCS_REQUEST_DEVELOPER" />
+      <Association Name="TP_WEBSITE_TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST_PUBLISHERs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TCS_REQUEST_PUBLISHER" />
+      <Association Name="TP_WEBSITE_TD_EARNING" Member="TD_EARNINGs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TD_EARNING" />
+      <Association Name="TP_WEBSITE_TD_EARNING_AGG" Member="TD_EARNING_AGGs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TD_EARNING_AGG" />
+      <Association Name="TP_WEBSITE_TM_PROFIT_AGG" Member="TM_PROFIT_AGGs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TM_PROFIT_AGG" />
+      <Association Name="TP_WEBSITE_TP_EARNING" Member="TP_EARNINGs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_EARNING" />
+      <Association Name="TP_WEBSITE_TP_EARNING_AGG" Member="TP_EARNING_AGGs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_EARNING_AGG" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_CATEGORY" Member="TP_WEBSITE_CATEGORies" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE_CATEGORY" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_COUNTRY" Member="TP_WEBSITE_COUNTRies" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE_COUNTRY" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_KEYWORD" Member="TP_WEBSITE_KEYWORDs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE_KEYWORD" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_LANGUAGE" Member="TP_WEBSITE_LANGUAGEs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE_LANGUAGE" />
+      <Association Name="TP_WEBSITE_TP_CAPTCHA" Member="TP_CAPTCHAs" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_CAPTCHA" />
+      <Association Name="TP_PUBLISHER_TP_WEBSITE" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE_CATEGORY" Member="TP_WEBSITE_CATEGORies">
+    <Type Name="TP_WEBSITE_CATEGORY">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Category_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="T_CATEGORY_TP_WEBSITE_CATEGORY" Member="T_CATEGORY" ThisKey="Category_Id" OtherKey="Category_Id" Type="T_CATEGORY" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_CATEGORY" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE_COUNTRY" Member="TP_WEBSITE_COUNTRies">
+    <Type Name="TP_WEBSITE_COUNTRY">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_COUNTRY" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+      <Association Name="T_COUNTRY_TP_WEBSITE_COUNTRY" Member="T_COUNTRY" ThisKey="Country_Id" OtherKey="Country_Id" Type="T_COUNTRY" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE_KEYWORD" Member="TP_WEBSITE_KEYWORDs">
+    <Type Name="TP_WEBSITE_KEYWORD">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Keyword" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_KEYWORD" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_WEBSITE_LANGUAGE" Member="TP_WEBSITE_LANGUAGEs">
+    <Type Name="TP_WEBSITE_LANGUAGE">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Language_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="T_LANGUAGE_TP_WEBSITE_LANGUAGE" Member="T_LANGUAGE" ThisKey="Language_Id" OtherKey="Language_Id" Type="T_LANGUAGE" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_WEBSITE_LANGUAGE" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_DECODE" Member="T_DECODEs">
+    <Type Name="T_DECODE">
+      <Column Name="Table_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Item_Desc" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Deleted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sort" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TCS_STATS" Member="TCS_STATs">
+    <Type Name="TCS_STAT">
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Correct" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Clickable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Views" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Type_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ad_Type_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Publisher_Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Developer_Earnings" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Advertiser_Charges" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Profits" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_REPORTS_PUBLISHER_REPORTMAIN" Member="T_REPORTS_PUBLISHER_REPORTMAINs">
+    <Type Name="T_REPORTS_PUBLISHER_REPORTMAIN">
+      <Column Name="PublisherId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WebsiteId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CaptchaId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReportDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Clicked" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fitted" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Earning" Type="System.Single" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="AverageSuccessRate" Type="System.Single" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Typed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="" Member="T_REPORTS_ADVERTISER_REPORTMAINs">
+    <Type Name="T_REPORTS_ADVERTISER_REPORTMAIN" />
+  </Table>
+  <Table Name="dbo.TP_CAPTCHA_HOUSEAD" Member="TP_CAPTCHA_HOUSEADs">
+    <Type Name="TP_CAPTCHA_HOUSEAD">
+      <Column Name="HouseAd_Id" Type="System.Int32" DbType="Int NOT NULL" IsReadOnly="true" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DeformedImageID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ClickUrl" Type="System.String" DbType="NVarChar(500)" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="InsertDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IsDeleted" Type="System.Boolean" DbType="Bit" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_AD" Member="TA_ADs">
+    <Type Name="TA_AD">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ad_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Width" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Height" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ad_Slogan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ad_Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ad_Video" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ad_Url" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="Max_Cpt" Type="System.Decimal" DbType="Decimal(11,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Rtl" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Ad_Like_Url" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="TA_AD_TA_CHARGE" Member="TA_CHARGEs" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TA_CHARGE" />
+      <Association Name="TA_AD_TA_CHARGE_AGG" Member="TA_CHARGE_AGGs" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TA_CHARGE_AGG" />
+      <Association Name="TA_AD_TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST_ADVERTISERs" ThisKey="Advertiser_Id,Campaign_Id,Ad_Id" OtherKey="Advertiser_Id,Campaign_Id,Ad_Id" Type="TCS_REQUEST_ADVERTISER" />
+      <Association Name="TA_ADVERTISER_TA_AD" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+      <Association Name="TA_CAMPAIGN_TA_AD" Member="TA_CAMPAIGN" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_CAMPAIGN" Member="TA_CAMPAIGNs">
+    <Type Name="TA_CAMPAIGN">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Campaign_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Language" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Country" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Category" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Target_By_Keyword" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Daily_Budget" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Schedule_Limit" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Schedule_Start_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Schedule_End_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Used_Budget" Type="System.Decimal" DbType="Decimal(13,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Bonus" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CampaignPaymentType" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_CATEGORY" Member="TA_CAMPAIGN_CATEGORies" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN_CATEGORY" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_COUNTRY" Member="TA_CAMPAIGN_COUNTRies" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN_COUNTRY" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_KEYWORD" Member="TA_CAMPAIGN_KEYWORDs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN_KEYWORD" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_LANGUAGE" Member="TA_CAMPAIGN_LANGUAGEs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CAMPAIGN_LANGUAGE" />
+      <Association Name="TA_CAMPAIGN_TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN_TARGETINGs" ThisKey="Campaign_Id" OtherKey="Campaign_Id" Type="TA_CAMPAIGN_TARGETING" />
+      <Association Name="TA_CAMPAIGN_TA_CHARGE" Member="TA_CHARGEs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CHARGE" />
+      <Association Name="TA_CAMPAIGN_TA_CHARGE_AGG" Member="TA_CHARGE_AGGs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_CHARGE_AGG" />
+      <Association Name="TA_CAMPAIGN_TCS_REQUEST_ADVERTISER" Member="TCS_REQUEST_ADVERTISERs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TCS_REQUEST_ADVERTISER" />
+      <Association Name="TA_CAMPAIGN_TA_AD" Member="TA_ADs" ThisKey="Advertiser_Id,Campaign_Id" OtherKey="Advertiser_Id,Campaign_Id" Type="TA_AD" />
+      <Association Name="TA_ADVERTISER_TA_CAMPAIGN" Member="TA_ADVERTISER" ThisKey="Advertiser_Id" OtherKey="Advertiser_Id" Type="TA_ADVERTISER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.T_COUNTRY" Member="T_COUNTRies">
+    <Type Name="T_COUNTRY">
+      <Column Name="Country_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Country_Prefix" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="Country_Name" Type="System.String" DbType="VarChar(65) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Accessible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="T_COUNTRY_TP_WEBSITE_TARGETING" Member="TP_WEBSITE_TARGETINGs" ThisKey="Country_Id" OtherKey="Country_Id" Type="TP_WEBSITE_TARGETING" />
+      <Association Name="T_COUNTRY_TA_CAMPAIGN_COUNTRY" Member="TA_CAMPAIGN_COUNTRies" ThisKey="Country_Id" OtherKey="Country_Id" Type="TA_CAMPAIGN_COUNTRY" />
+      <Association Name="T_COUNTRY_TA_CAMPAIGN_TARGETING" Member="TA_CAMPAIGN_TARGETINGs" ThisKey="Country_Id" OtherKey="Country_Id" Type="TA_CAMPAIGN_TARGETING" />
+      <Association Name="T_COUNTRY_TP_WEBSITE_COUNTRY" Member="TP_WEBSITE_COUNTRies" ThisKey="Country_Id" OtherKey="Country_Id" Type="TP_WEBSITE_COUNTRY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TP_CAPTCHA" Member="TP_CAPTCHAs">
+    <Type Name="TP_CAPTCHA">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Captcha_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Width" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Last_Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Video" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Image" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Slogan" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Click" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Theme_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Popup" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Allow_Image_Click" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SourceTypeId" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="IsCommercial" Type="System.Boolean" DbType="Bit" IsDbGenerated="true" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TP_CAPTCHA_TCS_REQUEST_DEVELOPER" Member="TCS_REQUEST_DEVELOPERs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TCS_REQUEST_DEVELOPER" />
+      <Association Name="TP_CAPTCHA_TCS_REQUEST_PUBLISHER" Member="TCS_REQUEST_PUBLISHERs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TCS_REQUEST_PUBLISHER" />
+      <Association Name="TP_CAPTCHA_TD_EARNING" Member="TD_EARNINGs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TD_EARNING" />
+      <Association Name="TP_CAPTCHA_TD_EARNING_AGG" Member="TD_EARNING_AGGs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TD_EARNING_AGG" />
+      <Association Name="TP_CAPTCHA_TM_PROFIT_AGG" Member="TM_PROFIT_AGGs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TM_PROFIT_AGG" />
+      <Association Name="TP_CAPTCHA_TP_EARNING" Member="TP_EARNINGs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_EARNING" />
+      <Association Name="TP_CAPTCHA_TP_EARNING_AGG" Member="TP_EARNING_AGGs" ThisKey="Publisher_Id,Website_Id,Captcha_Id" OtherKey="Publisher_Id,Website_Id,Captcha_Id" Type="TP_EARNING_AGG" />
+      <Association Name="TP_PUBLISHER_TP_CAPTCHA" Member="TP_PUBLISHER" ThisKey="Publisher_Id" OtherKey="Publisher_Id" Type="TP_PUBLISHER" IsForeignKey="true" />
+      <Association Name="TP_WEBSITE_TP_CAPTCHA" Member="TP_WEBSITE" ThisKey="Publisher_Id,Website_Id" OtherKey="Publisher_Id,Website_Id" Type="TP_WEBSITE" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.Process_CalcAdvertiserBalance" Method="Process_CalcAdvertiserBalance">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SendMail" Method="SendMail">
+    <Parameter Name="Receipient" Parameter="receipient" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Subject" Parameter="subject" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Content" Parameter="content" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Process_ArchiveCaptchaRequests" Method="Process_ArchiveCaptchaRequests">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateCampaignTargeting" Method="UpdateCampaignTargeting">
+    <Parameter Name="CampaignId" Parameter="campaignId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateWebsiteTargeting" Method="UpdateWebsiteTargeting">
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.Graph_GetRequests" Method="Graph_GetRequests">
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Graph_GetRequestsResult">
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Typed" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetWebsitesList" Method="GetWebsitesList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetWebsitesListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Captchas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security_Only_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPT_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPF_Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(13,2)" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CRM_GetRequestsList" Method="CRM_GetRequestsList">
+    <Parameter Name="Status_Id" Parameter="status_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Subject_Id" Parameter="subject_Id" Type="System.Int32" DbType="Int" />
+    <ElementType Name="CRM_GetRequestsListResult">
+      <Column Name="Message_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(1000) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Subject_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Subject" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Sent_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAdvertiserTransactionList" Method="GetAdvertiserTransactionList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TransactionTypeId" Parameter="transactionTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetAdvertiserTransactionListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetBillingsList" Method="GetBillingsList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TransactionTypeId" Parameter="transactionTypeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetBillingsListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Billing_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Charge" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Credit" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(256)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDeveloperCaptchasList" Method="GetDeveloperCaptchasList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetDeveloperCaptchasListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Size" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Only_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPT_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPF_Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDeveloperPaymentList" Method="GetDeveloperPaymentList">
+    <Parameter Name="Developer_Id" Parameter="developer_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetDeveloperPaymentListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDeveloperPublishersList" Method="GetDeveloperPublishersList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetDeveloperPublishersListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Websites" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security_Only_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPT_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPF_Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Signed_Up" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDeveloperWebsitesList" Method="GetDeveloperWebsitesList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetDeveloperWebsitesListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Captchas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security_Only_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPT_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPF_Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetPaymentList" Method="GetPaymentList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetPaymentListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Date" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetAdsList" Method="GetAdsList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CampaignId" Parameter="campaignId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetAdsListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Slogan" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Image" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Cpt" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Clicked" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetDeveloperEarningsList" Method="GetDeveloperEarningsList">
+    <Parameter Name="Developer_Id" Parameter="developer_Id" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetDeveloperEarningsListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetEarningsList" Method="GetEarningsList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetEarningsListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetWebsitesList" Method="Admin_GetWebsitesList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetWebsitesListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Captchas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dev_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Pub_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Total_Income" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetAdvertisersList" Method="Admin_GetAdvertisersList">
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetAdvertisersListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Campaigns" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetAdvertisersToBeChargeList" Method="Admin_GetAdvertisersToBeChargeList">
+    <ElementType Name="Admin_GetAdvertisersToBeChargeListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Min_Billing_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Payments" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="PCT" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Last_Payment_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetCampaignsList" Method="Admin_GetCampaignsList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetCampaignsListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Ads" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetCaptchasList" Method="Admin_GetCaptchasList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetCaptchasListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Size" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dev_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Pub_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Total_Income" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetChargesList" Method="Admin_GetChargesList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Admin_GetChargesListResult">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Payment_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Payment_Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetDevelopersList" Method="Admin_GetDevelopersList">
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetDevelopersListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Publishers" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dev_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Pub_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Total_Income" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetDevelopersToBePaidList" Method="Admin_GetDevelopersToBePaidList">
+    <ElementType Name="Admin_GetDevelopersToBePaidListResult">
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Payments" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="PCT" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Last_Payment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetPaymentsDevList" Method="Admin_GetPaymentsDevList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Admin_GetPaymentsDevListResult">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetPaymentsPubList" Method="Admin_GetPaymentsPubList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Admin_GetPaymentsPubListResult">
+      <Column Name="Payment_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Credit_Method_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Credit_Method" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Amount" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetPendingWebsitesList" Method="Admin_GetPendingWebsitesList">
+    <ElementType Name="Admin_GetPendingWebsitesListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Pending_Days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Captchas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dev_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Pub_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Total_Income" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetProfitsList" Method="Admin_GetProfitsList">
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Admin_GetProfitsListResult">
+      <Column Name="Date" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Profit" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetPublishersList" Method="Admin_GetPublishersList">
+    <Parameter Name="DeveloperId" Parameter="developerId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetPublishersListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Developer_Id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Developer_Name" Type="System.String" DbType="NVarChar(61)" CanBeNull="true" />
+      <Column Name="Join_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Websites" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Pub_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Dev_Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Total_Income" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetPublishersToBePaidList" Method="Admin_GetPublishersToBePaidList">
+    <ElementType Name="Admin_GetPublishersToBePaidListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Min_Check_Amount" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Security" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Payments" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Balance" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="PCT" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="Last_Payment_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetRequestsList" Method="Admin_GetRequestsList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CaptchaId" Parameter="captchaId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TypeId" Parameter="typeId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="Admin_GetRequestsListResult">
+      <Column Name="Request_Id" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Url" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Is_Typed" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Success_Rate" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Admin_GetAdsList" Method="Admin_GetAdsList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CampaignId" Parameter="campaignId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Admin_GetAdsListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Slogan" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Clickable" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Dimensions" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ad_Image" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bid" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Served" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Clicks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UpdateWebsiteTargeting" Method="UpdateAdvertiserCurrentBalance">
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetCampaignsList" Method="GetCampaignsList">
+    <Parameter Name="AdvertiserId" Parameter="advertiserId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetCampaignsListResult">
+      <Column Name="Advertiser_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Campaign_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Daily_Budget" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ads" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Charges" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Clicked" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetCaptchasList" Method="GetCaptchasList">
+    <Parameter Name="PublisherId" Parameter="publisherId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="WebsiteId" Parameter="websiteId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="StatusId" Parameter="statusId" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.DateTime" DbType="Date" />
+    <ElementType Name="GetCaptchasListResult">
+      <Column Name="Publisher_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Website_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Captcha_Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level_Id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Level" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Max_Size" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="Add_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Modify_Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Security_Only_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPT_Types" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="PPF_Fits" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Earnings" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="Served" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="Success" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Public_Key" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,1044 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AdsCaptcha_ImagesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="AdsCaptcha_ImagesModelStoreContainer">
+          <EntitySet Name="T_DEMOS" EntityType="AdsCaptcha_ImagesModel.Store.T_DEMOS" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_DEMOS_IMAGES" EntityType="AdsCaptcha_ImagesModel.Store.T_DEMOS_IMAGES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_EXCHANGE" EntityType="AdsCaptcha_ImagesModel.Store.T_EXCHANGE" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_EXCHANGE_IMAGES" EntityType="AdsCaptcha_ImagesModel.Store.T_EXCHANGE_IMAGES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_IMAGES" EntityType="AdsCaptcha_ImagesModel.Store.T_IMAGES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_IMAGES_DEFORMATIONS" EntityType="AdsCaptcha_ImagesModel.Store.T_IMAGES_DEFORMATIONS" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_IMAGES_DEFORMATIONS_TYPES" EntityType="AdsCaptcha_ImagesModel.Store.T_IMAGES_DEFORMATIONS_TYPES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_IMAGES_TYPES" EntityType="AdsCaptcha_ImagesModel.Store.T_IMAGES_TYPES" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_REQUESTS_IMAGES" EntityType="AdsCaptcha_ImagesModel.Store.T_REQUESTS_IMAGES" store:Type="Tables" store:Schema="dbo" store:Name="T_REQUESTS_IMAGES" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [T_REQUESTS_IMAGES].[RequestID] AS [RequestID], 
+      [T_REQUESTS_IMAGES].[ImageID] AS [ImageID], 
+      [T_REQUESTS_IMAGES].[RequestDate] AS [RequestDate], 
+      [T_REQUESTS_IMAGES].[Challenge] AS [Challenge], 
+      [T_REQUESTS_IMAGES].[Answer] AS [Answer], 
+      [T_REQUESTS_IMAGES].[AnswerDate] AS [AnswerDate], 
+      [T_REQUESTS_IMAGES].[SessionID] AS [SessionID], 
+      [T_REQUESTS_IMAGES].[Clicks] AS [Clicks], 
+      [T_REQUESTS_IMAGES].[Fits] AS [Fits], 
+      [T_REQUESTS_IMAGES].[TimeOver] AS [TimeOver], 
+      [T_REQUESTS_IMAGES].[Advertiser_Id] AS [Advertiser_Id], 
+      [T_REQUESTS_IMAGES].[Campaign_Id] AS [Campaign_Id], 
+      [T_REQUESTS_IMAGES].[Ad_Id] AS [Ad_Id], 
+      [T_REQUESTS_IMAGES].[Publisher_Id] AS [Publisher_Id], 
+      [T_REQUESTS_IMAGES].[Website_Id] AS [Website_Id], 
+      [T_REQUESTS_IMAGES].[Captcha_Id] AS [Captcha_Id], 
+      [T_REQUESTS_IMAGES].[ResendNo] AS [ResendNo], 
+      [T_REQUESTS_IMAGES].[RequestCounter] AS [RequestCounter], 
+      [T_REQUESTS_IMAGES].[PreviousImageID] AS [PreviousImageID]
+      FROM [dbo].[T_REQUESTS_IMAGES] AS [T_REQUESTS_IMAGES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="T_REQUESTS_IMAGES_ARCHIVE" EntityType="AdsCaptcha_ImagesModel.Store.T_REQUESTS_IMAGES_ARCHIVE" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_REQUESTS_SPEECH" EntityType="AdsCaptcha_ImagesModel.Store.T_REQUESTS_SPEECH" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="T_REQUESTS_SPEECH_ASK" EntityType="AdsCaptcha_ImagesModel.Store.T_REQUESTS_SPEECH_ASK" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+          <EntitySet Name="V_Exchange_Websites" EntityType="AdsCaptcha_ImagesModel.Store.V_Exchange_Websites" store:Type="Views" store:Schema="dbo" store:Name="V_Exchange_Websites" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
+            <DefiningQuery>SELECT 
+      [V_Exchange_Websites].[Website_Id] AS [Website_Id]
+      FROM [dbo].[V_Exchange_Websites] AS [V_Exchange_Websites]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_T_DEMOS_IMAGES_T_DEMOS" Association="AdsCaptcha_ImagesModel.Store.FK_T_DEMOS_IMAGES_T_DEMOS">
+            <End Role="T_DEMOS" EntitySet="T_DEMOS" />
+            <End Role="T_DEMOS_IMAGES" EntitySet="T_DEMOS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DEMOS_IMAGES_T_IMAGES" Association="AdsCaptcha_ImagesModel.Store.FK_T_DEMOS_IMAGES_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_DEMOS_IMAGES" EntitySet="T_DEMOS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_EXCHANGE_IMAGES_T_EXCHANGE" Association="AdsCaptcha_ImagesModel.Store.FK_T_EXCHANGE_IMAGES_T_EXCHANGE">
+            <End Role="T_EXCHANGE" EntitySet="T_EXCHANGE" />
+            <End Role="T_EXCHANGE_IMAGES" EntitySet="T_EXCHANGE_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES" Association="AdsCaptcha_ImagesModel.Store.FK_T_IMAGES_DEFORMATIONS_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_IMAGES_DEFORMATIONS" EntitySet="T_IMAGES_DEFORMATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES" Association="AdsCaptcha_ImagesModel.Store.FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES">
+            <End Role="T_IMAGES_DEFORMATIONS_TYPES" EntitySet="T_IMAGES_DEFORMATIONS_TYPES" />
+            <End Role="T_IMAGES_DEFORMATIONS" EntitySet="T_IMAGES_DEFORMATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_T_IMAGES_TYPES" Association="AdsCaptcha_ImagesModel.Store.FK_T_IMAGES_T_IMAGES_TYPES">
+            <End Role="T_IMAGES_TYPES" EntitySet="T_IMAGES_TYPES" />
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REQUESTS_IMAGES_T_IMAGES" Association="AdsCaptcha_ImagesModel.Store.FK_T_REQUESTS_IMAGES_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_REQUESTS_IMAGES" EntitySet="T_REQUESTS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH" Association="AdsCaptcha_ImagesModel.Store.FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH">
+            <End Role="T_REQUESTS_SPEECH" EntitySet="T_REQUESTS_SPEECH" />
+            <End Role="T_REQUESTS_SPEECH_ASK" EntitySet="T_REQUESTS_SPEECH_ASK" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="T_DEMOS">
+          <Key>
+            <PropertyRef Name="DemoID" />
+          </Key>
+          <Property Name="DemoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DemoName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="DemoUrlName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="DemoDescription" Type="nvarchar" MaxLength="1000" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="ClickUrl" Type="nvarchar" MaxLength="250" />
+          <Property Name="LikeUrl" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="T_DEMOS_IMAGES">
+          <Key>
+            <PropertyRef Name="DemoID" />
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="DemoID" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_EXCHANGE">
+          <Key>
+            <PropertyRef Name="ExchangeID" />
+          </Key>
+          <Property Name="ExchangeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ExchangeName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="Priority" Type="int" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+        </EntityType>
+        <EntityType Name="T_EXCHANGE_IMAGES">
+          <Key>
+            <PropertyRef Name="AdID" />
+            <PropertyRef Name="ExchangeID" />
+            <PropertyRef Name="Width" />
+            <PropertyRef Name="Height" />
+          </Key>
+          <Property Name="AdID" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="ExchangeID" Type="int" Nullable="false" />
+          <Property Name="SrcImageUrl" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="ClickUrl" Type="nvarchar" Nullable="false" MaxLength="500" />
+          <Property Name="ImageID" Type="int" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="ImageInsertDate" Type="datetime" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_IMAGES">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImageType" Type="int" Nullable="false" />
+          <Property Name="ImageStream" Type="varbinary(max)" Nullable="false" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="Extention" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+          <Property Name="Width" Type="int" Nullable="false" />
+          <Property Name="Height" Type="int" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_DEFORMATIONS">
+          <Key>
+            <PropertyRef Name="DeformationID" />
+            <PropertyRef Name="DeformationType" />
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="DeformationID" Type="int" Nullable="false" />
+          <Property Name="DeformationType" Type="int" Nullable="false" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="ImageStream" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_DEFORMATIONS_TYPES">
+          <Key>
+            <PropertyRef Name="DeformationTypeID" />
+          </Key>
+          <Property Name="DeformationTypeID" Type="int" Nullable="false" />
+          <Property Name="DeformationTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_TYPES">
+          <Key>
+            <PropertyRef Name="ImageTypeID" />
+          </Key>
+          <Property Name="ImageTypeID" Type="int" Nullable="false" />
+          <Property Name="ImageTypeName" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdsCaptcha_Images.dbo.T_REQUESTS_IMAGES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="T_REQUESTS_IMAGES">
+          <Key>
+            <PropertyRef Name="RequestID" />
+            <PropertyRef Name="ImageID" />
+            <PropertyRef Name="RequestDate" />
+            <PropertyRef Name="Challenge" />
+            <PropertyRef Name="SessionID" />
+            <PropertyRef Name="Clicks" />
+            <PropertyRef Name="Fits" />
+            <PropertyRef Name="TimeOver" />
+            <PropertyRef Name="ResendNo" />
+            <PropertyRef Name="RequestCounter" />
+          </Key>
+          <Property Name="RequestID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="Challenge" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="int" />
+          <Property Name="AnswerDate" Type="datetime" />
+          <Property Name="SessionID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Clicks" Type="int" Nullable="false" />
+          <Property Name="Fits" Type="int" Nullable="false" />
+          <Property Name="TimeOver" Type="int" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+          <Property Name="Publisher_Id" Type="int" />
+          <Property Name="Website_Id" Type="int" />
+          <Property Name="Captcha_Id" Type="int" />
+          <Property Name="ResendNo" Type="int" Nullable="false" />
+          <Property Name="RequestCounter" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PreviousImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_IMAGES_ARCHIVE">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ImageID" Type="int" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" Nullable="false" />
+          <Property Name="Challenge" Type="int" Nullable="false" />
+          <Property Name="Answer" Type="int" />
+          <Property Name="AnswerDate" Type="datetime" />
+          <Property Name="SessionID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Clicks" Type="int" Nullable="false" />
+          <Property Name="Fits" Type="int" Nullable="false" />
+          <Property Name="TimeOver" Type="int" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="int" />
+          <Property Name="Campaign_Id" Type="int" />
+          <Property Name="Ad_Id" Type="int" />
+          <Property Name="Publisher_Id" Type="int" />
+          <Property Name="Website_Id" Type="int" />
+          <Property Name="Captcha_Id" Type="int" />
+          <Property Name="ResendNo" Type="int" Nullable="false" />
+          <Property Name="RequestCounter" Type="bigint" Nullable="false" />
+          <Property Name="PreviousImageID" Type="int" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_SPEECH">
+          <Key>
+            <PropertyRef Name="SpeechID" />
+          </Key>
+          <Property Name="SpeechID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RequestID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="SessionID" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+          <Property Name="IsBlocked" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_SPEECH_ASK">
+          <Key>
+            <PropertyRef Name="AskID" />
+          </Key>
+          <Property Name="AskID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SpeechID" Type="bigint" Nullable="false" />
+          <Property Name="Value" Type="int" Nullable="false" />
+          <Property Name="ExpectedValue" Type="int" Nullable="false" />
+          <Property Name="InsertDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'AdsCaptcha_Images.dbo.V_Exchange_Websites' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Exchange_Websites">
+          <Key>
+            <PropertyRef Name="Website_Id" />
+          </Key>
+          <Property Name="Website_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_DEMOS_IMAGES_T_DEMOS">
+          <End Role="T_DEMOS" Type="AdsCaptcha_ImagesModel.Store.T_DEMOS" Multiplicity="1" />
+          <End Role="T_DEMOS_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_DEMOS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_DEMOS">
+              <PropertyRef Name="DemoID" />
+            </Principal>
+            <Dependent Role="T_DEMOS_IMAGES">
+              <PropertyRef Name="DemoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DEMOS_IMAGES_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES" Multiplicity="1" />
+          <End Role="T_DEMOS_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_DEMOS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_DEMOS_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_EXCHANGE_IMAGES_T_EXCHANGE">
+          <End Role="T_EXCHANGE" Type="AdsCaptcha_ImagesModel.Store.T_EXCHANGE" Multiplicity="1" />
+          <End Role="T_EXCHANGE_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_EXCHANGE_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_EXCHANGE">
+              <PropertyRef Name="ExchangeID" />
+            </Principal>
+            <Dependent Role="T_EXCHANGE_IMAGES">
+              <PropertyRef Name="ExchangeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES" Multiplicity="1" />
+          <End Role="T_IMAGES_DEFORMATIONS" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES_DEFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_IMAGES_DEFORMATIONS">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES">
+          <End Role="T_IMAGES_DEFORMATIONS_TYPES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES_DEFORMATIONS_TYPES" Multiplicity="1" />
+          <End Role="T_IMAGES_DEFORMATIONS" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES_DEFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES_DEFORMATIONS_TYPES">
+              <PropertyRef Name="DeformationTypeID" />
+            </Principal>
+            <Dependent Role="T_IMAGES_DEFORMATIONS">
+              <PropertyRef Name="DeformationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_T_IMAGES_TYPES">
+          <End Role="T_IMAGES_TYPES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES_TYPES" Multiplicity="1" />
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES_TYPES">
+              <PropertyRef Name="ImageTypeID" />
+            </Principal>
+            <Dependent Role="T_IMAGES">
+              <PropertyRef Name="ImageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REQUESTS_IMAGES_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_IMAGES" Multiplicity="1" />
+          <End Role="T_REQUESTS_IMAGES" Type="AdsCaptcha_ImagesModel.Store.T_REQUESTS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_REQUESTS_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH">
+          <End Role="T_REQUESTS_SPEECH" Type="AdsCaptcha_ImagesModel.Store.T_REQUESTS_SPEECH" Multiplicity="1" />
+          <End Role="T_REQUESTS_SPEECH_ASK" Type="AdsCaptcha_ImagesModel.Store.T_REQUESTS_SPEECH_ASK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_REQUESTS_SPEECH">
+              <PropertyRef Name="SpeechID" />
+            </Principal>
+            <Dependent Role="T_REQUESTS_SPEECH_ASK">
+              <PropertyRef Name="SpeechID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="P_Ads_GetForImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_Images_Deformations_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DeformationID" Type="int" Mode="In" />
+          <Parameter Name="DeformationType" Type="int" Mode="In" />
+          <Parameter Name="ImageID" Type="int" Mode="In" />
+          <Parameter Name="ImageStream" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="P_Images_Geformations_GetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RequestID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DeformationID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Images_Geformations_GetStream" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RequestID" Type="nvarchar" Mode="In" />
+          <Parameter Name="DeformationID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Images_GetExchangeOrRandomImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ExchangeID" Type="int" Mode="In" />
+          <Parameter Name="ExchangeImageID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ExchangeImageUrl" Type="nvarchar" Mode="In" />
+          <Parameter Name="ExchangeImageClickUrl" Type="nvarchar" Mode="In" />
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Height" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Images_GetRandomCommercialImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DemoID" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Images_GetRandomImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Height" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Images_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ImageType" Type="int" Mode="In" />
+          <Parameter Name="ImageStream" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="Extention" Type="nvarchar" Mode="In" />
+          <Parameter Name="Width" Type="int" Mode="In" />
+          <Parameter Name="Height" Type="int" Mode="In" />
+          <Parameter Name="Advertiser_Id" Type="int" Mode="In" />
+          <Parameter Name="Campaign_Id" Type="int" Mode="In" />
+          <Parameter Name="Ad_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Requests_Images_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RequestID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ImageID" Type="int" Mode="In" />
+          <Parameter Name="Challenge" Type="int" Mode="In" />
+          <Parameter Name="SessionID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Advertiser_Id" Type="int" Mode="In" />
+          <Parameter Name="Campaign_Id" Type="int" Mode="In" />
+          <Parameter Name="Ad_Id" Type="int" Mode="In" />
+          <Parameter Name="Publisher_Id" Type="int" Mode="In" />
+          <Parameter Name="Website_Id" Type="int" Mode="In" />
+          <Parameter Name="Captcha_Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="P_Requests_Images_InsertWithExchange" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RequestID" Type="nvarchar" Mode="In" />
+          <Parameter Name="ImageID" Type="int" Mode="In" />
+          <Parameter Name="Challenge" Type="int" Mode="In" />
+          <Parameter Name="SessionID" Type="nvarchar" Mode="In" />
+          <Parameter Name="Advertiser_Id" Type="int" Mode="In" />
+          <Parameter Name="Campaign_Id" Type="int" Mode="In" />
+          <Parameter Name="Ad_Id" Type="int" Mode="In" />
+          <Parameter Name="Publisher_Id" Type="int" Mode="In" />
+          <Parameter Name="Website_Id" Type="int" Mode="In" />
+          <Parameter Name="Captcha_Id" Type="int" Mode="In" />
+          <Parameter Name="ExchangeID" Type="int" Mode="In" />
+          <Parameter Name="AdID" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="P_Requests_MoveToArchive" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_Requests_UpdateBasicChallenge" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="RequestID" Type="bigint" Mode="In" />
+          <Parameter Name="Challenge" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="P_Website_GetCategoriesCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Website_Id" Type="int" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AdsCaptcha_ImagesModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AdsCaptcha_ImagesEntities" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="T_DEMOS" EntityType="AdsCaptcha_ImagesModel.T_DEMOS" />
+          <EntitySet Name="T_DEMOS_IMAGES" EntityType="AdsCaptcha_ImagesModel.T_DEMOS_IMAGES" />
+          <EntitySet Name="T_EXCHANGE" EntityType="AdsCaptcha_ImagesModel.T_EXCHANGE" />
+          <EntitySet Name="T_EXCHANGE_IMAGES" EntityType="AdsCaptcha_ImagesModel.T_EXCHANGE_IMAGES" />
+          <EntitySet Name="T_IMAGES" EntityType="AdsCaptcha_ImagesModel.T_IMAGES" />
+          <EntitySet Name="T_IMAGES_DEFORMATIONS" EntityType="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS" />
+          <EntitySet Name="T_IMAGES_DEFORMATIONS_TYPES" EntityType="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS_TYPES" />
+          <EntitySet Name="T_IMAGES_TYPES" EntityType="AdsCaptcha_ImagesModel.T_IMAGES_TYPES" />
+          <EntitySet Name="T_REQUESTS_IMAGES" EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES" />
+          <EntitySet Name="T_REQUESTS_IMAGES_ARCHIVE" EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES_ARCHIVE" />
+          <EntitySet Name="T_REQUESTS_SPEECH" EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH" />
+          <EntitySet Name="T_REQUESTS_SPEECH_ASK" EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH_ASK" />
+          <EntitySet Name="V_Exchange_Websites" EntityType="AdsCaptcha_ImagesModel.V_Exchange_Websites" />
+          <AssociationSet Name="FK_T_DEMOS_IMAGES_T_DEMOS" Association="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_DEMOS">
+            <End Role="T_DEMOS" EntitySet="T_DEMOS" />
+            <End Role="T_DEMOS_IMAGES" EntitySet="T_DEMOS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_DEMOS_IMAGES_T_IMAGES" Association="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_DEMOS_IMAGES" EntitySet="T_DEMOS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_EXCHANGE_IMAGES_T_EXCHANGE" Association="AdsCaptcha_ImagesModel.FK_T_EXCHANGE_IMAGES_T_EXCHANGE">
+            <End Role="T_EXCHANGE" EntitySet="T_EXCHANGE" />
+            <End Role="T_EXCHANGE_IMAGES" EntitySet="T_EXCHANGE_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES" Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_IMAGES_DEFORMATIONS" EntitySet="T_IMAGES_DEFORMATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_T_IMAGES_TYPES" Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_T_IMAGES_TYPES">
+            <End Role="T_IMAGES_TYPES" EntitySet="T_IMAGES_TYPES" />
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REQUESTS_IMAGES_T_IMAGES" Association="AdsCaptcha_ImagesModel.FK_T_REQUESTS_IMAGES_T_IMAGES">
+            <End Role="T_IMAGES" EntitySet="T_IMAGES" />
+            <End Role="T_REQUESTS_IMAGES" EntitySet="T_REQUESTS_IMAGES" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES" Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES">
+            <End Role="T_IMAGES_DEFORMATIONS_TYPES" EntitySet="T_IMAGES_DEFORMATIONS_TYPES" />
+            <End Role="T_IMAGES_DEFORMATIONS" EntitySet="T_IMAGES_DEFORMATIONS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH" Association="AdsCaptcha_ImagesModel.FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH">
+            <End Role="T_REQUESTS_SPEECH" EntitySet="T_REQUESTS_SPEECH" />
+            <End Role="T_REQUESTS_SPEECH_ASK" EntitySet="T_REQUESTS_SPEECH_ASK" />
+          </AssociationSet>
+          <FunctionImport Name="P_Images_Insert" EntitySet="T_IMAGES" ReturnType="Collection(AdsCaptcha_ImagesModel.T_IMAGES)">
+            <Parameter Name="ImageType" Mode="In" Type="Int32" />
+            <Parameter Name="ImageStream" Mode="In" Type="Binary" />
+            <Parameter Name="Extention" Mode="In" Type="String" />
+            <Parameter Name="Width" Mode="In" Type="Int32" />
+            <Parameter Name="Height" Mode="In" Type="Int32" />
+            <Parameter Name="Advertiser_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Campaign_Id" Mode="In" Type="Int32" />
+            <Parameter Name="Ad_Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="P_Images_Deformations_Insert" EntitySet="T_IMAGES_DEFORMATIONS" ReturnType="Collection(AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS)">
+            <Parameter Name="DeformationID" Mode="In" Type="Int32" />
+            <Parameter Name="DeformationType" Mode="In" Type="Int32" />
+            <Parameter Name="ImageID" Mode="In" Type="Int32" />
+            <Parameter Name="ImageStream" Mode="In" Type="Binary" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="T_DEMOS">
+          <Key>
+            <PropertyRef Name="DemoID" />
+          </Key>
+          <Property Name="DemoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DemoName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="DemoUrlName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="DemoDescription" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="ClickUrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="LikeUrl" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="T_DEMOS_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_DEMOS" FromRole="T_DEMOS" ToRole="T_DEMOS_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_DEMOS_IMAGES">
+          <Key>
+            <PropertyRef Name="DemoID" />
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="DemoID" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="T_DEMOS" Relationship="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_DEMOS" FromRole="T_DEMOS_IMAGES" ToRole="T_DEMOS" />
+          <NavigationProperty Name="T_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_IMAGES" FromRole="T_DEMOS_IMAGES" ToRole="T_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_EXCHANGE">
+          <Key>
+            <PropertyRef Name="ExchangeID" />
+          </Key>
+          <Property Name="ExchangeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ExchangeName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Priority" Type="Int32" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <NavigationProperty Name="T_EXCHANGE_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_EXCHANGE_IMAGES_T_EXCHANGE" FromRole="T_EXCHANGE" ToRole="T_EXCHANGE_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_EXCHANGE_IMAGES">
+          <Key>
+            <PropertyRef Name="AdID" />
+            <PropertyRef Name="ExchangeID" />
+            <PropertyRef Name="Width" />
+            <PropertyRef Name="Height" />
+          </Key>
+          <Property Name="AdID" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="ExchangeID" Type="Int32" Nullable="false" />
+          <Property Name="SrcImageUrl" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="ClickUrl" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ImageID" Type="Int32" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="ImageInsertDate" Type="DateTime" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="T_EXCHANGE" Relationship="AdsCaptcha_ImagesModel.FK_T_EXCHANGE_IMAGES_T_EXCHANGE" FromRole="T_EXCHANGE_IMAGES" ToRole="T_EXCHANGE" />
+        </EntityType>
+        <EntityType Name="T_IMAGES">
+          <Key>
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="ImageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ImageType" Type="Int32" Nullable="false" />
+          <Property Name="ImageStream" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="Extention" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <Property Name="Width" Type="Int32" Nullable="false" />
+          <Property Name="Height" Type="Int32" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="T_DEMOS_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_IMAGES" FromRole="T_IMAGES" ToRole="T_DEMOS_IMAGES" />
+          <NavigationProperty Name="T_IMAGES_DEFORMATIONS" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES" FromRole="T_IMAGES" ToRole="T_IMAGES_DEFORMATIONS" />
+          <NavigationProperty Name="T_IMAGES_TYPES" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_T_IMAGES_TYPES" FromRole="T_IMAGES" ToRole="T_IMAGES_TYPES" />
+          <NavigationProperty Name="T_REQUESTS_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_REQUESTS_IMAGES_T_IMAGES" FromRole="T_IMAGES" ToRole="T_REQUESTS_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_DEFORMATIONS">
+          <Key>
+            <PropertyRef Name="DeformationID" />
+            <PropertyRef Name="DeformationType" />
+            <PropertyRef Name="ImageID" />
+          </Key>
+          <Property Name="DeformationID" Type="Int32" Nullable="false" />
+          <Property Name="DeformationType" Type="Int32" Nullable="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="ImageStream" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="T_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES" FromRole="T_IMAGES_DEFORMATIONS" ToRole="T_IMAGES" />
+          <NavigationProperty Name="T_IMAGES_DEFORMATIONS_TYPES" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES" FromRole="T_IMAGES_DEFORMATIONS" ToRole="T_IMAGES_DEFORMATIONS_TYPES" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_DEFORMATIONS_TYPES">
+          <Key>
+            <PropertyRef Name="DeformationTypeID" />
+          </Key>
+          <Property Name="DeformationTypeID" Type="Int32" Nullable="false" />
+          <Property Name="DeformationTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="T_IMAGES_DEFORMATIONS" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES" FromRole="T_IMAGES_DEFORMATIONS_TYPES" ToRole="T_IMAGES_DEFORMATIONS" />
+        </EntityType>
+        <EntityType Name="T_IMAGES_TYPES">
+          <Key>
+            <PropertyRef Name="ImageTypeID" />
+          </Key>
+          <Property Name="ImageTypeID" Type="Int32" Nullable="false" />
+          <Property Name="ImageTypeName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="T_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_IMAGES_T_IMAGES_TYPES" FromRole="T_IMAGES_TYPES" ToRole="T_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_IMAGES">
+          <Key>
+            <PropertyRef Name="RequestID" />
+            <PropertyRef Name="ImageID" />
+            <PropertyRef Name="RequestDate" />
+            <PropertyRef Name="Challenge" />
+            <PropertyRef Name="SessionID" />
+            <PropertyRef Name="Clicks" />
+            <PropertyRef Name="Fits" />
+            <PropertyRef Name="TimeOver" />
+            <PropertyRef Name="ResendNo" />
+            <PropertyRef Name="RequestCounter" />
+          </Key>
+          <Property Name="RequestID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" />
+          <Property Name="Challenge" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="Int32" />
+          <Property Name="AnswerDate" Type="DateTime" />
+          <Property Name="SessionID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Clicks" Type="Int32" Nullable="false" />
+          <Property Name="Fits" Type="Int32" Nullable="false" />
+          <Property Name="TimeOver" Type="Int32" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <Property Name="Publisher_Id" Type="Int32" />
+          <Property Name="Website_Id" Type="Int32" />
+          <Property Name="Captcha_Id" Type="Int32" />
+          <Property Name="ResendNo" Type="Int32" Nullable="false" />
+          <Property Name="RequestCounter" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="PreviousImageID" Type="Int32" />
+          <NavigationProperty Name="T_IMAGES" Relationship="AdsCaptcha_ImagesModel.FK_T_REQUESTS_IMAGES_T_IMAGES" FromRole="T_REQUESTS_IMAGES" ToRole="T_IMAGES" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_IMAGES_ARCHIVE">
+          <Key>
+            <PropertyRef Name="RequestID" />
+          </Key>
+          <Property Name="RequestID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImageID" Type="Int32" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" Nullable="false" />
+          <Property Name="Challenge" Type="Int32" Nullable="false" />
+          <Property Name="Answer" Type="Int32" />
+          <Property Name="AnswerDate" Type="DateTime" />
+          <Property Name="SessionID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Clicks" Type="Int32" Nullable="false" />
+          <Property Name="Fits" Type="Int32" Nullable="false" />
+          <Property Name="TimeOver" Type="Int32" Nullable="false" />
+          <Property Name="Advertiser_Id" Type="Int32" />
+          <Property Name="Campaign_Id" Type="Int32" />
+          <Property Name="Ad_Id" Type="Int32" />
+          <Property Name="Publisher_Id" Type="Int32" />
+          <Property Name="Website_Id" Type="Int32" />
+          <Property Name="Captcha_Id" Type="Int32" />
+          <Property Name="ResendNo" Type="Int32" Nullable="false" />
+          <Property Name="RequestCounter" Type="Int64" Nullable="false" />
+          <Property Name="PreviousImageID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_SPEECH">
+          <Key>
+            <PropertyRef Name="SpeechID" />
+          </Key>
+          <Property Name="SpeechID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="RequestID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionID" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <Property Name="IsBlocked" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="T_REQUESTS_SPEECH_ASK" Relationship="AdsCaptcha_ImagesModel.FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH" FromRole="T_REQUESTS_SPEECH" ToRole="T_REQUESTS_SPEECH_ASK" />
+        </EntityType>
+        <EntityType Name="T_REQUESTS_SPEECH_ASK">
+          <Key>
+            <PropertyRef Name="AskID" />
+          </Key>
+          <Property Name="AskID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="SpeechID" Type="Int64" Nullable="false" />
+          <Property Name="Value" Type="Int32" Nullable="false" />
+          <Property Name="ExpectedValue" Type="Int32" Nullable="false" />
+          <Property Name="InsertDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="T_REQUESTS_SPEECH" Relationship="AdsCaptcha_ImagesModel.FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH" FromRole="T_REQUESTS_SPEECH_ASK" ToRole="T_REQUESTS_SPEECH" />
+        </EntityType>
+        <EntityType Name="V_Exchange_Websites">
+          <Key>
+            <PropertyRef Name="Website_Id" />
+          </Key>
+          <Property Name="Website_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_T_DEMOS_IMAGES_T_DEMOS">
+          <End Role="T_DEMOS" Type="AdsCaptcha_ImagesModel.T_DEMOS" Multiplicity="1" />
+          <End Role="T_DEMOS_IMAGES" Type="AdsCaptcha_ImagesModel.T_DEMOS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_DEMOS">
+              <PropertyRef Name="DemoID" />
+            </Principal>
+            <Dependent Role="T_DEMOS_IMAGES">
+              <PropertyRef Name="DemoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_DEMOS_IMAGES_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.T_IMAGES" Multiplicity="1" />
+          <End Role="T_DEMOS_IMAGES" Type="AdsCaptcha_ImagesModel.T_DEMOS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_DEMOS_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_EXCHANGE_IMAGES_T_EXCHANGE">
+          <End Role="T_EXCHANGE" Type="AdsCaptcha_ImagesModel.T_EXCHANGE" Multiplicity="1" />
+          <End Role="T_EXCHANGE_IMAGES" Type="AdsCaptcha_ImagesModel.T_EXCHANGE_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_EXCHANGE">
+              <PropertyRef Name="ExchangeID" />
+            </Principal>
+            <Dependent Role="T_EXCHANGE_IMAGES">
+              <PropertyRef Name="ExchangeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.T_IMAGES" Multiplicity="1" />
+          <End Role="T_IMAGES_DEFORMATIONS" Type="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_IMAGES_DEFORMATIONS">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_T_IMAGES_TYPES">
+          <End Role="T_IMAGES_TYPES" Type="AdsCaptcha_ImagesModel.T_IMAGES_TYPES" Multiplicity="1" />
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.T_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES_TYPES">
+              <PropertyRef Name="ImageTypeID" />
+            </Principal>
+            <Dependent Role="T_IMAGES">
+              <PropertyRef Name="ImageType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REQUESTS_IMAGES_T_IMAGES">
+          <End Role="T_IMAGES" Type="AdsCaptcha_ImagesModel.T_IMAGES" Multiplicity="1" />
+          <End Role="T_REQUESTS_IMAGES" Type="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Principal>
+            <Dependent Role="T_REQUESTS_IMAGES">
+              <PropertyRef Name="ImageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES">
+          <End Role="T_IMAGES_DEFORMATIONS_TYPES" Type="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS_TYPES" Multiplicity="1" />
+          <End Role="T_IMAGES_DEFORMATIONS" Type="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_IMAGES_DEFORMATIONS_TYPES">
+              <PropertyRef Name="DeformationTypeID" />
+            </Principal>
+            <Dependent Role="T_IMAGES_DEFORMATIONS">
+              <PropertyRef Name="DeformationType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH">
+          <End Role="T_REQUESTS_SPEECH" Type="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH" Multiplicity="1" />
+          <End Role="T_REQUESTS_SPEECH_ASK" Type="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH_ASK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="T_REQUESTS_SPEECH">
+              <PropertyRef Name="SpeechID" />
+            </Principal>
+            <Dependent Role="T_REQUESTS_SPEECH_ASK">
+              <PropertyRef Name="SpeechID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AdsCaptcha_ImagesModelStoreContainer" CdmEntityContainer="AdsCaptcha_ImagesEntities">
+          <EntitySetMapping Name="T_DEMOS">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_DEMOS">
+              <MappingFragment StoreEntitySet="T_DEMOS">
+                <ScalarProperty Name="DemoID" ColumnName="DemoID" />
+                <ScalarProperty Name="DemoName" ColumnName="DemoName" />
+                <ScalarProperty Name="DemoUrlName" ColumnName="DemoUrlName" />
+                <ScalarProperty Name="DemoDescription" ColumnName="DemoDescription" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="ClickUrl" ColumnName="ClickUrl" />
+                <ScalarProperty Name="LikeUrl" ColumnName="LikeUrl" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_DEMOS_IMAGES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_DEMOS_IMAGES">
+              <MappingFragment StoreEntitySet="T_DEMOS_IMAGES">
+                <ScalarProperty Name="DemoID" ColumnName="DemoID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_EXCHANGE">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_EXCHANGE">
+              <MappingFragment StoreEntitySet="T_EXCHANGE">
+                <ScalarProperty Name="ExchangeID" ColumnName="ExchangeID" />
+                <ScalarProperty Name="ExchangeName" ColumnName="ExchangeName" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_EXCHANGE_IMAGES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_EXCHANGE_IMAGES">
+              <MappingFragment StoreEntitySet="T_EXCHANGE_IMAGES">
+                <ScalarProperty Name="AdID" ColumnName="AdID" />
+                <ScalarProperty Name="ExchangeID" ColumnName="ExchangeID" />
+                <ScalarProperty Name="SrcImageUrl" ColumnName="SrcImageUrl" />
+                <ScalarProperty Name="ClickUrl" ColumnName="ClickUrl" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="ImageInsertDate" ColumnName="ImageInsertDate" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_IMAGES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_IMAGES">
+              <MappingFragment StoreEntitySet="T_IMAGES">
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImageType" ColumnName="ImageType" />
+                <ScalarProperty Name="ImageStream" ColumnName="ImageStream" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="Extention" ColumnName="Extention" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_IMAGES_DEFORMATIONS">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS">
+              <MappingFragment StoreEntitySet="T_IMAGES_DEFORMATIONS">
+                <ScalarProperty Name="DeformationID" ColumnName="DeformationID" />
+                <ScalarProperty Name="DeformationType" ColumnName="DeformationType" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="ImageStream" ColumnName="ImageStream" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_IMAGES_DEFORMATIONS_TYPES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS_TYPES">
+              <MappingFragment StoreEntitySet="T_IMAGES_DEFORMATIONS_TYPES">
+                <ScalarProperty Name="DeformationTypeID" ColumnName="DeformationTypeID" />
+                <ScalarProperty Name="DeformationTypeName" ColumnName="DeformationTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_IMAGES_TYPES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_IMAGES_TYPES">
+              <MappingFragment StoreEntitySet="T_IMAGES_TYPES">
+                <ScalarProperty Name="ImageTypeID" ColumnName="ImageTypeID" />
+                <ScalarProperty Name="ImageTypeName" ColumnName="ImageTypeName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS_IMAGES">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES">
+              <MappingFragment StoreEntitySet="T_REQUESTS_IMAGES">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="Challenge" ColumnName="Challenge" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="Clicks" ColumnName="Clicks" />
+                <ScalarProperty Name="Fits" ColumnName="Fits" />
+                <ScalarProperty Name="TimeOver" ColumnName="TimeOver" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Publisher_Id" ColumnName="Publisher_Id" />
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="ResendNo" ColumnName="ResendNo" />
+                <ScalarProperty Name="RequestCounter" ColumnName="RequestCounter" />
+                <ScalarProperty Name="PreviousImageID" ColumnName="PreviousImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS_IMAGES_ARCHIVE">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES_ARCHIVE">
+              <MappingFragment StoreEntitySet="T_REQUESTS_IMAGES_ARCHIVE">
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="ImageID" ColumnName="ImageID" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="Challenge" ColumnName="Challenge" />
+                <ScalarProperty Name="Answer" ColumnName="Answer" />
+                <ScalarProperty Name="AnswerDate" ColumnName="AnswerDate" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="Clicks" ColumnName="Clicks" />
+                <ScalarProperty Name="Fits" ColumnName="Fits" />
+                <ScalarProperty Name="TimeOver" ColumnName="TimeOver" />
+                <ScalarProperty Name="Advertiser_Id" ColumnName="Advertiser_Id" />
+                <ScalarProperty Name="Campaign_Id" ColumnName="Campaign_Id" />
+                <ScalarProperty Name="Ad_Id" ColumnName="Ad_Id" />
+                <ScalarProperty Name="Publisher_Id" ColumnName="Publisher_Id" />
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+                <ScalarProperty Name="Captcha_Id" ColumnName="Captcha_Id" />
+                <ScalarProperty Name="ResendNo" ColumnName="ResendNo" />
+                <ScalarProperty Name="RequestCounter" ColumnName="RequestCounter" />
+                <ScalarProperty Name="PreviousImageID" ColumnName="PreviousImageID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS_SPEECH">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH">
+              <MappingFragment StoreEntitySet="T_REQUESTS_SPEECH">
+                <ScalarProperty Name="SpeechID" ColumnName="SpeechID" />
+                <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+                <ScalarProperty Name="SessionID" ColumnName="SessionID" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+                <ScalarProperty Name="IsBlocked" ColumnName="IsBlocked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_REQUESTS_SPEECH_ASK">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH_ASK">
+              <MappingFragment StoreEntitySet="T_REQUESTS_SPEECH_ASK">
+                <ScalarProperty Name="AskID" ColumnName="AskID" />
+                <ScalarProperty Name="SpeechID" ColumnName="SpeechID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="ExpectedValue" ColumnName="ExpectedValue" />
+                <ScalarProperty Name="InsertDate" ColumnName="InsertDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Exchange_Websites">
+            <EntityTypeMapping TypeName="AdsCaptcha_ImagesModel.V_Exchange_Websites">
+              <MappingFragment StoreEntitySet="V_Exchange_Websites">
+                <ScalarProperty Name="Website_Id" ColumnName="Website_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_Images_Insert" FunctionName="AdsCaptcha_ImagesModel.Store.P_Images_Insert" />
+          <FunctionImportMapping FunctionImportName="P_Images_Deformations_Insert" FunctionName="AdsCaptcha_ImagesModel.Store.P_Images_Deformations_Insert" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ImagesModel" ZoomLevel="34">
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_DEMOS" Width="1.5" PointX="3" PointY="10.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_DEMOS_IMAGES" Width="1.5" PointX="5.25" PointY="5.625" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_EXCHANGE" Width="1.5" PointX="7.75" PointY="5.25" Height="2.3648893229166656" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_EXCHANGE_IMAGES" Width="1.5" PointX="10" PointY="5" Height="2.9417936197916656" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_IMAGES" Width="1.5" PointX="3" PointY="4.625" Height="3.9033007812500005" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS" Width="1.5" PointX="5.25" PointY="2.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_IMAGES_DEFORMATIONS_TYPES" Width="1.5" PointX="3" PointY="1.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_IMAGES_TYPES" Width="1.5" PointX="0.75" PointY="5.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES" Width="1.5" PointX="5.25" PointY="9.875" Height="4.8648079427083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_IMAGES_ARCHIVE" Width="1.5" PointX="7.75" PointY="8.75" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH" Width="1.5" PointX="7.75" PointY="0.875" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.T_REQUESTS_SPEECH_ASK" Width="1.5" PointX="10" PointY="0.875" Height="2.1725878906250031" IsExpanded="true" />
+        <EntityTypeShape EntityType="AdsCaptcha_ImagesModel.V_Exchange_Websites" Width="1.5" PointX="9.75" PointY="8.75" Height="1.2110807291666674" IsExpanded="true" />
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_DEMOS" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="10.126152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="9.7511528461538468" />
+          <ConnectorPoint PointX="4.875" PointY="6.6151432291666667" />
+          <ConnectorPoint PointX="5.25" PointY="6.6151432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_DEMOS_IMAGES_T_IMAGES" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.0575716145833329" />
+          <ConnectorPoint PointX="5.25" PointY="6.0575716145833329" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_EXCHANGE_IMAGES_T_EXCHANGE" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="6.4324446614583328" />
+          <ConnectorPoint PointX="10" PointY="6.4324446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="4.625" />
+          <ConnectorPoint PointX="4.875" PointY="4.25" />
+          <ConnectorPoint PointX="4.875" PointY="5.047587890625" />
+          <ConnectorPoint PointX="5.25" PointY="4.672587890625" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_T_IMAGES_TYPES" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.547841796875" />
+          <ConnectorPoint PointX="3" PointY="6.547841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_REQUESTS_IMAGES_T_IMAGES" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.4659920889423077" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="8.7820665238434277" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="8.899917654041186" />
+          <ConnectorPoint PointX="5.0625" PointY="9.0284920889423077" />
+          <ConnectorPoint PointX="5.0625" PointY="12.307403971354168" />
+          <ConnectorPoint PointX="5.25" PointY="12.307403971354168" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_IMAGES_DEFORMATIONS_T_IMAGES_DEFORMATIONS_TYPES" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.922841796875" />
+          <ConnectorPoint PointX="5.25" PointY="2.922841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="AdsCaptcha_ImagesModel.FK_T_REQUESTS_SPEECH_ASK_T_REQUESTS_SPEECH" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.25" PointY="1.9612939453125016" />
+          <ConnectorPoint PointX="10" PointY="1.9612939453125016" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

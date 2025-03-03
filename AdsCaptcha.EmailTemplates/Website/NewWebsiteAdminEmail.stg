@@ -1,0 +1,19 @@
+delimiters "$","$"
+import "../General/GeneralEmailParts.stg"
+
+subject(data)::="Inqwise | New Website (#$data.WebsiteId$)"
+
+body(data)::=<<
+$header(data)$
+
+The site owner <a href='mailto:$data.Publisher.Email$'>$data.Publisher.Email$</a> has just added new website.<br /><br />
+Please review the website in order to catalogue it and approve/reject it.
+<table>
+<tr><td><b>Email:</b></td><td><a href='mailto:$data.Publisher.Email$'>$data.Publisher.Email$</a></td></tr>
+<tr><td><b>URL:</b></td><td><a href='$data.WebsiteUrl$'>$data.WebsiteUrl$</a></td></tr>
+</table>
+<br/><br/>
+Click <a href='$data.AdminBaseUrl$EditWebsite.aspx?PublisherId=$data.Publisher.Id$&WebsiteId=$data.WebsiteId$'>here</a> to view and edit details.
+
+$footer(data)$
+>>
